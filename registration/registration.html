@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="google-signin-client_id" content="396784371487-jdo4d3ei4vrc8s61hkhjiu64rmptaq1i.apps.googleusercontent.com">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         <link href="/registration/registration.css" rel="stylesheet"></script>
+        <link rel="shortcut icon" href="/logo/logo.jpg">
         <title>MovieKraken | Registration</title>
+        
     </head>
     
     <body>    
         <!-- Navigation -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand text-white" href="#">MovieKraken</a>
+                <a class="navbar-brand text-white" href="/homepage/homepage.html">MovieKraken</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> 
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -35,14 +38,17 @@
             <hr>
             <div class="card bg-light mt-5">
             <article class="card-body mx-auto" style="max-width: 400px;">
-            	<h4 class="card-title mt-3 text-center">Crea un nuovo Account</h4>
-            	<p class="text-center">Registrati via Social</p>
-            	<p>
-            		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-            		<a href="" class="btn btn-block btn-google"> <i class="fab fa-google"></i>   Login con Google</a>
-                </p>
+                <h4 class="card-title mt-3 text-center">Crea un nuovo Account</h4>
+                
+                <!--REGISTRAZIONE COI SOCIAL-->
+                <p class="text-center">Registrati via Social</p>
+                <div id="profileID"></div>
+                    <div class="g-signin2" data-width="250" data-heigth="100" data-onsuccess="onSignIn" data-longtitle="true"></div>
+                    <a href="#" onclick="signOut();">Sign out</a>
                 <hr>
-            	<p class="divider-text text-center">
+                
+                <!--REGISTRAZIONE CLASSICA-->
+            	<p class="text-center">
                     <span class="bg-ligth bg-">oppure registrati normalmente</span>
                 </p>
                 <hr>
@@ -128,4 +134,6 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/api.js" async defer></script>
+    <script src="/registration/registration.js"></script>
 </html>
