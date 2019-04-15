@@ -4,7 +4,7 @@
         <meta name="google-signin-client_id" content="396784371487-8nfv15leuls7jtlh1mtp6a7eevsj67om.apps.googleusercontent.com">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-        <link href="/registration/registration.css" rel="stylesheet"></script>
+        <link href="../registration/registration.css" rel="stylesheet"></script>
         <link rel="shortcut icon" href="/logo/logo.jpg">
         <title>MovieKraken | Registration</title>
         
@@ -14,7 +14,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand text-white" href="/homepage/homepage.html">MovieKraken</a>
+                <a class="navbar-brand text-white" href="../homepage/homepage.html">MovieKraken</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button> 
@@ -24,10 +24,11 @@
                             <a class="nav-link text-white" href="#">Film</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Login</a>
+                            <a class="nav-l
+                            ink text-white" href="#">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/registration/registration.html">Sign Up</a>
+                            <a class="nav-link text-white" href="../registration/registration.html">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -47,6 +48,12 @@
                     <a href="#" onclick="signOut();">Sign out</a>
                 <hr>
                 
+                <div id="profileID"></div>
+                    <div class="g-signin2" data-width="250" data-heigth="100" data-onsuccess="onSignIn" data-longtitle="true"></div>
+                    <a href="#" onclick="signOut();">Sign out</a>
+                <hr>
+                
+
                 <!--REGISTRAZIONE CLASSICA-->
             	<p class="text-center">
                     <span class="bg-ligth bg-">oppure registrati normalmente</span>
