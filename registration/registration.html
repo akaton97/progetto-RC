@@ -7,10 +7,15 @@
         <link href="../registration/registration.css" rel="stylesheet"></script>
         <link rel="shortcut icon" href="/logo/logo.jpg">
         <title>MovieKraken | Registration</title>
+       
         
     </head>
     
     <body onload="initClient()">    
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2"></script>
+
+
         <!-- Navigation -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container">
@@ -45,15 +50,16 @@
                 <p class="text-center">Registrati via Social</p>
                 <div id="profileID"></div>
                     <div class="g-signin2" data-width="250" data-heigth="100" data-onsuccess="onSignIn" data-longtitle="true"></div>
+                   <br>
                     <a href="#" onclick="signOut();">Sign out</a>
                 <hr>
-                
-                <div id="profileID"></div>
-                    <div class="g-signin2" data-width="250" data-heigth="100" data-onsuccess="onSignIn" data-longtitle="true"></div>
-                    <a href="#" onclick="signOut();">Sign out</a>
-                <hr>
-                
 
+                <div id="fb-root">
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2"></script>
+                </div>
+
+                <div class="fb-login-button" data-width="100" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+               
                 <!--REGISTRAZIONE CLASSICA-->
             	<p class="text-center">
                     <span class="bg-ligth bg-">oppure registrati normalmente</span>
