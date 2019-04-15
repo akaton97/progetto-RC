@@ -5,8 +5,13 @@
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    document.getElementById("profileID").innerHTML = profile.getName() +"<br>" + "<a href='mailto'" + profile.getEmail() + ">" +
-    "</a>" + "</br>" + "<img src='" + profile.getImageUrl() + "'/>";
+    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
+    window.location.href = "../homepage/homepage.html"
 }
 
   function signOut() {
