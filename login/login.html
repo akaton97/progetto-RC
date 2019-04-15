@@ -1,33 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/logo/logo.jpg" />  <!--favicon-->
+    <title>MovieKraken | Sign In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="/JS/Registr.js"></script>
+    <link href="/login/login.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  <!--sweet alert-->
 </head>
-<body>
-    <a href="/homepage/homepage.html">Torna alla home</a>
-    <form action="" method="POST" style="width:2000px">
-        Nome:
-        <input type="text" name="Nome" size="10">
-        <br>
-        Cognome:
-        <input type="text" name="Cognome" size="10">
-        <br>
-        Data di Nascita:
-        <input type="date">
-        <br>
-        Sesso:
-        <input type="radio" value="M">M
-        <input type="radio" value="F">F
-        <br>
-        E-mail:
-        <input type="email" size="15">
-        <br>
-        Password:
-        <input type="password" size="15">
-        <br>
-    </form>
+
+<body background="" style="margin-top: 1%; margin-left: 1%; background-size: cover;" onload="return caricaDocumento()">
+
+    <a class="TAH" href="/homepage/homepage.html" title="Torna alla Home"> 
+        <b>MovieKraken<sup>®</sup></b>               
+    </a>
+
+    <div id="zonaDinamica"></div>
+
 </body>
 </html>
+
