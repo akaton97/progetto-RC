@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="google-signin-client_id" content="396784371487-8nfv15leuls7jtlh1mtp6a7eevsj67om.apps.googleusercontent.com">
+        <meta name="google-signin-client_id" content="396784371487-m12odsnjlj8orvvh58bn21e13t0ji7dl.apps.googleusercontent.com">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         <link href="../registration/registration.css" rel="stylesheet"></script>
-        <link rel="shortcut icon" href="/logo/logo.jpg">
+        <link rel="shortcut icon" href="../logo/logo.jpg">
         <title>MovieKraken | Registration</title>
         
     </head>
@@ -24,7 +24,8 @@
                             <a class="nav-link text-white" href="#">Film</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Login</a>
+                            <a class="nav-l
+                            ink text-white" href="../login/login.html">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="../registration/registration.html">Sign Up</a>
@@ -42,40 +43,10 @@
                 
                 <!--REGISTRAZIONE COI SOCIAL-->
                 <p class="text-center">Registrati via Social</p>
-
-                <!--REGISTRAZIONE CON GOOGLE-->
-                <div id="profileID"></div>
                     <div class="g-signin2" data-width="250" data-heigth="100" data-onsuccess="onSignIn" data-longtitle="true"></div>
                     <a href="#" onclick="signOut();">Sign out</a>
                 <hr>
                 
-                <!--REGISTRAZIONE CON FACEBOOK-->
-                <script>
-                    window.fbAsyncInit = function() {
-                      FB.init({
-                        appId            : '1159693734481176',
-                        autoLogAppEvents : true,
-                        xfbml            : true,
-                        version          : 'v3.2'
-                      });
-
-                    FB.getLoginStatus(function(response){
-                        statusChangeCallback(response)
-                    });
-                    };
-                  </script>
-                  <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-                      
-                  
-                
-                <div id="fb-root">
-                    <script async defer crossorigin="anonymous" src="http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2"></script>
-                    </div>
-                   
-                    <div> <button id="fb-button" onlogin="checkLoginState()" scope="public_profile,email" class="fb-login-button" data-width="250" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></button></div>
-                   <br>
-                   
-                    
 
 
 <br>
