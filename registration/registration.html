@@ -42,11 +42,14 @@
                 
                 <!--REGISTRAZIONE COI SOCIAL-->
                 <p class="text-center">Registrati via Social</p>
+
+                <!--REGISTRAZIONE CON GOOGLE-->
                 <div id="profileID"></div>
                     <div class="g-signin2" data-width="250" data-heigth="100" data-onsuccess="onSignIn" data-longtitle="true"></div>
                     <a href="#" onclick="signOut();">Sign out</a>
                 <hr>
                 
+                <!--REGISTRAZIONE CON FACEBOOK-->
                 <script>
                     window.fbAsyncInit = function() {
                       FB.init({
@@ -64,12 +67,13 @@
                 <div id="fb-root">
                     <script async defer crossorigin="anonymous" src="http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2"></script>
                     </div>
-    
-                    <div class="fb-login-button" data-width="250" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
                    
+                    <div onclick=FB.login(response) class="fb-login-button" data-width="250" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                   <br>
+                    <a href="#">Sign Out</a>    
                 <!--REGISTRAZIONE CLASSICA-->
             	<p class="text-center">
-                    <span class="bg-ligth bg-">oppure registrati normalmente</span>
+                    <span class="bg-ligth bg-">oppure registrati manualmente</span>
                 </p>
                 <hr>
             	<form>
