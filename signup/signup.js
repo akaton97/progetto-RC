@@ -84,6 +84,7 @@ function checkLoginState() {
 
       function logout(){
           FB.logout(function(response){
+              window.location("#")
               alert("baibai")
           })
       }
