@@ -42,12 +42,12 @@
    }
      
   //LOGIN CHECK
-  function ugualidue(u,o){
+  function ugualidue(u,o){  
     if(u.e==o.e && u.p==o.p) return true;
     return false;
   }
   
-  function logCheck(){
+  function logCheck(){  //LOGIN
     var u = JSON.parse(localStorage.reg);  //mail salvata nello storage
     var nextpos = u.length;
     var o = { e:document.login.email.value,
@@ -76,22 +76,21 @@
       localStorage.acc="[]"; 
      }
   }
-  
+
+  //LOGOUT
   function gestisciAcc(){
     var x = JSON.parse(localStorage.acc);
     if(x!="") {
-      document.getElementById("userlog").innerHTML =   '<a class="esc" onclick="resetStorageAcc();resetStorageCarrello()"><i class="esc fas fa-sign-out-alt"></i></a>';
-      
-     
+      document.getElementById("userlog").innerHTML =   '<a onclick="resetStorageAcc();>Logout</a>';
     }
-    
     return true;
   }
-  
+
   function resetStorageAcc(){
     var domanda =confirm("Sei sicuro di uscire?")
     if(domanda == true){
     localStorage.acc="[]";
     window.location.reload()
-    }  
+    }
+    
   }
