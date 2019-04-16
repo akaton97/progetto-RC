@@ -26,16 +26,12 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="/login/login.html">Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/signup/signup.html">Sign Up</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         <!-- Navigation -->
             <div class="container mb-5 mt-5">
-            <hr>
             <div class="card bg-light mt-5">
             <article class="card-body mx-auto" style="max-width: 400px;">
                 <h4 class="card-title mt-3 text-center">Crea un nuovo Account</h4>
@@ -44,8 +40,6 @@
                 <p class="text-center">Registrati via Social</p>
                 <!--REGISTRAZIONE CON GOOGLE-->
                 <div class="g-signup2" data-width="250" data-heigth="100" data-onsuccess="onSignIn" data-longtitle="true"></div>
-
-                <hr>
                 <!--REGISTRAZIONE CON FACEBOOK-->
                 <script>
                             window.fbAsyncInit = function() {
@@ -60,21 +54,10 @@
                                 statusChangeCallback(response)
                             });
                             };
-                </script>       
-                <div id="fb-root"></div>       
-                <div> 
-                    <button style="border: none" id="fb-button" onlogin="checkLoginState()" scope="public_profile,email" class="fb-login-button" data-width="250" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false">
-                    </button>
+                </script>      
+                <div style="border: none" id="fb-button" onlogin="checkLoginState()" scope="public_profile,email" class="fb-login-button" data-width="250" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false">
                 </div>
-
-                <div>
-                        <button id="fb-button" onlogin="checkLoginState()" scope="public_profile,email" class="fb-login-button" data-width="250" data-size="large" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true">
-                        </button>
-                </div>  
-        <br>
-        <br>
-        <button id="logout" onclick="logout()">Logout</button>
-        <br>
+        <hr>
             <!--REGISTRAZIONE CLASSICA-->
             	<p class="text-center">
                     <span class="bg-ligth bg-">oppure registrati manualmente</span>
@@ -147,11 +130,10 @@
         <!-- Footer -->
     </body>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/api.js" async defer></script>
     <script src="../signup/signup.js"></script>
+    <script src="/signup/signup.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://connect.facebook.net/en_US/sdk.js" async defer></script>
     <script async defer crossorigin="anonymous" src="   "></script>
