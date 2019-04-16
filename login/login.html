@@ -7,11 +7,12 @@
         <link href="../signup/signup.css" rel="stylesheet"></script>
         <link rel="shortcut icon" href="../logo/logo.jpg">
         <title>MovieKraken | Accedi</title>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  <!--sweet alert-->
         
     </head>
     
-    <body onload="initClient()" onsubmit="return logCheck();">    
-            <!-- Navigation -->
+    <body>   
+        <!-- Navigation -->
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <div class="container">
                     <a class="navbar-brand text-white" href="../homepage/homepage.html">MovieKraken</a>
@@ -50,7 +51,7 @@
                     <span class="bg-ligth bg-">oppure accedi normalmente</span>
                 </p>
                 <hr>
-            	<form>
+                <form role="form" name="login" action="/homepage/homepage.html" method="" onsubmit="return logCheck();">
                 <div class="form-group input-group">
                 	<div class="input-group-prepend">
             		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
@@ -115,7 +116,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/api.js" async defer></script>
-    <script src="../signup/signup.js"></script>
     <script src="../signup/signup2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </html>

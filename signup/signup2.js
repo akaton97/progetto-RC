@@ -10,26 +10,26 @@
     return false;
   }
  
-  function inserisciReg() {
-    if(document.registration.psw.value != document.registration.cpsw.value) {
+  function inserisciReg() {  //SIGN UP
+    if(document.signup.psw.value != document.signup.cpsw.value) {
     swal("Warning", "Le password non coincidono", "warning");
     //alert("le password non coincidono");
-      document.registration.psw.value="";  //document.nomeForm.campoNome.value
-      document.registration.cpsw.value="";
-      document.registration.psw.focus();
+      document.signup.psw.value="";  //document.nomeForm.campoNome.value
+      document.signup.cpsw.value="";
+      document.signup.psw.focus();
       return false;
     }
     var u = JSON.parse(localStorage.reg);  //mail salvata nello storage
     var nextpos = u.length;
-    var o ={e:document.registration.email.value,
-            p:document.registration.psw.value
+    var o ={e:document.signup.email.value,
+            p:document.signup.psw.value
            }
       for(i=0; i<nextpos; i++) {
           if(uguali(u[i],o)) {
             swal("Warning", "Indirizzo e-mail già attivo", "warning");
-            document.registration.email.value="";
-            document.registration.psw.value="";
-            document.registration.cpsw.value="";
+            document.signup.email.value="";
+            document.signup.psw.value="";
+            document.signup.cpsw.value="";
             return false;
           }
       }
@@ -56,7 +56,8 @@
   
     for(i=0; i<nextpos; i++) {
       if(ugualidue(u[i],o)){
-        swal("Good job", "Accesso effettuato con successo", "success");
+        alert("Accesso effettuato con successo");
+        //swal("Good job", "Accesso effettuato con successo", "success");
         var x = JSON.parse(localStorage.acc);
         var pos = x.length;
         x[pos]='true';

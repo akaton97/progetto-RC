@@ -7,6 +7,7 @@
         <link href="../signup/signup.css" rel="stylesheet"></script>
         <link rel="shortcut icon" href="../logo/logo.jpg">
         <title>MovieKraken | Registration</title>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  <!--sweet alert--> 
     </head>
     
     <body onload="initClient(); setButtons(false);">      
@@ -70,7 +71,7 @@
                     <span class="bg-ligth bg-">oppure registrati manualmente</span>
                 </p>
                 <hr>
-            	<form>
+            	<form name="signup" onSubmit="return inserisciReg()">
                 <div class="form-group input-group">
                 	<div class="input-group-prepend">
             		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
@@ -141,7 +142,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/api.js" async defer></script>
-    <script src="../signup/signup.js"></script>
+    <script src="../signup/signup2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://connect.facebook.net/en_US/sdk.js" async defer></script>
     <script async defer crossorigin="anonymous" src="http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2"></script>
