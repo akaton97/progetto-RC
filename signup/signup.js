@@ -1,5 +1,5 @@
 
-  function onFailure(error) {
+function onFailure(error) {
     alert(error)
 }
 
@@ -54,7 +54,8 @@ var initClient = function() {
 
 
 
-//FACEBOOK function checkLoginState() {
+//FACEBOOK 
+function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
   });
@@ -66,7 +67,7 @@ var initClient = function() {
     js.src = "https://connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-}
+  }
 
 
   function statusChangeCallback(response) {
