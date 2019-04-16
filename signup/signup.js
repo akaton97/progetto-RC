@@ -43,7 +43,7 @@ var initClient = function() {
        * client.
        */
       auth2 = gapi.auth2.init({
-          client_id: '396784371487-m12odsnjlj8orvvh58bn21e13t0ji7dl.apps.googleusercontent.com'
+          client_id: '396784371487-8nfv15leuls7jtlh1mtp6a7eevsj67om.apps.googleusercontent.com'
       });
 
       // Attach the click handler to the sign-in button
@@ -51,6 +51,7 @@ var initClient = function() {
   })
 }
 
+//FACEBOOK 
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
