@@ -15,166 +15,161 @@ head
     |         
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert
-  |     
-      
-  body(onload='initClient(); setButtons(false);')
-    // Navigation
-    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
-      .container
-        a.navbar-brand.text-white(href='/') MovieKraken
-        |                     
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsHomepage', aria-controls='navbarsHomepage', aria-expanded='false', aria-label='Toggle navigation')
-          span.navbar-toggler-icon
-        |                     
-        #navbarsHomepage.collapse.navbar-collapse
-          ul.navbar-nav.ml-auto
-            li.nav-item
-              a.nav-link.text-white(href='#') Film
-            |                             
-            li.nav-item
-              a.nav-link.text-white(href='/login') Login
-            |                             
-            li.nav-item
-              a.nav-link.text-white(href='/signup') Sign Up
-    // Navigation
-    .container.mb-5.mt-5
-      hr
-      |             
-      .card.bg-light.mt-5
-        article.card-body.mx-auto(style='max-width: 400px;')
-          h4.card-title.mt-3.text-center Crea un nuovo Account
-          // REGISTRAZIONE COI SOCIAL
-          p.text-center Registrati via Social
-          |                 
-          hr
-          // REGISTRAZIONE CON GOOGLE
-          .g-signin2(data-width='250', data-heigth='100', data-onsuccess='onSignIn', data-longtitle='true')
-          // REGISTRAZIONE CON FACEBOOK
-          br
-          |                 
-          script.
-            window.fbAsyncInit = function() {
-            FB.init({
-            appId            : '1159693734481176',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v3.2'
-            });
-            FB.getLoginStatus(function(response){
-            statusChangeCallback(response)
-            });
-            };
-          |        
-          |                 
-          #fb-root
-          |        
-          |                 
-          |                 
-          #fb-button.fb-login-button(style='border: none', onlogout="alert('pd')", onlogin='checkLoginState()', data-width='250', data-size='large', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')
-          |         
-          br
-          // REGISTRAZIONE CLASSICA
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    |     
+    script(src='//code.jquery.com/jquery-1.11.1.min.js')
+    |     
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    |     
+    script(src='https://apis.google.com/js/platform.js', async='', defer='')
+    |     
+    script(src='https://apis.google.com/js/api.js', async='', defer='')
+    |     
+    script(src='/javascripts/signup2.js')
+    |     
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    |     
+    script(src='https://connect.facebook.net/en_US/sdk.js', async='', defer='')
+    |     
+    script(async='', defer='', crossorigin='anonymous', src='http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
+  |        
+body(onload='initClient(); setButtons(false);')
+  // Navigation
+  nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+    .container
+      a.navbar-brand.text-white(href='/') MovieKraken
+      |                 
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsHomepage', aria-controls='navbarsHomepage', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      |                 
+      #navbarsHomepage.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link.text-white(href='#') Film
+          |                         
+          li.nav-item
+            a.nav-link.text-white(href='/login') Login
+          |                         
+          li.nav-item
+            a.nav-link.text-white(href='/signup') Sign Up
+  // Navigation
+  .container.mb-5.mt-5
+    hr
+    |         
+    .card.bg-light.mt-5
+      article.card-body.mx-auto(style='max-width: 400px;')
+        h4.card-title.mt-3.text-center Crea un nuovo Account
+        // REGISTRAZIONE COI SOCIAL
+        p.text-center Registrati via Social
+        |             
+        hr
+        // REGISTRAZIONE CON GOOGLE
+        .g-signin2(data-width='250', data-heigth='100', data-onsuccess='onSignIn', data-longtitle='true')
+        // REGISTRAZIONE CON FACEBOOK
+        br
+        |             
+        script.
+          window.fbAsyncInit = function() {
+          FB.init({
+          appId            : '1159693734481176',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.2'
+          });
+          FB.getLoginStatus(function(response){
+          statusChangeCallback(response)
+          });
+          };
+        |        
+        |             
+        #fb-root
+        |        
+        |             
+        |             
+        #fb-button.fb-login-button(style='border: none', onlogout="alert('pd')", onlogin='checkLoginState()', data-width='250', data-size='large', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')
+        |     
+        br
+        // REGISTRAZIONE CLASSICA
+        p.text-center
+          span.bg-ligth.bg- oppure registrati manualmente
+        |             
+        hr
+        |             
+        form(name='signup', onsubmit='return inserisciReg()')
+          .form-group.input-group
+            .input-group-prepend
+              span.input-group-text
+                i.fa.fa-envelope
+            |                 
+            input#email.form-control(name='email', placeholder='Indirizzo email', type='email')
+          // form-group//
+          .form-group.input-group
+            .input-group-prepend
+              span.input-group-text
+                i.fa.fa-lock
+            |                 
+            input#psw.form-control(name='psw', placeholder='Crea password', type='password')
+          // form-group//
+          .form-group.input-group
+            .input-group-prepend
+              span.input-group-text
+                i.fa.fa-lock
+            |                 
+            input#cpsw.form-control(name='cpsw', placeholder='Ripeti password', type='password')
+          // form-group//
+          .form-group
+            button.btn.btn-primary.btn-block(type='submit')  Create Account  
+          // form-group//
           p.text-center
-            span.bg-ligth.bg- oppure registrati manualmente
-          |                 
-          hr
-          |             &#x9;
-          form(name='signup', onsubmit='return inserisciReg()')
-            .form-group.input-group
-              .input-group-prepend
-                span.input-group-text
-                  i.fa.fa-envelope
-              |                     
-              input#email.form-control(name='email', placeholder='Indirizzo email', type='email')
-            // form-group//
-            .form-group.input-group
-              .input-group-prepend
-                span.input-group-text
-                  i.fa.fa-lock
-              |                     
-              input#psw.form-control(name='psw', placeholder='Crea password', type='password')
-            // form-group//
-            .form-group.input-group
-              .input-group-prepend
-                span.input-group-text
-                  i.fa.fa-lock
-              |                     
-              input#cpsw.form-control(name='cpsw', placeholder='Ripeti password', type='password')
-            // form-group//
-            .form-group
-              button.btn.btn-primary.btn-block(type='submit')  Create Account  
-            // form-group//
-            p.text-center
-              | hai gi&agrave; un account? 
-              a(href='/login/login.html') Esegui il Log In
-      // card.//
-    // Footer
-    footer.footer.bg-dark.text-white
-      // Footer Links
-      .container.pt-5.pb-2
-        .row
-          .col-md-3.col-lg-4.col-xl-3
-            h4 il trio universitario :P
-            |                         
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                         
-            p
-              | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
-          |     
+            | hai gi&agrave; un account? 
+            a(href='/login/login.html') Esegui il Log In
+    // card.//
+  // Footer
+  footer.footer.bg-dark.text-white
+    // Footer Links
+    .container.pt-5.pb-2
+      .row
+        .col-md-3.col-lg-4.col-xl-3
+          h4 il trio universitario :P
           |                     
-          .col-md-3.col-lg-2.col-xl-2.mx-auto
-            h4 Useful links
-            |                         
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                         
-            p
-              a.text-white(href='#') Home
-            |                         
-            p
-              a.text-white(href='#') About Us
-            |                         
-            p
-              a.text-white(href='#') Services
-            |                         
-            p
-              a.text-white(href='#') Contact
-          |     
+          hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
           |                     
-          .col-md-4.col-lg-3.col-xl-3
-            h4 Contact
-            |                         
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                         
-            p
-              a(href='https://goo.gl/maps/Z6mkUPT3rin')
-                i.fa.fa-home.mr-3
-              |  Piazzale Aldo Moro 7
-            |                         
-            p
-              i.fa.fa-envelope.mr-3
-              |  plutoboy97@gmail.com
-            |                         
-            p
-              i.fa.fa-phone.mr-3
-              |  + 06 842 569
-      // Footer Links
-    // Footer
-  |     
-  script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-  |     
-  script(src='//code.jquery.com/jquery-1.11.1.min.js')
-  |     
-  script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-  |     
-  script(src='https://apis.google.com/js/platform.js', async='', defer='')
-  |     
-  script(src='https://apis.google.com/js/api.js', async='', defer='')
-  |     
-  script(src='/javascripts/signup2.js')
-  |     
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-  |     
-  script(src='https://connect.facebook.net/en_US/sdk.js', async='', defer='')
-  |     
-  script(async='', defer='', crossorigin='anonymous', src='http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
-
+          p
+            | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
+        |                 
+        .col-md-3.col-lg-2.col-xl-2.mx-auto
+          h4 Useful links
+          |                     
+          hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+          |                     
+          p
+            a.text-white(href='#') Home
+          |                     
+          p
+            a.text-white(href='#') About Us
+          |                     
+          p
+            a.text-white(href='#') Services
+          |                     
+          p
+            a.text-white(href='#') Contact
+        |                 
+        .col-md-4.col-lg-3.col-xl-3
+          h4 Contact
+          |                     
+          hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+          |                     
+          p
+            a(href='https://goo.gl/maps/Z6mkUPT3rin')
+              i.fa.fa-home.mr-3
+            |  Piazzale Aldo Moro 7
+          |                     
+          p
+            i.fa.fa-envelope.mr-3
+            |  plutoboy97@gmail.com
+          |                     
+          p
+            i.fa.fa-phone.mr-3
+            |  + 06 842 569
+    // Footer Links
+  // Footer

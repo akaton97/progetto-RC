@@ -52,6 +52,8 @@ var initClient = function() {
 }
 
 //FACEBOOK 
+
+
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
@@ -77,16 +79,16 @@ function checkLoginState() {
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
+
     } else {
       // The person is not logged into your app or we are unable to tell.
-      alert("pace")
+    
     }
   }
 
       function logout(){
-          FB.logout(function(response){
-              window.location("#")
-              alert("baibai")
+          FB.logout(function(response){       
+              
           })
       }
 
@@ -94,7 +96,6 @@ function checkLoginState() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=name,email', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('profile').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+     
     });
   }
