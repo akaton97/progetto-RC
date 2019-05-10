@@ -25,7 +25,7 @@ head
     |     
     script(src='https://apis.google.com/js/api.js', async='', defer='')
     |     
-    script(src='/javascripts/signup2.js')
+    script(src='/javascripts/registr.js')
     |     
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
     |     
@@ -33,7 +33,7 @@ head
     |     
     script(async='', defer='', crossorigin='anonymous', src='http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
   |        
-body(onload='initClient(); setButtons(false);')
+body(onload='initClient();inizializzaStorageReg()')
   // Navigation
   nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
     .container
