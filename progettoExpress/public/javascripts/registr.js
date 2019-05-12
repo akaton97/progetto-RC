@@ -20,9 +20,8 @@ function uguali(u,o){
 function inserisciReg() {  //RISOLTO.
     if(document.signup.psw.value != document.signup.cpsw.value) {
         swal("Warning", "Le password non coincidono", "warning");
-        //document.signup.psw.value="";  //document.nomeForm.campoNome.value
-        //document.signup.cpsw.value="";
-        //document.signup.psw.focus();
+        document.signup.psw.value="";
+        document.signup.cpsw.value="";
         return false;
         }
     var u = JSON.parse(localStorage.reg);  //mail salvata nello storage
@@ -47,3 +46,22 @@ function inserisciReg() {  //RISOLTO.
     alert("ok")
     return true;
 }  
+
+
+
+
+//GESTIONE ACCESSI
+
+
+function inizializzaStorageAcc(){
+    if(typeof(localStorage.acc)=="undefined"){
+      localStorage.acc="[]"; 
+      alert("storage accessi inizializzato")
+     }
+}
+  
+function resetStorageAcc(){
+    alert("qui")
+    localStorage.acc = "[]";
+    alert("reset storage")
+}
