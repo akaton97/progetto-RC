@@ -7,7 +7,6 @@ function resetStorageReg(){
 function inizializzaStorageReg() { //RISOLTO.
     if(typeof(localStorage.reg)=="undefined"){
       localStorage.reg="[]"; 
-      alert("localstorage creato")
     } 
 }
    
@@ -36,14 +35,19 @@ function inserisciReg() {  //RISOLTO.
             document.signup.psw.value="";
             document.signup.cpsw.value="";
             return false;
+            function inizializzaStorageAcc(){
+              if(typeof(localStorage.acc)=="undefined"){
+                localStorage.acc="[]"; 
+               }
+            }
+            
         }
     }
     u[nextpos]=o;
     localStorage.reg = JSON.stringify(u);
     alert("Iscrizione effettuata con successo");
-    //swal("Good job", "Iscrizione effettuata con successo!", "success");
-    window.location.href("/homepage.jade")
-    alert("ok")
+    //swal("Good job", "Iscrizione effettuata con successo!", "success");7
+    window.location.href = "/login";
     return true;
 }  
 
@@ -53,15 +57,25 @@ function inserisciReg() {  //RISOLTO.
 //GESTIONE ACCESSI
 
 
+function resetStorageAcc(){
+    localStorage.acc = "[]";
+}
+
+
+function inizializzaStorageAcc(){
+    if(typeof(localStorage.acc)=="undefined"){
+        localStorage.acc="[]"; 
+    }
+}
+  
 function inizializzaStorageAcc(){
     if(typeof(localStorage.acc)=="undefined"){
       localStorage.acc="[]"; 
-      alert("storage accessi inizializzato")
      }
-}
+  }
   
-function resetStorageAcc(){
-    alert("qui")
-    localStorage.acc = "[]";
-    alert("reset storage")
+function inizializzaStorageAcc(){
+  if(typeof(localStorage.acc)=="undefined"){
+    localStorage.acc="[]"; 
+   }
 }
