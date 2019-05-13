@@ -45,9 +45,8 @@ function inserisciReg() {  //RISOLTO.
     }
     u[nextpos]=o;
     localStorage.reg = JSON.stringify(u);
-    alert("Iscrizione effettuata con successo");
-    //swal("Good job", "Iscrizione effettuata con successo!", "success")
-    alert("verrai reindirizzato alla pagina di login");
+    //swal("Good job", "Iscrizione effettuata con successo! Verrai reindirizzato alla pagina di login", "success")
+    alert("Iscrizione effettuata con successo! Verrai reindirizzato alla pagina di login");
     return true;
 }  
 

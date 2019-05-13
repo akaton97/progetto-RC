@@ -108,14 +108,14 @@ body(onload='initClient();inizializzaStorageReg();inizializzaStorageAcc()')
               span.input-group-text
                 i.fa.fa-lock
             |                 
-            input#psw.form-control(name='psw', placeholder='Crea password', type='password', min="5", required)
+            input#psw.form-control(name='psw', placeholder='Crea password', type='password', minlength="6", required)
           // form-group//
           .form-group.input-group
             .input-group-prepend
               span.input-group-text
                 i.fa.fa-lock
             |                 
-            input#cpsw.form-control(name='cpsw', placeholder='Ripeti password', type='password', min="5", required)
+            input#cpsw.form-control(name='cpsw', placeholder='Ripeti password', type='password', required)
           // form-group//
           .form-group
             button.btn.btn-primary.btn-block(type='submit')  Create Account  
