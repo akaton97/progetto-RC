@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var login = require('./routes/login');
 var accesso = require('./routes/accesso');
 var signup = require('./routes/signup');
+var film = require('./routes/film');
 
 
 var app = express();
@@ -30,6 +31,7 @@ app.use('/users', usersRouter);
 app.use('/login', login);
 app.use('/accesso', accesso);
 app.use('/signup',signup);
+app.use('/film', film);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
