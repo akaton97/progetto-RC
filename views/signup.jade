@@ -86,7 +86,7 @@ body(onload='initClient();inizializzaStorageReg();inizializzaStorageAcc()')
         |        
         |             
         |             
-        #fb-button.fb-login-button(style='border: none', onlogout="alert('pd')", onlogin='checkLoginState()', data-width='250', data-size='large', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')
+        #fb-button.fb-login-button(style='border: none', onlogin='checkLoginState()', data-width='250', data-size='large', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')
         |     
         br
         // REGISTRAZIONE CLASSICA
@@ -95,34 +95,34 @@ body(onload='initClient();inizializzaStorageReg();inizializzaStorageAcc()')
         |             
         hr
         |             
-        form(name='signup', onsubmit='return inserisciReg();window.location.href="/"')
+        form(name='signup', onsubmit='return inserisciReg()')
           .form-group.input-group
             .input-group-prepend
               span.input-group-text
                 i.fa.fa-envelope
             |                 
-            input#email.form-control(name='email', placeholder='Indirizzo email', type='email')
+            input#email.form-control(name='email', placeholder='Indirizzo email', type='email', required)
           // form-group//
           .form-group.input-group
             .input-group-prepend
               span.input-group-text
                 i.fa.fa-lock
             |                 
-            input#psw.form-control(name='psw', placeholder='Crea password', type='password')
+            input#psw.form-control(name='psw', placeholder='Crea password', type='password', min="5", required)
           // form-group//
           .form-group.input-group
             .input-group-prepend
               span.input-group-text
                 i.fa.fa-lock
             |                 
-            input#cpsw.form-control(name='cpsw', placeholder='Ripeti password', type='password')
+            input#cpsw.form-control(name='cpsw', placeholder='Ripeti password', type='password', min="5", required)
           // form-group//
           .form-group
             button.btn.btn-primary.btn-block(type='submit')  Create Account  
           // form-group//
           p.text-center
             | hai gi&agrave; un account? 
-            a(href='/login/login.html') Esegui il Log In
+            a(href='/login') Esegui il Log In
     // card.//
   // Footer
   footer.footer.bg-dark.text-white
