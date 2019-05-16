@@ -11,6 +11,7 @@ var login = require('./routes/login');
 var accesso = require('./routes/accesso');
 var signup = require('./routes/signup');
 var film = require('./routes/film');
+var generi = require('./routes/generi');
 
 
 var app = express();
@@ -32,10 +33,20 @@ app.use('/login', login);
 app.use('/accesso', accesso);
 app.use('/signup',signup);
 app.use('/film', film);
+app.use('/generi', generi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404));var express = require('express');
+var router = express.Router();
+
+
+router.get('/', function(req,res) {
+	res.render('login', {title: 'Express' });
+});
+
+module.exports = router;
+
 });
 
 // error handler
