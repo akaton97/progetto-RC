@@ -7,13 +7,12 @@ router.get('/', function(req,res) {
   request(url, function(err,resp,body){
     if(err) console.log("err");
     else{
-		
-      res.json(JSON.parse(body))
+		var fileJson = JSON.parse(body);
+		res.render("film", {jsonfile: fileJson})
+
     }
   })
 
 });
-
-
 
 module.exports = router;

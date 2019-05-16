@@ -25,5 +25,12 @@ head
     div ciao
     div(id = "ciao")
     script.
-      document.getElementById("ciao").innerHTML = jf;
-
+    -if(jsonfile == NULL){ console.log("jsonfile non esiste")}
+    -else {
+      -console.log(jsonfile)
+      -var t = jsonfile['overview'];
+      -var title = jsonfile['original_title']
+      -}
+    p Titolo: #{title}
+    br
+    p Trama: #{t}
