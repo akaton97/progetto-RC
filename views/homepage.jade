@@ -1,6 +1,7 @@
 doctype html
 html
 head
+<<<<<<< Updated upstream
     link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
     |     
     script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
@@ -199,4 +200,215 @@ head
       // Copyright
     // Footer
   script(src='/javascripts/registr.js')
+=======
+|         
+link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+|         
+link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.8/css/all.css')
+|         
+link(href='/stylesheets/signup.css', rel='stylesheet')
+|         
+link(rel='shortcut icon', href='/images/logo.jpg')
+|         
+title MovieKraken | Registration
+|         
+script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
+// sweet alert
+script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+|     
+script(src='//code.jquery.com/jquery-1.11.1.min.js')
+|     
+script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+|     
+script(src='https://apis.google.com/js/platform.js', async='', defer='')
+|     
+script(src='https://apis.google.com/js/api.js', async='', defer='')
+|     
+script(src='/javascripts/registr.js')
+|     
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+|     
+script(src='https://connect.facebook.net/en_US/sdk.js', async='', defer='')
+|     
+script(async='', defer='', crossorigin='anonymous', src='http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
+|        
+>>>>>>> Stashed changes
 
+body(onload='inizializzaStorageReg();inizializzaStorageAcc()')
+// Navigation
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+.container
+a.navbar-brand.text-white(href='/') MovieKraken
+|
+button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsHomepage', aria-controls='navbarsHomepage', aria-expanded='false', aria-label='Toggle navigation')
+span.navbar-toggler-icon
+|
+.collapse.navbar-collapse(id='navbarsHomepage userlog')
+ul.navbar-nav.ml-auto
+li.nav-item
+a.nav-link.text-white(href='#') Film
+|
+li.nav-item
+a.nav-link.text-white(href='/login') Login
+|
+li.nav-item
+a.nav-link.text-white(href='/signup') Sign Up
+// Navigation
+// Carousel Slider
+#carouselLogo.carousel.slide(data-ride='carousel')
+ol.carousel-indicators
+li.active(data-target='#carouselLogo', data-slide-to='0')
+|
+li(data-target='#carouselLogo', data-slide-to='1')
+|
+li(data-target='#carouselLogo', data-slide-to='2')
+|
+.carousel-inner(role='listbox')
+.carousel-item.active
+img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+|
+.carousel-item
+img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+|
+.carousel-item
+img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+|
+a.carousel-control-prev(href='#carouselLogo', role='button', data-slide='prev')
+span.carousel-control-prev-icon(aria-hidden='true')
+|
+span.sr-only Previous
+|
+a.carousel-control-next(href='#carouselLogo', role='button', data-slide='next')
+span.carousel-control-next-icon(aria-hidden='true')
+|
+span.sr-only Next
+// Carousel Slider
+// Card
+.container.container.mt-4.mb-5
+br
+|
+a.display-4.LP(href='#')  Ora al cinema
+|
+hr.bg-dark.mb-4.w-25
+|
+.row
+.col-md-4
+.card
+img.card-img-top(src='https://dummyimage.com/350x300/c7c7c7/000.png', alt='Card image cap')
+|
+.card-block.p-3
+h4.card-title TITOLO
+|
+p.card-text Regista, Attore 1, Attore 2
+|
+a.btn.btn-outline-primary.rounded-0(href='#') Read More
+|
+.col-md-4
+.card
+img.card-img-top(src='https://dummyimage.com/350x300/c7c7c7/000.png', alt='Card image cap')
+|
+.card-block.p-3
+h4.card-title TITOLO
+|
+p.card-text Regista, Attore 1, Attore 2
+|
+a.btn.btn-outline-primary.rounded-0(href='#') Read More
+|
+.col-md-4
+.card
+img.card-img-top(src='https://dummyimage.com/350x300/c7c7c7/000.png', alt='Card image cap')
+|
+.card-block.p-3
+h4.card-title TITOLO
+|
+p.card-text Regista, Attore 1, Attore 2
+|
+a.btn.btn-outline-primary.rounded-0(href='#') Read More
+// Card
+.container.mb-5
+.row
+.col-md-8
+h3.display-4 La nostra raccolta
+|
+hr.bg-dark.w-auto.ml-0.mt-3
+|
+p.lead
+| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s
+|
+p
+| When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+|
+ul.list-unstyled.pl-4
+li
+i.fa.fa-check
+|  Lorem Ipsum is simply dummy text
+|
+li
+i.fa.fa-check
+|  Lorem Ipsum is simply dummy text
+|
+li
+i.fa.fa-check
+|  Lorem Ipsum is simply dummy text
+|
+a.btn.btn-outline-primary.rounded-0(href='#')  View All
+|
+.col-md-4.mt-5
+img.card-img-top(src='https://dummyimage.com/300x300/c7c7c7/000.png', alt='Card image cap')
+// Footer
+footer.footer.bg-dark.text-white
+// Footer Links
+.container.pt-5.pb-2
+.row
+.col-md-3.col-lg-4.col-xl-3
+h4 il trio universitario :P
+|
+hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+|
+p
+| Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
+|
+.col-md-3.col-lg-2.col-xl-2.mx-auto
+h4 Useful links
+|
+hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+|
+p
+a.text-white(href='#') Home
+|
+p
+a.text-white(href='#') About Us
+|
+p
+a.text-white(href='#') Services
+|
+p
+a.text-white(href='#') Contact
+|
+.col-md-4.col-lg-3.col-xl-3
+h4 Contact
+|
+hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+|
+p
+a(href='https://goo.gl/maps/Z6mkUPT3rin')
+i.fa.fa-home.mr-3
+|  Piazzale Aldo Moro 7
+|
+p
+i.fa.fa-envelope.mr-3
+|  plutoboy97@gmail.com
+|
+p
+i.fa.fa-phone.mr-3
+|  + 06 842 569
+// Footer Links
+hr.bg-white.mx-4.mt-2.mb-1
+// Copyright
+.container-fluid
+p.text-center.m-0.py-1
+| &copy; 2017 Copyright
+a.text-white(href='https://getbootstrap.com/') Bootstrap 4
+// Copyright
+// Footer
+script(src='/javascripts/registr.js')
