@@ -12,7 +12,7 @@ var accesso = require('./routes/accesso');
 var signup = require('./routes/signup');
 var film = require('./routes/film');
 var generi = require('./routes/generi');
-
+var risultato = require('./routes/risultato');
 
 var app = express();
 
@@ -34,6 +34,7 @@ app.use('/accesso', accesso);
 app.use('/signup',signup);
 app.use('/film', film);
 app.use('/generi', generi);
+app.use('/risultato', risultato);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -44,43 +44,15 @@ head
     // Navigation
 
     
-    // Carousel Slider
-    #carouselLogo.carousel.slide(data-ride='carousel')
-      ol.carousel-indicators
-        li.active(data-target='#carouselLogo', data-slide-to='0')
-        |             
-        li(data-target='#carouselLogo', data-slide-to='1')
-        |             
-        li(data-target='#carouselLogo', data-slide-to='2')
-      |         
-      .carousel-inner(role='listbox')
-        .carousel-item.active
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-        |             
-        .carousel-item
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-        |             
-        .carousel-item
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-      |         
-      a.carousel-control-prev(href='#carouselLogo', role='button', data-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        |             
-        span.sr-only Previous
-      |         
-      a.carousel-control-next(href='#carouselLogo', role='button', data-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        |             
-        span.sr-only Next
-    // Carousel Slider
 
 
 script.
--if(jsonfile == NULL){ console.log("jsonfile non esiste")}
+-if(jf == NULL){ console.log("jsonfile non esiste")}
 -else {
-  -console.log(jsonfile)
-  -var t = JSON.stringify(jsonfile);
-  -var title = jsonfile['original_title']
+  -var t = JSON.stringify(jf);
+  -var image = jf['poster_path'];
+  -var id = jf['id'];
+  -var title = jf['title']
   -}
 br
 br
@@ -89,42 +61,11 @@ br
 br
 p Titolo: #{title}
 br
+div ciao
+        img(src='https://image.tmdb.org/t/p/w600_and_h900_bestv2/or06FN3Dka5tukK1e9sl16pB3iy.jpg', title="POSTER")
+br
 p Trama: #{t}
 
-a(href="/risultato") clicca qui per il film
-
-    
-    .container.mb-5
-      .row
-        .col-md-8
-          h3.display-4 I nostri film
-          |                 
-          hr.bg-dark.w-auto.ml-0.mt-3
-          |                 
-          p.lead
-            | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s
-          |                 
-          p
-            | When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          |                 
-          ul.list-unstyled.pl-4
-            li
-              i.fa.fa-check
-              |  Lorem Ipsum is simply dummy text
-            |                     
-            li
-              i.fa.fa-check
-              |  Lorem Ipsum is simply dummy text
-            |                     
-            li
-              i.fa.fa-check
-              |  Lorem Ipsum is simply dummy text
-          |                 
-          a.btn.btn-outline-primary.rounded-0(href='#')  View All
-        |             
-        .col-md-4.mt-5
-          img.card-img-top(src='https://dummyimage.com/300x300/c7c7c7/000.png', alt='Card image cap')
-    // Footer
     footer.footer.bg-dark.text-white
       // Footer Links
       .container.pt-5.pb-2
