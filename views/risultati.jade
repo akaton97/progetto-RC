@@ -44,30 +44,58 @@ head
     // Navigation
 
     
+    // Carousel Slider
+    #carouselLogo.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carouselLogo', data-slide-to='0')
+        |             
+        li(data-target='#carouselLogo', data-slide-to='1')
+        |             
+        li(data-target='#carouselLogo', data-slide-to='2')
+      |         
+      .carousel-inner(role='listbox')
+        .carousel-item.active
+          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+        |             
+        .carousel-item
+          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+        |             
+        .carousel-item
+          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+      |         
+      a.carousel-control-prev(href='#carouselLogo', role='button', data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        |             
+        span.sr-only Previous
+      |         
+      a.carousel-control-next(href='#carouselLogo', role='button', data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        |             
+        span.sr-only Next
+    // Carousel Slider
 
 
 script.
--if(jf == NULL){ console.log("jsonfile non esiste")}
+-if(jsonfile == NULL){ console.log("jsonfile non esiste")}
 -else {
-  -var t = JSON.stringify(jf);
-  -var image = jf['poster_path'];
-  -var id = jf['id'];
-  -var title = jf['title']
+  -console.log(jsonfile)
+  -var t = jsonfile["overview"];
+  -var title = jsonfile['original_title']
+  -var poster = jsonfile['poster_path']
   -}
-br
-br
-br
-br
-br
-p Titolo: #{title}
-br
-div ciao
-        img(src='https://image.tmdb.org/t/p/w600_and_h900_bestv2/or06FN3Dka5tukK1e9sl16pB3iy.jpg', title="POSTER")
-br
-p Trama: #{t}
 
+   .container.mb-5.mt-5
+      .row
+        .col-md-8
+          h3.display-4 #{title}
+          |                 
+          hr.bg-dark.w-auto.ml-0.mt-3
+          |                 
+          p #{t}             
+        .col-md-4.mt-5
+          img.card-img-top(src='https://image.tmdb.org/t/p/w400/' + poster, alt='Card image cap')
+    // Footer
     footer.footer.bg-dark.text-white
-      // Footer Links
       .container.pt-5.pb-2
         .row
           .col-md-3.col-lg-4.col-xl-3
@@ -122,4 +150,5 @@ p Trama: #{t}
       // Copyright
     // Footer
   script(src='/javascripts/registr.js')
-
+  
+  
