@@ -13,7 +13,7 @@ var signup = require('./routes/signup');
 var film = require('./routes/film');
 var generi = require('./routes/generi');
 var risultato = require('./routes/risultato');
-var chat = require('./routes/chat'); //collegamento file
+var chat = require('./routes/chat'); //definizione variabile chat
 
 var app = express();
 
@@ -36,6 +36,7 @@ app.use('/signup',signup);
 app.use('/film', film);
 app.use('/generi', generi);
 app.use('/risultato', risultato);
+app.use('/chat', chat);  //collegamento file
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
