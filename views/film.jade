@@ -79,51 +79,22 @@ script.
 -if(jsonfile == NULL){ console.log("jsonfile non esiste")}
 -else {
   -console.log(jsonfile)
-  -var t = JSON.stringify(jsonfile);
+  -var t = jsonfile["overview"];
   -var title = jsonfile['original_title']
+  -var poster = jsonfile['poster_path']
   -}
-br
-br
-br
-br
-br
-p Titolo: #{title}
-br
-p Trama: #{t}
 
-a(href="/risultato") clicca qui per il film
-
-    
-    .container.mb-5
+   .container.mb-5.mt-5
       .row
         .col-md-8
-          h3.display-4 I nostri film
+          h3.display-4 
+          #{title}
           |                 
           hr.bg-dark.w-auto.ml-0.mt-3
           |                 
-          p.lead
-            | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s
-          |                 
-          p
-            | When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          |                 
-          ul.list-unstyled.pl-4
-            li
-              i.fa.fa-check
-              |  Lorem Ipsum is simply dummy text
-            |                     
-            li
-              i.fa.fa-check
-              |  Lorem Ipsum is simply dummy text
-            |                     
-            li
-              i.fa.fa-check
-              |  Lorem Ipsum is simply dummy text
-          |                 
-          a.btn.btn-outline-primary.rounded-0(href='#')  View All
-        |             
+          p #{t}             
         .col-md-4.mt-5
-          img.card-img-top(src='https://dummyimage.com/300x300/c7c7c7/000.png', alt='Card image cap')
+          img.card-img-top(src='https://image.tmdb.org/t/p/original/' + poster, alt='Card image cap')
     // Footer
     footer.footer.bg-dark.text-white
       // Footer Links
@@ -181,4 +152,3 @@ a(href="/risultato") clicca qui per il film
       // Copyright
     // Footer
   script(src='/javascripts/registr.js')
-
