@@ -13,6 +13,7 @@ var signup = require('./routes/signup');
 var film = require('./routes/film');
 var generi = require('./routes/generi');
 var risultato = require('./routes/risultato');
+var chat = require('./routes/chat'); //collegamento file
 
 var app = express();
 
