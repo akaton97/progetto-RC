@@ -43,37 +43,6 @@ head
               a.nav-link.text-white(href='/signup') Sign Up
     // Navigation
 
-    
-    // Carousel Slider
-    #carouselLogo.carousel.slide(data-ride='carousel')
-      ol.carousel-indicators
-        li.active(data-target='#carouselLogo', data-slide-to='0')
-        |             
-        li(data-target='#carouselLogo', data-slide-to='1')
-        |             
-        li(data-target='#carouselLogo', data-slide-to='2')
-      |         
-      .carousel-inner(role='listbox')
-        .carousel-item.active
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-        |             
-        .carousel-item
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-        |             
-        .carousel-item
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-      |         
-      a.carousel-control-prev(href='#carouselLogo', role='button', data-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        |             
-        span.sr-only Previous
-      |         
-      a.carousel-control-next(href='#carouselLogo', role='button', data-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        |             
-        span.sr-only Next
-    // Carousel Slider
-
 
 script.
 -if(jsonfile == NULL){ console.log("jsonfile non esiste")}

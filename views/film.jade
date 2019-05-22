@@ -2,11 +2,10 @@ doctype html
 html
 head
     link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
-    link(href="/stylesheet/search.css", rel="stylesheet")
     |     
-    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-    |     
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')     
     script(src='//code.jquery.com/jquery-1.11.1.min.js')
+    script(src='/javascripts/film_function.js')
     |     
     meta(charset='UTF-8')
     |     
@@ -20,7 +19,7 @@ head
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert
-  body(onload='inizializzaStorage()')
+    body(onload='initializeStorage()')
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -46,31 +45,12 @@ head
     div.container.mt-5
       form(action='/search', method='post', onsubmit="return addStorage()")
         div(class="input-group mb-3")
-          input.form-control#product_name(type='text', name='name_field', placeholder='Product name')
+          input.form-control#product_name(type='text', name='name_field', placeholder='cerca il film che desideri!')
           div.input-group-append
             input(class = 'btn btn-primary',type='submit', value='Search')
       br
-    
-
-script.
--if(jsonfile == NULL){ console.log("jsonfile non esiste")}
--else {
-  -console.log(jsonfile)
-  -var t = jsonfile["overview"];
-  -var title = jsonfile['original_title']
-  -var poster = jsonfile['poster_path']
-  -}
-
-   .container.mb-5.mt-5
-      .row
-        .col-md-8
-          h3.display-4 #{title}
-          |                 
-          hr.bg-dark.w-auto.ml-0.mt-3
-          |                 
-          p #{t}             
-        .col-md-4.mt-5
-          img.card-img-top(src='https://image.tmdb.org/t/p/w400/' + poster, alt='Card image cap')
+    script
+    -console.log(fileJon)
     // Footer
     footer.footer.bg-dark.text-white
       .container.pt-5.pb-2
@@ -128,5 +108,3 @@ script.
       // Copyright
     // Footer
   script(src='/javascripts/registr.js')
-  
-  
