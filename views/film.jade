@@ -3,10 +3,6 @@ html
 head
     link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
     |     
-    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')     
-    script(src='//code.jquery.com/jquery-1.11.1.min.js')
-    script(src='/javascripts/film_function.js')
-    |     
     meta(charset='UTF-8')
     |     
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
@@ -43,14 +39,11 @@ head
               a.nav-link.text-white(href='/signup') Sign Up
     // Navigation
     div.container.mt-5
-      form(action='/search', method='post', onsubmit="return addStorage()")
+      form(action = "/film", method='post', onsubmit="return addStorage("+jsonfile+")")
         div(class="input-group mb-3")
           input.form-control#product_name(type='text', name='name_field', placeholder='cerca il film che desideri!')
           div.input-group-append
             input(class = 'btn btn-primary',type='submit', value='Search')
-      br
-    script
-    -console.log(fileJon)
     // Footer
     footer.footer.bg-dark.text-white
       .container.pt-5.pb-2
@@ -107,4 +100,6 @@ head
           a.text-white(href='https://getbootstrap.com/') Bootstrap 4
       // Copyright
     // Footer
-  script(src='/javascripts/registr.js')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')     
+    script(src='//code.jquery.com/jquery-1.11.1.min.js')
+    script(src='/javascripts/film_function.js')

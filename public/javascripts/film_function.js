@@ -7,15 +7,19 @@ function initializeStorage() {
     }
   }
 
-  function addStorage() {
-    var x = document.getElementById("product_name").value.trim();
-    if (x == "") {
-      alert("Product name must be filled out");
-      return false;
-    }
+  function addStorage(fj) {
 
-    var u = JSON.parse(sessionStorage.recipes);
-    var o = x;
+    //var films = fj;
+    alert("dioooo")
+    alert(JSON.parse(fj));
+    return false;
+  }
+
+
+
+
+/*    var u = JSON.parse(sessionStorage.recipes);
+    var o = null;
 
     u.unshift(o);
     var len = u.length;
@@ -25,4 +29,4 @@ function initializeStorage() {
     }
     sessionStorage.recipes = JSON.stringify(u);
     return true;
-  }
+  }*/
