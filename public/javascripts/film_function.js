@@ -1,13 +1,4 @@
-function initializeStorage() {
-    if (typeof sessionStorage.recipes == "undefined") {
-      sessionStorage.recipes = "[]";
-    }
-    if (sessionStorage.recipes == "[]") {
-      $("#sessionStorage").css("display", "none");
-    }
-  }
-
-  function addStorage(fj) {
+  function mostraFilm(fj) {
 
     //var films = fj;
     alert("dioooo")
@@ -15,6 +6,19 @@ function initializeStorage() {
     return false;
   }
 
+  function addFilmz(j){
+    if(j == "[]" || j == null){
+      window.href = "/views/film.jade"
+    }else{
+      var lenght = j.length()
+      var i = 0
+      while(i<lenght)
+      $("#filmz").append(
+
+      )
+      i++
+    }
+  }
 
 
 

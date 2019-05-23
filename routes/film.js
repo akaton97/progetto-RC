@@ -12,12 +12,10 @@ router.post("/", function(req, res) {
 	name +"&include_adult=false";
   request(url, function(err, response, body) {
     if (err) {
-      res.render("film", {
-        error: "error, try with another ingredient"
-      });
+      res.render("film", alert("pio"));
     } else {
       let fileJson = JSON.parse(body);
-      res.render("film", { jsonfile: fileJson});
+      res.render("films", { jsonfile: fileJson});
     }
   });
 });

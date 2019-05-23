@@ -39,7 +39,7 @@ head
               a.nav-link.text-white(href='/signup') Sign Up
     // Navigation
     div.container.mt-5
-      form(action = "/film", method='post', onsubmit="return addStorage("+jsonfile+")")
+      form(action = "/film", method='post')
         div(class="input-group mb-3")
           input.form-control#product_name(type='text', name='name_field', placeholder='cerca il film che desideri!')
           div.input-group-append
@@ -102,4 +102,3 @@ head
     // Footer
     script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')     
     script(src='//code.jquery.com/jquery-1.11.1.min.js')
-    script(src='/javascripts/film_function.js')
