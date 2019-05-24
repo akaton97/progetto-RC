@@ -40,7 +40,7 @@ head
     // Navigation
     h1 Seleziona il tuo Film preferito!
     div
-    -for(i = 0; i+1 < jsonfile['total_results']; i+=2)
+    -for(i = 0; i+1 < jsonfile['total_results']/jsonfile['total_pages']; i+=2)
           - console.log(jsonfile['results'][i]['original_title'])
           - var fileJson1 = jsonfile['results'][i]['original_title'];
           - var img1 = jsonfile['results'][i]['poster_path'];
@@ -56,15 +56,15 @@ head
                     img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "30%", class='img')
                     p #{fileJson1}
               .col-sm
-                a(href=link2,class='ricetta')
                   div(class='res')
-                    img(src = 'https://image.tmdb.org/t/p/w500/'+img2,width = "30%", class='img')
-                    p #{fileJson2}
+                    a(href=link2,style = "border:none")
+                      img(src = 'https://image.tmdb.org/t/p/w500/'+img2,width = "30%", class='img')
+                      p #{fileJson2}
                     
   
     // Footer
     
-    div
+   //client.js:1:19 div
       br
       br
       br
@@ -127,4 +127,4 @@ head
         // Copyright
       // Footer
       script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')     
-      script(src='//code.jquery.com/jquery-1.11.1.min.js')
+      script(src='//code.jquery.com/jquery-1.11.1.min.js') 
