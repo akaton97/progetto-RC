@@ -7,7 +7,7 @@ router.get('/', function(req,res) {
 });
 
 router.post("/", function(req, res) {
-  let name = req.body.name_field;
+  let name = req.body.nomeFilm ;
   let url = "https://api.themoviedb.org/3/search/movie?api_key=807244b48f548385eab5d123309248e6&language=en-US&query="+
 	name +"&include_adult=false";
   request(url, function(err, response, body) {
@@ -19,6 +19,5 @@ router.post("/", function(req, res) {
     }
   });
 });
-
 
 module.exports = router;
