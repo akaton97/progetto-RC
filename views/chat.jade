@@ -1,47 +1,41 @@
-html
+doctype html
+html(dir='ltr', lang='en')
   head
-  body
     meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
     title Chat
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', type='text/css', media='screen', href='main.css')
-    script(src='main.js')
     style.
       #box {
       width: 500px;
       height: 200px;
       overflow-x: auto;
-      border: 2px solid gray;
+      border: 2px solid grey;
       font-family: monospace;
       }
+  body
     #box
     input#msg(type='text')
     script(src='/javascripts/client.js')
 
-//doctype html
-//html.
-//<html>
-//<head>
+//<!DOCTYPE html>
+//<html lang="en" dir="ltr">
+//  <head>
 //    <meta charset="utf-8">
-//    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 //    <title>Chat</title>
 //    <meta name="viewport" content="width=device-width, initial-scale=1">
-//    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-//    <script src="main.js"></script>
 //    <style>
-//        #box {
-//            width: 500px;
-//            height: 200px;
-//            overflow-x: auto;
-//            border: 2px solid gray;
-//            font-family: monospace;
-//        }
+//      #box {
+//        width: 500px;
+//        height: 200px;
+//        overflow-x: auto;
+//        border: 2px solid grey;
+//        font-family: monospace;
+//      }
 //    </style>
-//</head>
-//<body>
-//    <div id="box"></div>
-//    <input type="text" id="msg">
-//    <script src="client.js"></script>
-//</body>
+//  </head>
+//  <body>
+//      <div id="box"></div>
+//      <input type="text" id="msg">
+//      <script src="./client.js"></script>
+//  </body>
 //</html>
