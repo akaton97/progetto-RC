@@ -44,47 +44,17 @@ head
     // Navigation
 
     
-    // Carousel Slider
-    #carouselLogo.carousel.slide(data-ride='carousel')
-      ol.carousel-indicators
-        li.active(data-target='#carouselLogo', data-slide-to='0')
-        |             
-        li(data-target='#carouselLogo', data-slide-to='1')
-        |             
-        li(data-target='#carouselLogo', data-slide-to='2')
-      |         
-      .carousel-inner(role='listbox')
-        .carousel-item.active
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-        |             
-        .carousel-item
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-        |             
-        .carousel-item
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
-      |         
-      a.carousel-control-prev(href='#carouselLogo', role='button', data-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        |             
-        span.sr-only Previous
-      |         
-      a.carousel-control-next(href='#carouselLogo', role='button', data-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        |             
-        span.sr-only Next
-    // Carousel Slider
-
-
+    
 script.
--if(jsonfile == NULL){ console.log("jsonfile non esiste")}
+-if(filmo == NULL){ console.log("filmo non esiste")}
 -else {
-  -var trama = jsonfile["overview"];
-  -var title = jsonfile['original_title']
-  -var poster = jsonfile['poster_path']
-  -var cast = jsonfile['production_companies']
-  -var genere = jsonfile['genres']
-  -var data = jsonfile['release_date']
-  -var rank = jsonfile['vote_average']
+  -var trama = filmo["overview"];
+  -var title = filmo['original_title']
+  -var poster = filmo['poster_path']
+  -var cast = filmo['production_companies']
+  -var genere = filmo['genres']
+  -var data = filmo['release_date']
+  -var rank = filmo['vote_average']
   -}
 
    .container.mb-5.mt-5

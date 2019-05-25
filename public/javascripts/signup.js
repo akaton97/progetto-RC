@@ -1,57 +1,4 @@
-
-  function onFailure(error) {
-    alert(error)
-}
-
-/**
- * Handle successful sign-ins.
- */
-var onSuccess = function(user) {
-  console.log('Signed in as ' + user.getBasicProfile().getName());
-};
-
-/**
-* Handle sign-in failures.
-*/
-var onFailure = function(error) {
-  console.log(error);
-};
-
-function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail());
-    if(auth2.isSignedIn.get())
-      window.location.href= "../homepage/homepage.html"
-}
-
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      alert('User signed out.');
-    });
-}
-
-var initClient = function() {
-  gapi.load('auth2', function(){
-      /**
-       * Retrieve the singleton for the GoogleAuth library and set up the
-       * client.
-       */
-      auth2 = gapi.auth2.init({
-          client_id: '396784371487-8nfv15leuls7jtlh1mtp6a7eevsj67om.apps.googleusercontent.com'
-      });
-
-      // Attach the click handler to the sign-in button
-      auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
-  })
-}
-
-//FACEBOOK 
+//FACEBOOK
 
 
 function checkLoginState() {
@@ -82,13 +29,13 @@ function checkLoginState() {
 
     } else {
       // The person is not logged into your app or we are unable to tell.
-    
+
     }
   }
 
       function logout(){
-          FB.logout(function(response){       
-              
+          FB.logout(function(response){
+
           })
       }
 
@@ -96,6 +43,6 @@ function checkLoginState() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=name,email', function(response) {
       console.log('Successful login for: ' + response.name);
-     
+
     });
   }
