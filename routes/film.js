@@ -8,12 +8,13 @@ router.get('/', function(req,res) {
 
 router.post("/", function(req, res) {
   let name = req.body.nomeFilm ;
-  let url = "https://api.themoviedb.org/3/search/movie?api_key=807244b48f548385eab5d123309248e6&language=en-US&query="+
+  let url = "https://api.themoviedb.org/3/search/movie?api_key=807244b48f548385eab5d123309248e6&language=it&query="+
 	name +"&include_adult=false";
   request(url, function(err, response, body) {
     if (err) {
       res.render("film", alert("pio"));
-    } else {
+    } 
+    else {
       let fileJson = JSON.parse(body);
       res.render("films", { jsonfile: fileJson});
     }

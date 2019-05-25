@@ -11,7 +11,6 @@ var login = require('./routes/login');
 var accesso = require('./routes/accesso');
 var signup = require('./routes/signup');
 var film = require('./routes/film');
-var generi = require('./routes/generi');
 var risultato = require('./routes/risultato');
 var tvshow = require('./routes/tvshow');
 var chat = require('./routes/chat'); //definizione variabile chat
@@ -35,7 +34,6 @@ app.use('/login', login);
 app.use('/accesso', accesso);
 app.use('/signup',signup);
 app.use('/film', film);
-app.use('/generi', generi);
 app.use('/risultato', risultato);
 app.use('/tvshow', tvshow);
 app.use('/chat', chat);  //collegamento file

@@ -51,7 +51,8 @@ body(onload='initClient();inizializzaStorageReg();inizializzaStorageAcc()')
             a.nav-link.text-white(href='/generi') Generi
           |                         
           li.nav-item
-            a.nav-link.text-white(href='/login') Login
+              #fb-root
+              #fb-button.fb-login-button(style='border: none', onlogin='checkLoginState()', data-size='small', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')   
           |                         
           li.nav-item
             a.nav-link.text-white(href='/signup') Sign Up
