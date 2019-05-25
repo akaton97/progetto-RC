@@ -79,43 +79,22 @@ head
     .container.container.mt-4.mb-5
       br
       |         
-      a.display-4.LP(href='#')  Ora al cinema 
+      a.display-4.LP(href='#')  Cosa ti interessa?
       |         
       hr.bg-dark.mb-4.w-25
       |         
       .row
         .col-md-4
-          .card
-            img.card-img-top(src='https://dummyimage.com/350x300/c7c7c7/000.png', alt='Card image cap')
-            |                     
+          .card                     
             .card-block.p-3
-              h4.card-title TITOLO
-              |                         
-              p.card-text Regista, Attore 1, Attore 2
-              |                         
-              a.btn.btn-outline-primary.rounded-0(href='#') Read More
+             button(onclick = "window.location.href = '/film'")
+              h4.card-title FILM
         |             
         .col-md-4
           .card
-            img.card-img-top(src='https://dummyimage.com/350x300/c7c7c7/000.png', alt='Card image cap')
-            |                     
             .card-block.p-3
-              h4.card-title TITOLO
-              |                         
-              p.card-text Regista, Attore 1, Attore 2
-              |                         
-              a.btn.btn-outline-primary.rounded-0(href='#') Read More
-        |             
-        .col-md-4
-          .card
-            img.card-img-top(src='https://dummyimage.com/350x300/c7c7c7/000.png', alt='Card image cap')
-            |                     
-            .card-block.p-3
-              h4.card-title TITOLO
-              |                         
-              p.card-text Regista, Attore 1, Attore 2
-              |                         
-              a.btn.btn-outline-primary.rounded-0(href='#') Read More
+             button(onclick="window.location.href='/tvshow'")
+              h4.card-title SERIE TV
     // Card
     .container.mb-5
       .row
