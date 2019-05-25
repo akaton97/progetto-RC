@@ -49,6 +49,7 @@ head
         h5  
           a(href="/film") RITORNA ALLA PAGINA DEI FILM
     -else
+        -console.log("total results = "+jsonfile['total_results']/jsonfile['total_pages'])
         -for(i = 0; i+2 < jsonfile['total_results']/jsonfile['total_pages']; i+=3)
               - console.log(jsonfile['results'][i]['original_title'])
               - var fileJson1 = jsonfile['results'][i]['original_title'];
@@ -60,8 +61,6 @@ head
               - var fileJson3 = jsonfile['results'][i+2]['original_title'];
               - var img3 = jsonfile['results'][i+2]['poster_path'];
               - var id3 = jsonfile['results'][i+2]['id'];
-              br
-              br
               br
               .container
                 .row
@@ -80,8 +79,48 @@ head
                       a(href="https://www.themoviedb.org/movie/"+id3+"-"+fileJson3+"?language=it-IT",style = "border:none")
                         img(src = 'https://image.tmdb.org/t/p/w500/'+img3,width = "40%", class='img')
                         p #{fileJson3}
-                      
-
+         -while(i+1<jsonfile['total_results']/jsonfile['total_pages'])
+            - var fileJson1 = jsonfile['results'][i]['original_title'];
+            - var img1 = jsonfile['results'][i]['poster_path'];
+            - var id1 = jsonfile['results'][i]['id'];
+            - var fileJson2 = jsonfile['results'][i+1]['original_title'];
+            - var img2 = jsonfile['results'][i+1]['poster_path'];
+            - var id2 = jsonfile['results'][i+1]['id'];
+            br
+            .container
+                .row
+                    .col-sm
+                        div(class='res')
+                         a(href='https://www.themoviedb.org/movie/'+id1+'-'+fileJson1+'?language=it-IT')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
+                            p #{fileJson1}
+                    .col-sm
+                        div(class='res')
+                         a(href='https://www.themoviedb.org/movie/'+id2+'-'+fileJson2+'?language=it-IT')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img2,width = "40%", class='img')
+                            p #{fileJson2}
+                    .col-sm
+                    div(class='res')
+                      br
+            -i = i+2;
+         -while(i<jsonfile['total_results']/jsonfile['total_pages'])
+            - var fileJson1 = jsonfile['results'][i]['original_title'];
+            - var img1 = jsonfile['results'][i]['poster_path'];
+            - var id1 = jsonfile['results'][i]['id'];
+            br
+            .container
+                .row
+                    .col-sm
+                        div(class='res')
+                         a(href='https://www.themoviedb.org/movie/'+id1+'-'+fileJson1+'?language=it-IT')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
+                            p #{fileJson1}
+                    .col-sm
+                    div(class='res')
+                    .col-sm
+                    div(class='res')
+                      br
+            -i = i+1;
     // Footer
     
    //client.js:1:19 div

@@ -85,7 +85,7 @@ head
         br
         h5 NESSUN RISULTATO TROVATO.
         h5  
-          a(href="/tvshow") RITORNA ALLA PAGINA DEI FILM
+          a(href="/tvshow") RITORNA ALLA PAGINA DELLE SERIE TV
      -else
         -console.log(jsonfile)
         -for(i = 0; i+2 < jsonfile['total_results']/jsonfile['total_pages']; i+=3)
@@ -107,18 +107,61 @@ head
                     .col-sm
                         div(class='res')
                          a(href='https://www.themoviedb.org/tv/'+id1+'-'+fileJson1+'?language=it-IT')
-                            img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "36%", class='img')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
                             p #{fileJson1}
                     .col-sm
                         div(class='res')
                          a(href='https://www.themoviedb.org/tv/'+id2+'-'+fileJson2+'?language=it-IT')
-                            img(src = img2,width = "36%", class='img')
+                            img(src = img2,width = "40%", class='img')
                             p #{fileJson2}
                     .col-sm
                         div(class='res')
                          a(href='https://www.themoviedb.org/tv/'+id3+'-'+fileJson2+'?language=it-IT')
-                            img(src = 'https://image.tmdb.org/t/p/w500/'+img3,width = "36%", class='img')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img3,width = "40%", class='img')
                             p #{fileJson3}
+        -while(i+1<jsonfile['total_results']/jsonfile['total_pages'])
+            -console.log(i)
+            - var fileJson1 = jsonfile['results'][i]['name'];
+            - var img1 = jsonfile['results'][i]['poster_path'];
+            - var id1 = jsonfile['results'][i]['id'];
+            - var fileJson2 = jsonfile['results'][i+1]['name'];
+            - var img2 = jsonfile['results'][i+1]['poster_path'];
+            - var id2 = jsonfile['results'][i+1]['id'];
+            br
+            .container
+                .row
+                    .col-sm
+                        div(class='res')
+                         a(href='https://www.themoviedb.org/movie/'+id1+'-'+fileJson1+'?language=it-IT')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
+                            p #{fileJson1}
+                    .col-sm
+                        div(class='res')
+                         a(href='https://www.themoviedb.org/movie/'+id2+'-'+fileJson2+'?language=it-IT')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img2,width = "40%", class='img')
+                            p #{fileJson2}
+                    .col-sm
+                    div(class='res')
+                      br
+            -i = i+2;
+        -while(i<jsonfile['total_results']/jsonfile['total_pages'])
+            - var fileJson1 = jsonfile['results'][i]['name'];
+            - var img1 = jsonfile['results'][i]['poster_path'];
+            - var id1 = jsonfile['results'][i]['id'];
+            br
+            .container
+                .row
+                    .col-sm
+                        div(class='res')
+                         a(href='https://www.themoviedb.org/movie/'+id1+'-'+fileJson1+'?language=it-IT')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "36%", class='img')
+                            p #{fileJson1}
+                    .col-sm
+                    div(class='res')
+                    .col-sm
+                    div(class='res')
+                      br
+            -i = i+1
 
     //div
       br
