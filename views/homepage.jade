@@ -19,7 +19,7 @@ head
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert    
-    body()
+    body(class = "center-text")
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -76,25 +76,21 @@ head
     // Carousel Slider
     
     // Card
-    .container.container.mt-4.mb-5
-      br
-      |         
-      a.display-4.LP(href='#')  Cosa ti interessa?
-      |         
+    .container.container.mt-4.mb-5    
       hr.bg-dark.mb-4.w-25
-      |         
-      .row
+      |       
+      .row 
         .col-md-4
-          .card                     
-            .card-block.p-3
-             button(onclick = "window.location.href = '/film'")
-              h4.card-title FILM
+          .card                   
+            a#animation_6(href = "/film")
+             img(src="/images/avatar.jpg", width="100%")
+             h4.card-title FILM
         |             
         .col-md-4
           .card
-            .card-block.p-3
-             button(onclick="window.location.href='/tvshow'")
-              h4.card-title SERIE TV
+            a#animation_6(href="/tvshow")
+             img(src="/images/bb.jpg", width="100%",)
+             h4.card-title SERIE TV
     // Card
     .container.mb-5
       .row
@@ -126,6 +122,9 @@ head
         |             
         .col-md-4.mt-5
           img.card-img-top(src='https://dummyimage.com/300x300/c7c7c7/000.png', alt='Card image cap')
+ 
+ 
+ 
     // Footer
     footer.footer.bg-dark.text-white
       // Footer Links

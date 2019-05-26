@@ -1,8 +1,15 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css');
 
 
+.filmbg{
+  background-image: url(/images/interstellar.jpg); 
+  background-size: cover
+}
+
+
 .bgimg{
-  background-image: url(/images/filmwp.jpeg)
+  background-image: url(/images/nk.jpg); 
+  background-size: cover
 }
 
 .searchbar {

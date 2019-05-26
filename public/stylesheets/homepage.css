@@ -21,3 +21,14 @@
     outline: none;
     box-shadow: none;
 }
+
+
+@keyframes scalaImmagine {
+    from {transform:scale(1,1);}
+    to {transform:scale(1.05,1.05);}  /*diventa più grande di 0.05*/
+}
+#animation_6 img:hover {
+    animation-name:scalaImmagine;
+	transform:scale(1.05,1.05);  /*a fine animazione torna a questa grandezza*/
+    animation-duration:0.9s;
+}

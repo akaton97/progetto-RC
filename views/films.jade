@@ -51,13 +51,13 @@ head
     -else
         -console.log("total results = "+jsonfile['total_results']/jsonfile['total_pages'])
         -for(i = 0; i+2 < jsonfile['total_results']/jsonfile['total_pages']; i+=3)
-              - var fileJson1 = jsonfile['results'][i]['original_title'];
+              - var fileJson1 = jsonfile['results'][i]['title'];
               - var img1 = jsonfile['results'][i]['poster_path'];
               - var id1 = jsonfile['results'][i]['id'];
-              - var fileJson2 = jsonfile['results'][i+1]['original_title'];
+              - var fileJson2 = jsonfile['results'][i+1]['title'];
               - var img2 = jsonfile['results'][i+1]['poster_path'];
               - var id2 = jsonfile['results'][i+1]['id'];
-              - var fileJson3 = jsonfile['results'][i+2]['original_title'];
+              - var fileJson3 = jsonfile['results'][i+2]['title'];
               - var img3 = jsonfile['results'][i+2]['poster_path'];
               - var id3 = jsonfile['results'][i+2]['id'];
               br
@@ -79,10 +79,10 @@ head
                         img(src = 'https://image.tmdb.org/t/p/w500/'+img3,width = "40%", class='img')
                         p #{fileJson3}
          -while(i+1<jsonfile['total_results']/jsonfile['total_pages'])
-            - var fileJson1 = jsonfile['results'][i]['original_title'];
+            - var fileJson1 = jsonfile['results'][i]['title'];
             - var img1 = jsonfile['results'][i]['poster_path'];
             - var id1 = jsonfile['results'][i]['id'];
-            - var fileJson2 = jsonfile['results'][i+1]['original_title'];
+            - var fileJson2 = jsonfile['results'][i+1]['title'];
             - var img2 = jsonfile['results'][i+1]['poster_path'];
             - var id2 = jsonfile['results'][i+1]['id'];
             br
@@ -103,7 +103,7 @@ head
                       br
             -i = i+2;
          -while(i<jsonfile['total_results']/jsonfile['total_pages'])
-            - var fileJson1 = jsonfile['results'][i]['original_title'];
+            - var fileJson1 = jsonfile['results'][i]['title'];
             - var img1 = jsonfile['results'][i]['poster_path'];
             - var id1 = jsonfile['results'][i]['id'];
             br
