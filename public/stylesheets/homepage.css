@@ -32,3 +32,8 @@
 	transform:scale(1.05,1.05);  /*a fine animazione torna a questa grandezza*/
     animation-duration:0.9s;
 }
+
+.sfbg{
+    background-image: url("/images/bg.jpg");
+    background-size: contain
+}

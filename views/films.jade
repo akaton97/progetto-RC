@@ -15,7 +15,7 @@ head
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert
-    body(style = "text-align: center")
+    body.sfbg(style = "text-align: center")
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -70,17 +70,17 @@ head
                     div(class='res')
                       a(href="/risultato" name=""+id1+"")
                         img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
-                        p #{fileJson1}
+                        p.tfilm #{fileJson1}
                   .col-sm
                     div(class='res')
                       a(href="/risultato" name=""+id2+"")
                         img(src = 'https://image.tmdb.org/t/p/w500/'+img2,width = "40%", class='img')
-                        p #{fileJson2}
+                        p.tfilm #{fileJson2}
                   .col-sm
                     div(class='res' name=""+id3+"")
                       a(href="/risultato")
                         img(src = 'https://image.tmdb.org/t/p/w500/'+img3,width = "40%", class='img')
-                        p #{fileJson3}
+                        p.tfilm #{fileJson3}
          -while(i+1<jsonfile['total_results']/jsonfile['total_pages'])
             - var fileJson1 = jsonfile['results'][i]['title'];
             - var img1 = jsonfile['results'][i]['poster_path'];
@@ -95,12 +95,12 @@ head
                         div(class='res')
                          a(href='https://www.themoviedb.org/movie/'+id1+'-'+fileJson1+'?language=it-IT')
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
-                            p #{fileJson1}
+                            p.tfilm #{fileJson1}
                     .col-sm
                         div(class='res')
                          a(href='https://www.themoviedb.org/movie/'+id2+'-'+fileJson2+'?language=it-IT')
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img2,width = "40%", class='img')
-                            p #{fileJson2}
+                            p.tfilm #{fileJson2}
                     .col-sm
                     div(class='res')
                       br
@@ -114,9 +114,9 @@ head
                 .row
                     .col-sm
                         div(class='res')
-                         a(href='https://www.themoviedb.org/movie/'+id1+'-'+fileJson1+'?language=it-IT')
+                         a#animation_6(href='https://www.themoviedb.org/movie/'+id1+'-'+fileJson1+'?language=it-IT')
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
-                            p #{fileJson1}
+                            p.tfilm #{fileJson1}
                     .col-sm
                     div(class='res')
                     .col-sm

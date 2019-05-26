@@ -67,4 +67,10 @@ transform:scale(1.05,1.05);  /*a fine animazione torna a questa grandezza*/
 .tfilm{
   color: azure;
   text-decoration : none;
+  font-size: 25px
+}
+
+.sfbg{
+  background-image: url("/images/bg.jpg");
+  background-size: contain
 }
