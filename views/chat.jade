@@ -54,15 +54,17 @@ head
       overflow-x: auto;
       border: 2px solid grey;
       font-family: monospace;
+      margin-block-end: 5px;
       }
       #msg {
       margin-block-end: 13px;
       margin-left: 37px;
-      width: 1000px;
+      width: 875px;
       }
   body
     #box
-    input#msg(type='text')
+    input#msg(type='text')        
+    input(class = 'btn btn-primary',type='submit')
     script(src='/javascripts/client.js')
     // Footer
     footer.footer.bg-dark.text-white
