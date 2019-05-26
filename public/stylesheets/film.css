@@ -2,13 +2,13 @@
 
 
 .filmbg{
-  background-image: url(/images/interstellar.jpg); 
+  background-image: url(/images/int2.jpg); 
   background-size: cover
 }
 
 
 .bgimg{
-  background-image: url(/images/nk.jpg); 
+  background-image: url(/images/nk2.jpg); 
   background-size: cover
 }
 
@@ -51,4 +51,20 @@ footer{
   bottom:0;
   width:100%;
   height:300px;
+}
+
+
+@keyframes scalaImmagine {
+  from {transform:scale(1,1);}
+  to {transform:scale(1.05,1.05);}  /*diventa più grande di 0.05*/
+}
+#animation_6 img:hover {
+  animation-name:scalaImmagine;
+transform:scale(1.05,1.05);  /*a fine animazione torna a questa grandezza*/
+  animation-duration:0.9s;
+}
+
+.tfilm{
+  color: azure;
+  text-decoration : none;
 }
