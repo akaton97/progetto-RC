@@ -6,11 +6,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
 var login = require('./routes/login');
 var accesso = require('./routes/accesso');
 var signup = require('./routes/signup');
 var film = require('./routes/film');
+var films = require('./routes/films');
 var risultato = require('./routes/risultato');
 var tvshow = require('./routes/tvshow');
 var chat = require('./routes/chat'); //definizione variabile chat
@@ -29,26 +29,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/films', films)
 app.use('/login', login);
 app.use('/accesso', accesso);
 app.use('/signup',signup);
 app.use('/film', film);
 app.use('/risultato', risultato);
 app.use('/tvshow', tvshow);
+app.use('/risultato', risultato)
 app.use('/chat', chat);  //collegamento file
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));var express = require('express');
-var router = express.Router();
-
-
-router.get('/', function(req,res) {
-	res.render('login', {title: 'Express' });
-});
-
-module.exports = router;
+  var router = express.Router();
+  module.exports = router;
 
 });
 
