@@ -50,10 +50,10 @@ script.
 -if(filmo == NULL){ console.log("filmo non esiste")}
 -else {
   -var trama = filmo["overview"];
-  -var title = filmo['original_title']
+  -var title = filmo['title']
   -var poster = filmo['poster_path']
   -var cast = filmo['production_companies']
-  -var genere = filmo['genres']
+  -var genere = filmo['genres'][0]
   -var data = filmo['release_date']
   -var rank = filmo['vote_average']
   -}
@@ -64,7 +64,9 @@ script.
           |                 
           hr.bg-dark.w-auto.ml-0.mt-3 
           |                 
-          p #{trama}             
+          p TRAMA: #{trama}
+          p DATA DI USCITA: #{data}     
+          p GENERE: #{genere}        
         .col-md-4.mt-5
           img.card-img-top(src='https://image.tmdb.org/t/p/original/' + poster, alt='Card image cap')
     // Footer
