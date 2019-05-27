@@ -96,8 +96,8 @@ head
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
                             p.tfilm #{fileJson1}
                     .col-sm
-                        div(href="/risultato"+"/:"+id2+"?")
-                         a(href='https://www.themoviedb.org/movie/'+id2+'-'+fileJson2+'?language=it-IT')
+                        div(class = "res")
+                         a(href="/risultato"+"/:"+id2+"?")
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img2,width = "40%", class='img')
                             p.tfilm #{fileJson2}
                     .col-sm
@@ -113,7 +113,7 @@ head
                 .row
                     .col-sm
                         div(class='res')
-                         a#animation_6(href='https://www.themoviedb.org/movie/'+id1+'-'+fileJson1+'?language=it-IT')
+                         a#animation_6(href='/risultato'+id1+"?")
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
                             p.tfilm #{fileJson1}
                     .col-sm
