@@ -2,13 +2,13 @@
 
 
 .filmbg{
-  background-image: url(/images/int2.jpg); 
+  background-image: url(/images/int2.jpg);
   background-size: cover
 }
 
 
 .bgimg{
-  background-image: url(/images/nk2.jpg); 
+  background-image: url(/images/nk2.jpg);
   background-size: cover
 }
 
@@ -65,8 +65,9 @@ transform:scale(1.05,1.05);  /*a fine animazione torna a questa grandezza*/
 }
 
 .tfilm{
-  color: azure;
+  color: white;
   text-decoration : none;
+  margin-left: 20%;   
   font-size: 25px
 }
 
