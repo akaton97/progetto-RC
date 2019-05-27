@@ -73,7 +73,6 @@ transform:scale(1.05,1.05);  /*a fine animazione torna a questa grandezza*/
 
 
 .sfbg{
-    /*background-image: url("/images/bg.jpg");*/
-    background-color: black;
-    background-size: contain
+    background-image: url("/images/interstellar.jpg");
+    background-size: cover;
 }
