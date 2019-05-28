@@ -11,7 +11,7 @@ head
     |     
     link(rel='shortcut icon', href='/images/logo.jpg')
     |     
-    title MovieKraken | HomePage
+    title MovieKraken | SerieTV
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert
@@ -71,17 +71,17 @@ head
                 .row
                     .col-sm
                         div(class='res')
-                         a(href='https://www.themoviedb.org/tv/'+id1+'-'+fileJson1+'?language=it-IT')
+                         a(href='/tvresults/:'+id1+'?')
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
                             p.tfilm #{fileJson1}
                     .col-sm
                         div(class='res')
-                         a(href='https://www.themoviedb.org/tv/'+id2+'-'+fileJson2+'?language=it-IT')
+                         a(href='/tvresults/:'+id2+'?')
                             img(src = img2,width = "40%", class='img')
                             p.tfilm #{fileJson2}
                     .col-sm
                         div(class='res')
-                         a(href='https://www.themoviedb.org/tv/'+id3+'-'+fileJson2+'?language=it-IT')
+                         a(href='/tvresults/:'+id3+'?')
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img3,width = "40%", class='img')
                             p.tfilm #{fileJson3}
         -while(i+1<jsonfile['total_results']/jsonfile['total_pages'])
@@ -97,12 +97,12 @@ head
                 .row
                     .col-sm
                         div(class='res')
-                         a(href='https://www.themoviedb.org/tv/'+id1+'-'+fileJson1+'?language=it-IT')
+                         a(href='/tvresults/:'+id1+'?')
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
                             p.tfilm #{fileJson1}
                     .col-sm
                         div(class='res')
-                         a(href='https://www.themoviedb.org/tv/'+id2+'-'+fileJson2+'?language=it-IT')
+                         a(href='/tvresults/:'+id2+'?')
                             img(src = 'https://image.tmdb.org/t/p/w500/'+img2,width = "40%", class='img')
                             p.tfilm #{fileJson2}
                     .col-sm
@@ -118,8 +118,8 @@ head
                 .row
                     .col-sm
                         div(class='res')
-                         a(href='https://www.themoviedb.org/tv/'+id1+'-'+fileJson1+'?language=it-IT')
-                            img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "36%", class='img')
+                         a(href='/tvresults/:'+id1+'?')
+                            img(src = 'https://image.tmdb.org/t/p/w500/'+img1,width = "40%", class='img')
                             p.tfilm #{fileJson1}
                     .col-sm
                     div(class='res')

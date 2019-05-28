@@ -7,13 +7,14 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var login = require('./routes/login');
-var accesso = require('./routes/accesso');
 var signup = require('./routes/signup');
 var film = require('./routes/film');
 var films = require('./routes/films');
 var risultato = require('./routes/risultato');
 var tvshow = require('./routes/tvshow');
+var tvresults = require('./routes/tvresults');
 var chat = require('./routes/chat'); //definizione variabile chat
+
 
 var app = express();
 
@@ -31,12 +32,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/films', films)
 app.use('/login', login);
-app.use('/accesso', accesso);
 app.use('/signup',signup);
 app.use('/film', film);
 app.use('/risultato', risultato);
 app.use('/tvshow', tvshow);
-app.use('/risultato', risultato)
+app.use('/risultato', risultato);
+app.use('/tvresults', tvresults);
 app.use('/chat', chat);  //collegamento file
 
 // catch 404 and forward to error handler

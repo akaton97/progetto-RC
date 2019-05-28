@@ -67,10 +67,8 @@ transform:scale(1.05,1.05);  /*a fine animazione torna a questa grandezza*/
 .tfilm{
   color: white;
   text-decoration : none;
-  margin-left: 20%;
   font-size: 25px
 }
-
 
 .sfbg{
     background-image: url("/images/interstellar.jpg");
