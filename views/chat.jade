@@ -19,7 +19,7 @@ head
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert    
-    body()
+    body.sfchat
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -48,80 +48,78 @@ head
     style.
       #box {
       margin-top: 73px;
-      margin-left: 37px;
-      width: 1000px;
-      height: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 54.4%;
+      height: 563px;
       overflow-x: auto;
       border: 2px solid grey;
       font-family: monospace;
       margin-block-end: 5px;
+      background: white;
       }
       #msg {
       margin-block-end: 13px;
-      margin-left: 37px;
-      width: 875px;
+      margin-left: 22.8%;
+      width: 54.4%;
       }
   body
     #box
-    input#msg(type='text')        
-    input(class = 'btn btn-primary',type='submit')
+    #msg
+      div(class="input-group mb-3")
+        input.form-control(type='text', placeholder='Inizia una conversazione...')
+        div.input-group-append
+          button(type='submit', class = 'btn btn-primary', value='Submit') Invia messaggio    
+    //input#msg(type='text')                                    funziona
+    //input(class = 'btn btn-primary',type='submit')            funziona
     script(src='/javascripts/client.js')
-    // Footer
-    footer.footer.bg-dark.text-white
-      // Footer Links
-      .container.pt-5.pb-2
-        .row
-          .col-md-3.col-lg-4.col-xl-3
-            h4 il trio universitario :P
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
-          |                 
-          .col-md-3.col-lg-2.col-xl-2.mx-auto
-            h4 Useful links
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              a.text-white(href='#') Home
-            |                     
-            p
-              a.text-white(href='#') About Us
-            |                     
-            p
-              a.text-white(href='#') Services
-            |                     
-            p
-              a.text-white(href='#') Contact
-          |                 
-          .col-md-4.col-lg-3.col-xl-3
-            h4 Contact
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              a(href='https://goo.gl/maps/Z6mkUPT3rin')
-                i.fa.fa-home.mr-3
-              |  Piazzale Aldo Moro 7
-            |                     
-            p
-              i.fa.fa-envelope.mr-3
-              |  plutoboy97@gmail.com
-            |                     
-            p
-              i.fa.fa-phone.mr-3
-              |  + 06 842 569
-      // Footer Links
-      hr.bg-white.mx-4.mt-2.mb-1
-      // Copyright
-      .container-fluid
-        p.text-center.m-0.py-1
-          | &copy; 2017 Copyright 
-          a.text-white(href='https://getbootstrap.com/') Bootstrap 4
-      // Copyright
-    // Footer
+    
+// Footer
+footer.footer.bg-dark.text-white
+          // Footer Links
+          .container.pt-5.pb-2
+            .row
+              .col-md-3.col-lg-4.col-xl-3
+                h4 Information
+                |                     
+                hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+                |                     
+                p
+                  | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
+              |                 
+              .col-md-3.col-lg-2.col-xl-2.mx-auto
+                h4 Useful links
+                |                     
+                hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+                |                     
+                p
+                  a.text-white(href='#') Home
+                |                     
+                p
+                  a.text-white(href='#') About Us
+              |                 
+              .col-md-4.col-lg-3.col-xl-3
+                h4 Contact
+                |                     
+                hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+                |                     
+                p
+                  a(href='https://goo.gl/maps/Z6mkUPT3rin')
+                    i.fa.fa-home.mr-3.text-white
+                  |  Piazzale Aldo Moro 7
+                |                                        
+                p
+                  i.fa.fa-phone.mr-3
+                  |  + 06 842 569
+          // Footer Links
+          hr.bg-white.mx-4.mt-2.mb-1
+          // Copyright
+          .container-fluid
+            p.text-center.m-0.py-1
+              | &copy; 2019 Copyright 
+              a.text-white(href='https://getbootstrap.com/') MK
+          // Copyright
+        // Footer
 
 
 //<!DOCTYPE html>  //HTML chat
