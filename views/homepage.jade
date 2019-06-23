@@ -13,13 +13,89 @@ head
     |     
     link(href='/stylesheets/homepage.css', rel='stylesheet', type='text/css')
     |     
-    link(rel='shortcut icon', href='/images/logo.jpg')
+    link(rel='shortcut icon', href='window.location.reload(true);/images/logo.jpg')
     |     
     title MovieKraken | HomePage
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
+    |     
+    script(src='https://connect.facebook.net/en_US/sdk.js', async='', defer='')
+    |     
+    script(async='', defer='', crossorigin='anonymous', src='http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
+    |        
     // sweet alert    
     body.sfbg
+    
+     // FB-ASINC-INIT      
+    script.
+     window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '1159693734481176',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.2'
+        });
+
+        FB.getLoginStatus(function(response){
+          statusChangeCallback(response);
+        });
+      } ;
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
+      //funzione di callback
+      function statusChangeCallback(response){
+        if(response.status==='connected'){
+          console.log('Logged in and authenticated');
+          setButtons(true);
+          testAPI();
+        }else{
+          console.log('Not authenticated');
+          setButtons(false);
+        }
+      }
+      
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+         });
+      }
+      
+
+     function setButtons(log){
+      if(log){  
+        document.getElementById('chat').style.display='block';
+        document.getElementById('film').style.display='block';
+        document.getElementById('tvshow').style.display='block';
+      }else{
+       document.getElementById('chat').style.display='none';
+       document.getElementById('film').style.display='none';
+       document.getElementById('tvshow').style.display='none';
+       }
+     }
+
+      function logout(){
+        FB.logout(function(response){
+          setButtons(false);
+        });
+      }
+  
+      function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me?fields=name,email', function(response) {
+          console.log('Successful login for: ' + response.name);
+          document.getElementById('profile').innerHTML ='Welcome ' + response.name + ' thanks for logging in!';
+        });
+      }
+      
+
+
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -31,20 +107,23 @@ head
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
           ul.navbar-nav.ml-auto
             li.nav-item
-              a.nav-link.text-white(href='/film') Film
+              #fb-root
+              #fb-button.fb-login-button(style='border: none', onlogin='checkLoginState()', data-size='small', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')   
+            |             
+            li.nav-item
+              #film
+                a.nav-link.text-white(href='/film') Film
+              
             |                     
             li.nav-item
-              a.nav-link.text-white(href='/tvshow') Serie TV
+              #tvshow
+                a.nav-link.text-white(href='/tvshow') Serie TV
             |                     
             li.nav-item
-              a.nav-link.text-white(href='/login') Login
-            |                     
-            li.nav-item
-              a.nav-link.text-white(href='/signup') Sign Up
-            |                     
-            li.nav-item
-              a.nav-link.text-white(href='/chat') Chat
-    // Navigation
+              #chat
+                a.nav-link.text-white(ihref='/chat') Chat  
+            | 
+
     // Carousel Slider
     #carouselLogo.carousel.slide(data-ride='carousel')
       ol.carousel-indicators

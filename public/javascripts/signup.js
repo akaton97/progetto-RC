@@ -1,6 +1,5 @@
 //FACEBOOK
 
-
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
@@ -26,16 +25,18 @@ function checkLoginState() {
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
+      setButtons(true)
 
     } else {
       // The person is not logged into your app or we are unable to tell.
+      setButtons(false)
 
     }
   }
 
       function logout(){
           FB.logout(function(response){
-
+            setButtons(false)
           })
       }
 
@@ -45,4 +46,16 @@ function checkLoginState() {
       console.log('Successful login for: ' + response.name);
 
     });
+  }
+
+  function setButtons(log){
+    if(log){  
+      document.getElementById('chat').style.display='block';
+      document.getElementById('film').style.display='block';
+      document.getElementById('tvshow').style.display='block';
+    }else{
+      document.getElementById('chat').style.display='none';
+      document.getElementById('film').style.display='none';
+      document.getElementById('tvshow').style.display='none';
+    }
   }
