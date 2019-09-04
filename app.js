@@ -15,6 +15,7 @@ var tvshow = require('./routes/tvshow');
 var tvresults = require('./routes/tvresults');
 var chat = require('./routes/chat'); //definizione variabile chat
 
+var chatRouter = require('./routes/chatroom');  //new chat
 
 var app = express();
 
@@ -39,6 +40,8 @@ app.use('/tvshow', tvshow);
 app.use('/risultato', risultato);
 app.use('/tvresults', tvresults);
 app.use('/chat', chat);  //collegamento file
+
+app.use('/ChatRoom',chatRouter);  //new chat
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
