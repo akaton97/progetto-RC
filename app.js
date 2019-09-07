@@ -13,11 +13,18 @@ var films = require('./routes/films');
 var risultato = require('./routes/risultato');
 var tvshow = require('./routes/tvshow');
 var tvresults = require('./routes/tvresults');
-var chat = require('./routes/chat'); //definizione variabile chat
-
-var chatRouter = require('./routes/chatroom');  //new chat
+var chatRouter = require('./routes/chat'); 
 
 var app = express();
+
+//INIZIO parte per la socket
+const APP_PORT = 5555;
+
+const server = app.listen(APP_PORT, () => {
+  console.log(`App running on port ${APP_PORT}`);
+})
+const io = require('socket.io').listen(server);
+//FINE roba sulla socket
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,16 +46,14 @@ app.use('/risultato', risultato);
 app.use('/tvshow', tvshow);
 app.use('/risultato', risultato);
 app.use('/tvresults', tvresults);
-app.use('/chat', chat);  //collegamento file
-
-app.use('/ChatRoom',chatRouter);  //new chat
+app.use('/chat', chatRouter);  //collegamento file
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));var express = require('express');
+  next(createError(404));
+  var express = require('express');
   var router = express.Router();
   module.exports = router;
-
 });
 
 // error handler
@@ -61,5 +66,18 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//altre robe sulla socket
+io.on('connection', (socket) => {
+  console.log('a user connected')
+})
+
+io.on('connection', (socket) => {
+  console.log('a user connected')
+  socket.on('chatter', (message) => {
+    console.log('chatter : ', message)
+    io.emit('chatter', message)
+  })
+})
 
 module.exports = app;
