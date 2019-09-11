@@ -27,19 +27,21 @@ head
     body.sfbg
     
      // FB-ASINC-INIT      
-    script.
-     window.fbAsyncInit = function() {
-        FB.init({
-          appId            : '1159693734481176',
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v3.2'
-        });
 
-        FB.getLoginStatus(function(response){
-          statusChangeCallback(response);
+    script(async='', defer='', src='https://connect.facebook.net/en_US/sdk.js')
+
+    script.
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1159693734481176',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v4.0'
         });
-      } ;
+          
+        FB.AppEvents.logPageView();   
+          
+      };
 
       (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -48,54 +50,17 @@ head
         js.src = "https://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-      
-      //funzione di callback
-      function statusChangeCallback(response){
-        if(response.status==='connected'){
-          console.log('Logged in and authenticated');
-          setButtons(true);
-          testAPI();
-        }else{
-          console.log('Not authenticated');
-          setButtons(false);
-        }
-      }
-      
+
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+
       function checkLoginState() {
         FB.getLoginStatus(function(response) {
-          statusChangeCallback(response);
-         });
+        statusChangeCallback(response);
+          });
       }
-      
-
-     function setButtons(log){
-      if(log){  
-        document.getElementById('chat').style.display='block';
-        //document.getElementById('film').style.display='block';
-        //document.getElementById('tvshow').style.display='block';
-      }else{
-       document.getElementById('chat').style.display='none';
-       //document.getElementById('film').style.display='none';
-       //document.getElementById('tvshow').style.display='none';
-       }
-     }
-
-      function logout(){
-        FB.logout(function(response){
-          setButtons(false);
-        });
-      }
-  
-      function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me?fields=name,email', function(response) {
-          console.log('Successful login for: ' + response.name);
-          document.getElementById('profile').innerHTML ='Welcome ' + response.name + ' thanks for logging in!';
-        });
-      }
-      
-
-
+    
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -105,15 +70,15 @@ head
           span.navbar-toggler-icon
         |             
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto
+          ul.navbar-nav.ml-auto             
             li.nav-item
+            a.nav-link.text-white
               #fb-root
-              #fb-button.fb-login-button(style='border: none', onlogin='checkLoginState()', data-size='small', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')   
+               #fb-button.fb-login-button(data-width='100', data-size='small', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')
             |             
             li.nav-item
               #film
                 a.nav-link.text-white(href='/film') Film
-              
             |                     
             li.nav-item
               #tvshow
@@ -121,7 +86,7 @@ head
             |                     
             li.nav-item
               #chat
-                a.nav-link.text-white(ihref='/chat') Chat  
+                a.nav-link.text-white( href='/chat') Chat  
             | 
 
     // Carousel Slider
