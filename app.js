@@ -13,12 +13,11 @@ var films = require('./routes/films');
 var risultato = require('./routes/risultato');
 var tvshow = require('./routes/tvshow');
 var tvresults = require('./routes/tvresults');
-var chatRouter = require('./routes/chat'); 
-
+var chatRouter = require('./routes/chat');
 var app = express();
 
 //INIZIO parte per la socket
-const APP_PORT = 5555;
+var APP_PORT = process.env.PORT || 5555;
 
 const server = app.listen(APP_PORT, () => {
   console.log(`App running on port ${APP_PORT}`);
