@@ -17,7 +17,7 @@ var chatRouter = require('./routes/chat');
 var app = express();
 
 //INIZIO parte per la socket
-var APP_PORT = process.env.PORT || 5555;
+var APP_PORT = 5555;
 
 const server = app.listen(APP_PORT, () => {
   console.log(`App running on port ${APP_PORT}`);
