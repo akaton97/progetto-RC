@@ -22,7 +22,8 @@ head
     script(src='https://connect.facebook.net/en_US/sdk.js', async='', defer='')
     |     
     script(async='', defer='', crossorigin='anonymous', src='http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
-    |        
+    |    
+    link(rel='shortcut icon', href='/images/logo.jpg')    
     // sweet alert    
     body.sfbg
     
@@ -61,7 +62,7 @@ head
           });
       }
 
-       function statusChangeCallback(response){
+      function statusChangeCallback(response){
         if(response.status==='connected'){
           console.log('Logged in and authenticated');
           setButtons(true);
@@ -87,11 +88,11 @@ head
       }
 
       function setButtons(logged){
-        if(logged){
-          document.getElementById('chat').style.display = 'block'
+        if(document.getElementById('chat').style.display == "none" && !logged){
+          document.getElementById('chat').style.display = 'block';
         }
         else{
-          document.getElementById('chat').style.display = 'none'
+          document.getElementById('chat').style.display = 'none';
         }
       }
     
@@ -120,7 +121,7 @@ head
             |                     
             li.nav-item
               #chat
-                a.nav-link.text-white( href='/chat') Chat  
+                a.nav-link.text-white(href='/chat') Chat  
             | 
 
     // Carousel Slider
