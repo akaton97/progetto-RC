@@ -25,7 +25,7 @@ head
     |    
     link(rel='shortcut icon', href='/images/logo.jpg')    
     // sweet alert    
-    body.sfbg
+    body.sfbg(onload= "checkLoginState()")
     
      // FB-ASINC-INIT      
 
@@ -71,12 +71,6 @@ head
           console.log('Not authenticated');
           setButtons(false);
         }
-      }
-
-      function logout(){
-        FB.logout(function(response){
-          setButtons(false);
-        });
       }
 
       function testAPI() {
