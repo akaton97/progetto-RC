@@ -16,7 +16,7 @@ head
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert
    
-    body.sfbg
+    body.sfbg(style = "text-align: center")
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -37,14 +37,15 @@ head
               a.nav-link.text-white(href='/chat') Chat
     // Navigation
     h1 Seleziona il tuo Film preferito!
+    div
      -if(jsonfile['total_results'] == '0')
       div
         br
         br
         br
-        h1 NESSUN RISULTATO TROVATO.
-        h1  
-          a(href="/tvshow") RITORNA ALLA PAGINA DELLE SERIE TV
+        h5 NESSUN RISULTATO TROVATO.
+        h5  
+          a(href="/tvshow") Ritorna alla pagina delle serie TV
      -else
         -console.log(jsonfile)
         -for(i = 0; i+2 < jsonfile['total_results']/jsonfile['total_pages']; i+=3)

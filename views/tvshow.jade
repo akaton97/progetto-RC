@@ -15,15 +15,16 @@ head
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert
-
     style.
-      #searchbar {
-        margin-top: 4%;
+      #box {
+        margin-left: 4%;
+      }  
+      #testo {
+        color: white;
+        text-decoration : none;
+        margin-left: 40%;   
+        font-size: 25px
       }
-      #imag {
-        margin-left: 3%;
-      }
-      
     body.filmbg
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
@@ -43,37 +44,39 @@ head
             |                     
             li.nav-item
               a.nav-link.text-white(href='/chat') Chat
-
+    // Navigation
     #searchbar
     div.container.mt-5
       form(action = "/tvshow", method='post')
         div(class="input-group mb-3")
           input.form-control#tvshowSearch(type='text', name='nomeShow', placeholder='Cerca il titolo della serie TV che desideri...', required)
           div.input-group-append
-            input(class = 'btn btn-primary',type='submit', value='Cerca', style='background-color: peachpuff; color: black; border-color:peachpuff;')
-                 
-     #imag
-     div.container.container.mt-4.mb-5   
+            input(class = 'btn btn-primary',type='submit', value='Cerca', style='background-color: peachpuff; color: black; border-color:peachpuff;')   
+
+    #imag
+    div.container.container.mt-4.mb-5   
       //hr.bg-dark.mb-4.w-25
-      |                      
+      |       
       .row
         .col-md-4 
+          .card(style="width:85%")
+            h4.tfilm Lost                 
+            a#animation_6(href = "/tvresults/:4607?")
+             img(src="/images/lost.jpg", width="100%")
+             
+        |             
+        .col-md-4
           .card(style="width:85%")
             h4.tfilm Peaky Blinders
             a#animation_6(href="/tvresults/:60574?")
              img(src="/images/peaky.jpg", width="100%")
+             
         |             
         .col-md-4
           .card(style="width:85%")
-            h4.tfilm I Simpson                
-            a#animation_6(href = "/tvresults/:456?")
-              img(src="/images/Simpson.jpg", width="100%") 
-        |             
-        .col-md-4
-          .card(style="width:85%")
-            h4.tfilm Big Bang Theory
-            a#animation_6(href="/tvresults/:1418?")
-             img(src="/images/bang.jpg", width="100%")
+            h4.tfilm Black Mirror
+            a#animation_6(href="/tvresults/:42009?")
+             img(src="/images/bmitr.jpg", width="100%")
 
 // Footer
 footer.footer.bg-dark.text-white

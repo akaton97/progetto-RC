@@ -44,7 +44,7 @@ head
         br
         h5 NESSUN RISULTATO TROVATO.
         h5  
-          a(href="/film") RITORNA ALLA PAGINA DEI FILM
+          a(href="/film") Ritorna alla pagina dei film
     -else
         -for(i = 0; i+2 < jsonfile['total_results']/jsonfile['total_pages']; i+=3)
               - var fileJson1 = jsonfile['results'][i]['title'];
