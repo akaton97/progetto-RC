@@ -3,7 +3,7 @@
 il progetto consiste nella creazione di una web app che utilizzi un paradigma RESTFULL con api REST a protocollo CRUD.
 ## Requisiti
 1. Il servizio REST deve offrire delle API esterne documentate e accessibili
-2.Si deve interfacciare con almeno due servizi REST “esterni”, cioè non su localhost
+2. Si deve interfacciare con almeno due servizi REST “esterni”, cioè non su localhost
 3. Almeno uno dei servizi REST esterni deve essere “commerciale” (es: twitter, google, facebook, pubnub, parse, firbase etc)
 4. Almeno uno dei servizi REST esterni deve richiedere oauth
 5. Si devono usare Websocket e/o AMQP (o simili es MQTT)
@@ -29,3 +29,17 @@ se non sarà inserito nulla, verrà mostrato un messaggio d'errore
 ![immagine4]
 nel caso in cui la ricerca sia andata a buon fine, verrà mostrato un elenco di film/serie tv che corrispondono a al nome ricercato (nb tutti gli elementi che conterrano la parola ricercata) 
 
+## API reference
+
+Le API utilizzate nel sito sono:
+
+- [The Movie DB](https://www.themoviedb.org/documentation/api?language=it-IT)
+- [Facebook API](https://developers.facebook.com/?locale=it_IT)
+
+## Tecnologie usate
+
+- [Node.js](https://nodejs.org/it/)
+- [Express](https://expressjs.com/)
+- [Jade](https://pugjs.org/api/getting-started.html)
+- [Socket.io](https://socket.io/)
+- [Bootstrap](https://getbootstrap.com/)
