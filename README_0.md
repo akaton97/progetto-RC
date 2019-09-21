@@ -35,7 +35,7 @@ E' possibile effettuare una ricerca, tramite barra apposita, delle serie TV o de
 
 Per effettuare l'accesso bisogna premere il pulsante login sulla navbar del sito, inserire l'email o numero di telefono di Facebook e la password.
 
-![immagine1.2](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/LogoutRC.png)
+![immagine1.2](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/images/LogoutRC.png)
 
 In alto a sinistra sulla navbar comparirà il pulsante Chat.
 
