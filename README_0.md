@@ -31,31 +31,31 @@ E' possibile effettuare una ricerca, tramite barra apposita, delle serie TV o de
 
 ## SignIn
 
-![immagine1](https://github.com/akaton97/progetto-RC/tree/redme-branch/public/images/HomeRC.png)
+![immagine1](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/images/HomeRC.png)
 
 Per effettuare l'accesso bisogna premere il pulsante login sulla navbar del sito, inserire l'email o numero di telefono di Facebook e la password.
 
-![immagine1.2](https://github.com/akaton97/progetto-RC/tree/redme-branch/public/LogoutRC.png)
+![immagine1.2](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/LogoutRC.png)
 
 In alto a sinistra sulla navbar comparirà il pulsante Chat.
 
 ## Ricerca
 
-![immagine2](https://github.com/akaton97/progetto-RC/tree/redme-branch/public/images/         NULL         )
+![immagine2](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/images/         NULL         )
 
 Una volta giunti su una delle due pagine, si può o selezionare uno dei tre elementi posti in vetrina, oppure effettuare una ricerca tramite barra apposita.
 
-![immagine2.2](https://github.com/akaton97/progetto-RC/tree/redme-branch/public/images/       NULL         )
+![immagine2.2](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/images/       NULL         )
 
 In caso di insuccesso verrà mostrato un messaggio d'errore e un link permetterà di ritornare nella categoria precedentemente selezionata.
 
-![immagine2.3](https://github.com/akaton97/progetto-RC/tree/redme-branch/public/images/Schermata_film.png)
+![immagine2.3](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/images/Schermata_film.png)
 
 Nel caso in cui la ricerca sia andata a buon fine verrà mostrato un elenco di film o serie TV, in base alla categoria visionata, che corrispondono al nome ricercato (NB: tutti gli elementi che conterrano la parola ricercata); è a questo punto possibile visionare il file risultato.
 
 ## Risultato
 
-![immagine3](https://github.com/akaton97/progetto-RC/tree/redme-branch/public/images/Risultato_SerieTV.png)
+![immagine3](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/images/Risultato_SerieTV.png)
 
 Il risultato è composto dalla foto di copertina del film o della serie TV e dalle seguenti informazioni:
 Nel caso in cui fosse stato richiesto un film viene fornito il Titolo, la Trama, la Data di uscita, il Produttore, il Genere e infine la Valutazione.
@@ -64,6 +64,6 @@ Nel caso in cui fosse stato richiesta una serie TV viene fornito il Titolo, la T
 
 ## Chat
 
-![immagine4](https://github.com/akaton97/progetto-RC/tree/redme-branch/public/images/Chatroom.png)
+![immagine4](https://github.com/akaton97/progetto-RC/blob/redme-branch/public/images/Chatroom.png)
 
 Il box della chat è costituita da una barra iniziale per inserire il nome utente che comparirà nella chat, una casella di testo in cui scrivere il messaggio da inviare e una finestra dinamica in cui compaiono i messaggi.
