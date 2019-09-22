@@ -1,8 +1,12 @@
+  
+'use strict';
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var socketIO = require('socket.io');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -17,12 +21,12 @@ var chatRouter = require('./routes/chat');
 var app = express();
 
 //INIZIO parte per la socket
-var APP_PORT = 5555;
+var APP_PORT = process.env.PORT || 3000
 
 const server = app.listen(APP_PORT, () => {
   console.log(`App running on port ${APP_PORT}`);
 })
-const io = require('socket.io').listen(server);
+const io = socketIO(server);
 //FINE roba sulla socket
 
 // view engine setup
@@ -66,11 +70,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//altre robe sulla socket
-io.on('connection', (socket) => {
-  console.log('a user connected')
-})
-
+//connessione con la socket
 io.on('connection', (socket) => {
   console.log('a user connected')
   socket.on('chatter', (message) => {
