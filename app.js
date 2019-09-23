@@ -1,4 +1,3 @@
-  
 'use strict';
 
 var createError = require('http-errors');
