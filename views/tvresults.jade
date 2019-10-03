@@ -45,6 +45,9 @@ head
        font-family: Georgia;
        font-weight: 900;
      }
+     #pos {
+       margin-left: -33.5%;
+     }
     
 script.
 -if(filmo == NULL){ console.log("filmo non esiste")}
@@ -99,57 +102,58 @@ script.
                    .row
                        .col
                            p #{nome1}
-                           img(src=image1, width = "200px")    
+                           img(src=image1, width = "200px", height = "300px")    
                            p Messa in onda: #{air1}
                            p Episodi: #{ep1}
                        .col
                            p #{nome2}
-                           img(src=image2, width = "200px")    
+                           img(src=image2, width = "200px", height = "300px")    
                            p Messa in onda: #{air2}
                            p Episodi: #{ep2}
                        .col
                            p #{nome3}
-                           img(src=image3, width = "200px")    
+                           img(src=image3, width = "200px", height = "300px")    
                            p Messa in onda: #{air3}
                            p Episodi: #{ep3}
 - while(i+1 < seasons.length)
-      -console.log(i)
-      -var nome1 = seasons[i]['name'];
-      -var image1 = (seasons[i]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+seasons[i]['poster_path'] : "/images/no_locandina.webp"
-      -var air1 = seasons[i]['air_date'];
-      -var ep1 = seasons[i]['episode_count'];
-      -var nome2 = seasons[i+1]['name'];
-      -var image2 = (seasons[i+1]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+seasons[i+1]['poster_path'] : "/images/no_locandina.webp"
-      -var air2 = seasons[i+1]['air_date'];
-      -var ep2 = seasons[i+1]['episode_count'];
-      .container
-          .row
-              .col
-                  p #{nome1}
-                  img(src=image1, width = "200px")    
-                  p Messa in onda: #{air1}
-                  p Episodi: #{ep1}
-              .col
-                  p #{nome2}
-                  img(src=image2, width = "200px")    
-                  p Messa in onda: #{air2}
-                  p Episodi: #{ep2}
-      -i+=2
-      -console.log('number '+i)
+            -console.log(i)
+            -var nome1 = seasons[i]['name'];
+            -var image1 = (seasons[i]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+seasons[i]['poster_path'] : "/images/no_locandina.webp"
+            -var air1 = seasons[i]['air_date'];
+            -var ep1 = seasons[i]['episode_count'];
+            -var nome2 = seasons[i+1]['name'];
+            -var image2 = (seasons[i+1]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+seasons[i+1]['poster_path'] : "/images/no_locandina.webp"
+            -var air2 = seasons[i+1]['air_date'];
+            -var ep2 = seasons[i+1]['episode_count'];
+            .container
+                   .row
+                       .col
+                           p #{nome1}
+                           img(src=image1, width = "200px", height = "300px")    
+                           p Messa in onda: #{air1}
+                           p Episodi: #{ep1}
+                       .col#pos
+                           p #{nome2}
+                           img(src=image2, width = "200px", height = "300px")    
+                           p Messa in onda: #{air2}
+                           p Episodi: #{ep2}
+            -i+=2
+            -console.log('number '+i)
+            
 -while(i < seasons.length)
-      -console.log(i)
-      -var nome1 = seasons[i]['name'];
-      -var image1 = (seasons[i]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+seasons[i]['poster_path'] : "/images/no_locandina.webp"
-      -var air1 = seasons[i]['air_date'];
-      -var ep1 = seasons[i]['episode_count'];
-      .container
-          .row
-              .col
-                  p #{nome1}
-                  img(src=image1, width = "200px")    
-                  p Messa in onda: #{air1}
-                  p Episodi: #{ep1}
-      -i+=1
+            -console.log(i)
+            -var nome1 = seasons[i]['name'];
+            -var image1 = (seasons[i]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+seasons[i]['poster_path'] : "/images/no_locandina.webp"
+            -var air1 = seasons[i]['air_date'];
+            -var ep1 = seasons[i]['episode_count'];
+            .container
+                   .row
+                       .col
+                           p #{nome1}
+                           img(src=image1, width = "200px", height = "300px")    
+                           p Messa in onda: #{air1}
+                           p Episodi: #{ep1}
+            -i+=1
 br
 
 // Footer
