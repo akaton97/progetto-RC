@@ -59,7 +59,7 @@ head
         if(response.status==='connected'){
           console.log('Logged in and authenticated');
           setButtons(true);
-        }else{
+        }else if(response.status==='not connected'){
           console.log('Not authenticated');
           setButtons(false);
         }
