@@ -21,16 +21,13 @@ head
     |     
     script(src='https://connect.facebook.net/en_US/sdk.js', async='', defer='')
     |     
-    script(async='', defer='', crossorigin='anonymous', src='http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
+    script(async='', defer='', crossorigin='anonymous', src='https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
     |    
     link(rel='shortcut icon', href='/images/logo.jpg')    
     // sweet alert    
     body.sfbg(onload= "checkLoginState()")
     
-     // FB-ASINC-INIT      
-  
-    script(async='', defer='', src='https://connect.facebook.net/en_US/sdk.js')
-
+     // FB-ASINC-INIT 
     script.
       window.fbAsyncInit = function() {
         FB.init({
@@ -52,37 +49,24 @@ head
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
 
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-
       function checkLoginState() {
         FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
-          });
+        });
       }
 
       function statusChangeCallback(response){
         if(response.status==='connected'){
           console.log('Logged in and authenticated');
           setButtons(true);
-          testAPI();
         }else{
           console.log('Not authenticated');
           setButtons(false);
         }
       }
 
-      function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me?fields=name,email', function(response) {
-          console.log('Successful login for: ' + response.name);
-          document.getElementById('profile').innerHTML ='Welcome ' + response.name + ' thanks for logging in!';
-        });
-      }
-
       function setButtons(logged){
-        if(document.getElementById('chat').style.display == "none" && !logged){
+        if(logged){
           document.getElementById('chat').style.display = 'block';
         }
         else{
@@ -129,13 +113,13 @@ head
       |         
       .carousel-inner(role='listbox')
         .carousel-item.active
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+          img.d-block.img-fluid(src='https://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
         |             
         .carousel-item
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+          img.d-block.img-fluid(src='https://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
         |             
         .carousel-item
-          img.d-block.img-fluid(src='http://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
+          img.d-block.img-fluid(src='https://www.facenet.org/wp-content/themes/executive/assets/images/header.jpg', alt='First slide')
       |         
       a.carousel-control-prev(href='#carouselLogo', role='button', data-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
