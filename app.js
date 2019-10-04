@@ -8,7 +8,6 @@ var logger = require('morgan');
 var socketIO = require('socket.io');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var film = require('./routes/film');
