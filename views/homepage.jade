@@ -63,7 +63,7 @@ head
       }
 
       function statusChangeCallback(response){
-        if(response.status==='connected'){
+        if(response.status=='connected'){
           console.log('Logged in and authenticated');
           setButtons(true);
           testAPI();
@@ -82,7 +82,7 @@ head
       }
 
       function setButtons(logged){
-        if(document.getElementById('chat').style.display == "none" && !logged){
+        if(logged){
           document.getElementById('chat').style.display = 'block';
         }
         else{
