@@ -7,15 +7,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var socketIO = require('socket.io');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var login = require('./routes/login');
-var signup = require('./routes/signup');
-var film = require('./routes/film');
-var films = require('./routes/films');
-var risultato = require('./routes/risultato');
-var tvshow = require('./routes/tvshow');
-var tvresults = require('./routes/tvresults');
+var HP = require('./routes/homepage');
+var home_film = require('./routes/home_film');
+var risultato_film = require('./routes/risultato_film');
+var search_film = require('./routes/search_film');
+var home_tvshow = require('./routes/home_tvshow');
+var risultato_TV = require('./routes/risultato_TV');
+var search_TV = require('./routes/search_TV');
 var chatRouter = require('./routes/chat');
 var app = express();
 
@@ -38,16 +36,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/films', films)
-app.use('/login', login);
-app.use('/signup',signup);
-app.use('/film', film);
-app.use('/risultato', risultato);
-app.use('/tvshow', tvshow);
-app.use('/risultato', risultato);
-app.use('/tvresults', tvresults);
+app.use('/', HP);
+app.use('/search_film', search_film)
+app.use('/home_film', home_film);
+app.use('/risultato_film', risultato_film);
+app.use('/home_tvshow', home_tvshow);
+app.use('/risultato_TV', risultato_TV);
+app.use('/search_TV', search_TV);
 app.use('/chat', chatRouter);  //collegamento file
 
 // catch 404 and forward to error handler

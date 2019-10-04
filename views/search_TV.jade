@@ -28,10 +28,10 @@ head
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
           ul.navbar-nav.ml-auto
             li.nav-item
-              a.nav-link.text-white(href='/film') Film
+              a.nav-link.text-white(href='/home_film') Film
             |                     
             li.nav-item
-              a.nav-link.text-white(href='/tvshow') Serie TV
+              a.nav-link.text-white(href='/home_tvshow') Serie TV
     // Navigation
     h1 Seleziona il tuo Film preferito!
     div
@@ -63,18 +63,18 @@ head
                 .row
                     .col-sm
                         div(class='res')
-                         a(href='/tvresults/:'+id1+'?')
-                            img(src = img1,width = "40%", class='img')
+                         a(href='/risultato_TV/:'+id1+'?')
+                            img(src = img1,width = "50%", height = "75%",class='img')
                             p.tfilm #{fileJson1}
                     .col-sm
                         div(class='res')
-                         a(href='/tvresults/:'+id2+'?')
-                            img(src = img2,width = "40%", class='img')
+                         a(href='/risultato_TV/:'+id2+'?')
+                            img(src = img2,width = "50%", height = "75%",class='img')
                             p.tfilm #{fileJson2}
                     .col-sm
                         div(class='res')
-                         a(href='/tvresults/:'+id3+'?')
-                            img(src = img3,width = "40%", class='img')
+                         a(href='/risultato_TV/:'+id3+'?')
+                            img(src = img3,width = "50%", height = "75%", class='img')
                             p.tfilm #{fileJson3}
         -while(i+1<jsonfile['total_results']/jsonfile['total_pages'])
             -console.log(i)
@@ -89,13 +89,13 @@ head
                 .row
                     .col-sm
                         div(class='res')
-                         a(href='/tvresults/:'+id1+'?')
-                            img(src = img1,width = "40%", class='img')
+                         a(href='/risultato_TV/:'+id1+'?')
+                            img(src = img1,width = "50%",height = "75%", class='img')
                             p.tfilm #{fileJson1}
                     .col-sm
                         div(class='res')
-                         a(href='/tvresults/:'+id2+'?')
-                            img(src = img2,width = "40%", class='img')
+                         a(href='/risultato_TV/:'+id2+'?')
+                            img(src = img2,width = "50%",height = "75%", class='img')
                             p.tfilm #{fileJson2}
                     .col-sm
                     div(class='res')
@@ -110,8 +110,8 @@ head
                 .row
                     .col-sm
                         div(class='res')
-                         a(href='/tvresults/:'+id1+'?')
-                            img(src = img1,width = "40%", class='img')
+                         a(href='/risultato_TV/:'+id1+'?')
+                            img(src = img1,width = "50%", height = "75%",class='img')
                             p.tfilm #{fileJson1}
                     .col-sm
                     div(class='res')
@@ -119,69 +119,3 @@ head
                     div(class='res')
                       br
             -i = i+1
-
-    //div
-      br
-      br
-      br
-      br
-      br
-      br
-      footer.footer.bg-dark.text-white
-        .container.pt-5.pb-2
-          .row
-            .col-md-3.col-lg-4.col-xl-3
-              h4 il trio universitario :P
-              |                     
-              hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-              |                     
-              p
-                | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
-            |                 
-            .col-md-3.col-lg-2.col-xl-2.mx-auto
-              h4 Useful links
-              |                     
-              hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-              |                     
-              p
-                a.text-white(href='#') Home
-              |                     
-              p
-                a.text-white(href='#') About Us
-              |                     
-              p
-                a.text-white(href='#') Services
-              |                     
-              p
-                a.text-white(href='#') Contact
-            |                 
-            .col-md-4.col-lg-3.col-xl-3
-              h4 Contact
-              |                     
-              hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-              |                     
-              p
-                a(href='https://goo.gl/maps/Z6mkUPT3rin')
-                  i.fa.fa-home.mr-3
-                |  Piazzale Aldo Moro 7
-              |                     
-              p
-                i.fa.fa-envelope.mr-3
-                |  plutoboy97@gmail.com
-              |                     
-              p
-                i.fa.fa-phone.mr-3
-                |  + 06 842 569
-        div#sessionStorage
-        // Footer Links
-        hr.bg-white.mx-4.mt-2.mb-1
-        // Copyright
-        .container-fluid
-          p.text-center.m-0.py-1
-            | &copy; 2017 Copyright 
-            a.text-white(href='https://getbootstrap.com/') Bootstrap 4
-        // Copyright
-      // Footer
-      script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')     
-      script(src='//code.jquery.com/jquery-1.11.1.min.js') 
-   

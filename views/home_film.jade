@@ -36,14 +36,14 @@ head
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
           ul.navbar-nav.ml-auto
             li.nav-item
-              a.nav-link.text-white(href='/film') Film
+              a.nav-link.text-white(href='/home_film') Film
             |                     
             li.nav-item
-              a.nav-link.text-white(href='/tvshow') Serie TV
+              a.nav-link.text-white(href='/home_tvshow') Serie TV
     
     #searchbar
     div.container.mt-5
-      form(action = "/film", method='post')
+      form(action = "/home_film", method='post')
         div(class="input-group mb-3")
           input.form-control#filmSearch(type='text', name='nomeFilm', placeholder='Cerca il titolo del film che desideri...', required)
           div.input-group-append
@@ -57,19 +57,19 @@ head
         .col-md-4
           .card(style="width:85%")
             h4.tfilm It - Capitolo due                
-            a#animation_6(href = "/risultato/:474350?")
+            a#animation_6(href = "/risultato_film/:474350?")
              img(src="/images/it2.jpg", width="100%")
         |             
         .col-md-4
           .card(style="width:85%")
             h4.tfilm Forrest Gump
-            a#animation_6(href="/risultato/:13?")
+            a#animation_6(href="/risultato_film/:13?")
              img(src="/images/Forrest.jpg", width="100%")
         |             
         .col-md-4
           .card(style="width:85%")
             h4.tfilm Toy Story 4
-            a#animation_6(href="/risultato/:301528?")
+            a#animation_6(href="/risultato_film/:301528?")
              img(src="/images/TS4.jpg", width="100%")
              
 // Footer
