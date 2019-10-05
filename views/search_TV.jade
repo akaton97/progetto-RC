@@ -21,18 +21,19 @@ head
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
         a.navbar-brand.text-white(href='/') MovieKraken
-        |             
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsHomepage', aria-controls='navbarsHomepage', aria-expanded='false', aria-label='Toggle navigation')
-          span.navbar-toggler-icon
-        |             
+        |                        
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto
+          ul.navbar-nav.ml-auto            
             li.nav-item
-              a.nav-link.text-white(href='/home_film') Film
+              #film
+                a.nav-link.text-white(href='/home_film') Film
+              
             |                     
             li.nav-item
-              a.nav-link.text-white(href='/home_tvshow') Serie TV
-    // Navigation
+              #tvshow
+                a.nav-link.text-white(href='/home_tvshow') Serie TV
+            
+    // ERROR
     h1 Seleziona il tuo Film preferito!
     div
      -if(jsonfile['total_results'] == '0')
@@ -42,20 +43,21 @@ head
         br
         h5 NESSUN RISULTATO TROVATO.
         h5  
-          a(href="/tvshow") Ritorna alla pagina delle serie TV
+          a(href="/home_tvshow") Ritorna alla pagina delle serie TV
      -else
         -console.log(jsonfile)
         -for(i = 0; i+2 < jsonfile['total_results']/jsonfile['total_pages']; i+=3)
             - var fileJson1 = jsonfile['results'][i]['name'];
             - var img1 = (jsonfile['results'][i]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+jsonfile['results'][i]['poster_path'] : "/images/no_locandina.webp"
             - var id1 = jsonfile['results'][i]['id'];
+
             - var fileJson2 = jsonfile['results'][i+1]['name'];
             - var img2 = (jsonfile['results'][i+1]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+jsonfile['results'][i+1]['poster_path'] : "/images/no_locandina.webp"
             - var id2 = jsonfile['results'][i+1]['id'];
+
             - var fileJson3 = jsonfile['results'][i+2]['name'];
             - var img3 = (jsonfile['results'][i+2]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+jsonfile['results'][i+2]['poster_path'] : "/images/no_locandina.webp"
             - var id3 = jsonfile['results'][i+2]['id'];
-
             br
             br
             br
@@ -76,11 +78,13 @@ head
                          a(href='/risultato_TV/:'+id3+'?')
                             img(src = img3,width = "50%", height = "75%", class='img')
                             p.tfilm #{fileJson3}
+
         -while(i+1<jsonfile['total_results']/jsonfile['total_pages'])
             -console.log(i)
             - var fileJson1 = jsonfile['results'][i]['name'];
             - var img1 = (jsonfile['results'][i]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+jsonfile['results'][i]['poster_path'] : "/images/no_locandina.webp"
             - var id1 = jsonfile['results'][i]['id'];
+
             - var fileJson2 = jsonfile['results'][i+1]['name'];
             - var img2 = (jsonfile['results'][i+1]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+jsonfile['results'][i+1]['poster_path'] : "/images/no_locandina.webp"
             - var id2 = jsonfile['results'][i+1]['id'];
@@ -99,8 +103,9 @@ head
                             p.tfilm #{fileJson2}
                     .col-sm
                     div(class='res')
-                      br
+                    br
             -i = i+2;
+
         -while(i<jsonfile['total_results']/jsonfile['total_pages'])
             - var fileJson1 = jsonfile['results'][i]['name'];
             - var img1 = (jsonfile['results'][i]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+jsonfile['results'][i]['poster_path'] : "/images/no_locandina.webp"
@@ -117,5 +122,5 @@ head
                     div(class='res')
                     .col-sm
                     div(class='res')
-                      br
-            -i = i+1
+                    br
+            -i = i+1;

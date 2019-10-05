@@ -24,16 +24,9 @@ head
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
         a.navbar-brand.text-white(href='/') MovieKraken
-        |             
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsHomepage', aria-controls='navbarsHomepage', aria-expanded='false', aria-label='Toggle navigation')
-          span.navbar-toggler-icon
-        |             
+        |                        
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto
-            li.nav-item
-              #fb-root
-              #fb-button.fb-login-button(style='border: none', onlogin='checkLoginState()', data-size='small', data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')   
-            |             
+          ul.navbar-nav.ml-auto            
             li.nav-item
               #film
                 a.nav-link.text-white(href='/home_film') Film
@@ -70,17 +63,17 @@ head
                       input(type='submit', class='button is-success sfbg', value='Invia', style='background-color: black;')
                       
         script.
-            const socket = io();
+            const socket = io();  //"io" is a Socket.IO server
             $('form').submit(function() {
               const name = $('#name').val();
               const message = $('#message').val();
 
-              socket.emit('chatter', `${name} : ${message}`);
+              socket.emit('chatter', `${name} : ${message}`);  //This method is responsible for sending messages
               $('#message').val('');
               return false; 
             });
 
-            socket.on('chatter', function(message) {
+            socket.on('chatter', function(message) {  //This method is responsible for listening for incoming messages
               $('#chat-messages').append($('<li>').text(message));
             });
         

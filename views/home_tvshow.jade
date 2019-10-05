@@ -29,18 +29,18 @@ head
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
         a.navbar-brand.text-white(href='/') MovieKraken
-        |             
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsHomepage', aria-controls='navbarsHomepage', aria-expanded='false', aria-label='Toggle navigation')
-          span.navbar-toggler-icon
-        |             
+        |                        
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto
+          ul.navbar-nav.ml-auto            
             li.nav-item
-              a.nav-link.text-white(href='/home_film') Film
+              #film
+                a.nav-link.text-white(href='/home_film') Film
+              
             |                     
             li.nav-item
-              a.nav-link.text-white(href='/home_tvshow') Serie TV
-
+              #tvshow
+                a.nav-link.text-white(href='/home_tvshow') Serie TV
+            
     //rimando i dati raccolti al router della pagina corrente
     #searchbar
     div.container.mt-5
