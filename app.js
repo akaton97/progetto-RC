@@ -1,4 +1,4 @@
-'use strict';
+'use strict';  //controllo variabili non dichiarate
 
 var createError = require('http-errors');
 var express = require('express');
@@ -23,7 +23,7 @@ var APP_PORT = process.env.PORT || 3000
 const server = app.listen(APP_PORT, () => {
   console.log(`App running on port ${APP_PORT}`);
 })
-const io = socketIO(server);
+const io = socketIO(server);  //formazione WebSocket
 //FINE roba sulla socket
 
 // view engine setup
