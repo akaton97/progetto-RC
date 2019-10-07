@@ -21,7 +21,7 @@ head
     |     
     script(src='https://connect.facebook.net/en_US/sdk.js', async='', defer='')
     |     
-    script(async='', defer='', crossorigin='anonymous', src='https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
+    script(async='', defer='', crossorigin='anonymous', src='https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v4.0')
     |    
     link(rel='shortcut icon', href='/images/logo.jpg')    
     // sweet alert    
@@ -29,36 +29,6 @@ head
     
      // FB-ASINC-INIT 
     script.
-      var accessToken;
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1159693734481176',
-          cookie     : true,
-          xfbml      : true,
-          version    : 'v4.0'
-        });
-          
-        FB.AppEvents.logPageView();   
-          
-      };
-
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-        });
-      
-      function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-        });
-      }
 
       function statusChangeCallback(response){
         if(response.status==='connected'){
@@ -70,6 +40,33 @@ head
           setButtons(false);
         }
       }
+
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+        });
+      }
+
+      window.fbAsyncInit = function() {
+        window.FB.init({
+          appId      : '1159693734481176',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v4.0'
+        });
+      }
+
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+      
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
 
       function setButtons(logged){
         if(logged){
@@ -124,7 +121,7 @@ head
     
     br
     // Card
-    div.container.container.mt-4.mb-5
+    div.container.container.mt-5.mb-5
       hr.bg-dark.mb-4.w-25
       |       
       .row 
