@@ -63,7 +63,7 @@ head
                       input(type='submit', class='button is-success sfbg', value='Invia', style='background-color: black;')
                       
         script.
-            const socket = io();  //"io" is a Socket.IO server
+            const socket = io(); 
             $('form').submit(function() {
               const name = $('#name').val();
               const message = $('#message').val();
