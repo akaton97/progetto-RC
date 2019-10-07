@@ -4,7 +4,9 @@ head
     link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', rel='stylesheet')
     |     
     script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-    |     
+    |         
+    script(src='https://apis.google.com/js/platform.js', async='', defer='')
+    |         
     script(src='//code.jquery.com/jquery-1.11.1.min.js')
     |     
     meta(charset='UTF-8')
@@ -27,6 +29,19 @@ head
     // sweet alert    
     body.sfbg(onload= "checkLoginState()")
     
+
+     // GOOGLE OAUTH
+     meta(name='google-signin-client_id', content='620881066128-o3mjoegv64viebt4s5liiqv2j90foa3p.apps.googleusercontent.com')
+     script.
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      }
+
+
      // FB-ASINC-INIT      
   
     script(async='', defer='', src='https://connect.facebook.net/en_US/sdk.js')
@@ -99,7 +114,22 @@ head
           span.navbar-toggler-icon
         |             
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto             
+          ul.navbar-nav.ml-auto            
+            li.nav-item
+            a.nav-link.text-white
+              .g-signin2(data-onsuccess='onSignIn')
+            | 
+            li.nav-item
+            a.nav-link.text-white
+                a(href='#', onclick='signOut();') Sign out
+                script.
+                      function signOut() {
+                      var auth2 = gapi.auth2.getAuthInstance();
+                      auth2.signOut().then(function () {
+                      console.log('User signed out.');
+                      });
+                      }
+            |     
             li.nav-item
             a.nav-link.text-white
               #fb-root
