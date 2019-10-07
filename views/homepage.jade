@@ -21,45 +21,29 @@ head
     |     
     script(src='https://connect.facebook.net/en_US/sdk.js', async='', defer='')
     |     
-    script(async='', defer='', crossorigin='anonymous', src='https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v4.0')
+    script(async='', defer='', crossorigin='anonymous', src='http://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.2')
     |    
     link(rel='shortcut icon', href='/images/logo.jpg')    
     // sweet alert    
     body.sfbg(onload= "checkLoginState()")
     
-     // FB-ASINC-INIT 
+     // FB-ASINC-INIT      
+  
+    script(async='', defer='', src='https://connect.facebook.net/en_US/sdk.js')
+
     script.
-
-      function statusChangeCallback(response){
-        if(response.status==='connected'){
-          console.log('Logged in and authenticated');
-          accessToken = response.authResponse.accessToken;
-          setButtons(true);
-        }else{
-          console.log('Not authenticated');
-          setButtons(false);
-        }
-      }
-
-      function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-        });
-      }
-
       window.fbAsyncInit = function() {
-        window.FB.init({
+        FB.init({
           appId      : '1159693734481176',
           cookie     : true,
           xfbml      : true,
           version    : 'v4.0'
         });
-      }
+          
+        FB.AppEvents.logPageView();   
+          
+      };
 
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-      
       (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
@@ -68,8 +52,37 @@ head
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
 
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+          });
+      }
+
+      function statusChangeCallback(response){
+        if(response.status==='connected'){
+          console.log('Logged in and authenticated');
+          setButtons(true);
+          testAPI();
+        }else{
+          console.log('Not authenticated');
+          setButtons(false);
+        }
+      }
+
+      function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me?fields=name,email', function(response) {
+          console.log('Successful login for: ' + response.name);
+          document.getElementById('profile').innerHTML ='Welcome ' + response.name + ' thanks for logging in!';
+        });
+      }
+
       function setButtons(logged){
-        if(logged){
+        if(document.getElementById('chat').style.display == "none" && !logged){
           document.getElementById('chat').style.display = 'block';
         }
         else{
@@ -93,19 +106,18 @@ head
                #fb-button.fb-login-button(data-width='100', data-size='small', onlogin = "checkLoginState()", data-button-type='login_with', data-auto-logout-link='true', data-use-continue-as='true')
             |             
             li.nav-item
-              #home_film
-                a.nav-link.text-white(href='/home_film') Film
+              #film
+                a.nav-link.text-white(href='/film') Film
             |                     
             li.nav-item
-              #home_tvshow
-                a.nav-link.text-white(href='/home_tvshow') Serie TV
+              #tvshow
+                a.nav-link.text-white(href='/tvshow') Serie TV
             |                     
             li.nav-item
               #chat
                 a.nav-link.text-white(href='/chat') Chat  
             | 
-
-
+            
     style.
       #title {
         text-align: center;
@@ -118,23 +130,21 @@ head
       #br {
         margin-top: 1.1%;
       }
-    
-    br
     // Card
-    div.container.container.mt-5.mb-5
+    div.container.container.mt-4.mb-5
       hr.bg-dark.mb-4.w-25
       |       
       .row 
         .col-md-4#box
           .card
             h4.tfilm#title Film             
-            a#animation_6(href = "/home_film")
+            a#animation_6(href = "/film")
              img(src="/images/venom.jpg", width="100%")
         |             
         .col-md-4#br
           .card
             h4.tfilm#title Serie TV
-            a#animation_6(href="/home_tvshow")
+            a#animation_6(href="/tvshow")
              img(src="/images/bb.jpg", width="100%")
  
 // Footer
