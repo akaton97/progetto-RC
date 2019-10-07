@@ -31,14 +31,25 @@ head
     
 
      // GOOGLE OAUTH
-     meta(name='google-signin-client_id', content='620881066128-o3mjoegv64viebt4s5liiqv2j90foa3p.apps.googleusercontent.com')
+     meta(name='google-signin-client_id', content='620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com')
+     
      script.
       function onSignIn(googleUser) {
+        console.log("hello")
         var profile = googleUser.getBasicProfile();
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      }
+
+
+      function signOut() {
+      console.log("adieu")
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+        });
       }
 
 
@@ -121,14 +132,7 @@ head
             | 
             li.nav-item
             a.nav-link.text-white
-                a(href='#', onclick='signOut();') Sign out
-                script.
-                      function signOut() {
-                      var auth2 = gapi.auth2.getAuthInstance();
-                      auth2.signOut().then(function () {
-                      console.log('User signed out.');
-                      });
-                      }
+                a(href='#', onclick='signOut();') Sign Out
             |     
             li.nav-item
             a.nav-link.text-white
@@ -137,11 +141,11 @@ head
             |             
             li.nav-item
               #film
-                a.nav-link.text-white(href='/film') Film
+                a.nav-link.text-white(href='/home_film') Film
             |                     
             li.nav-item
               #tvshow
-                a.nav-link.text-white(href='/tvshow') Serie TV
+                a.nav-link.text-white(href='/home_tvshow') Serie TV
             |                     
             li.nav-item
               #chat
@@ -168,13 +172,13 @@ head
         .col-md-4#box
           .card
             h4.tfilm#title Film             
-            a#animation_6(href = "/film")
+            a#animation_6(href = "/home_film")
              img(src="/images/venom.jpg", width="100%")
         |             
         .col-md-4#br
           .card
             h4.tfilm#title Serie TV
-            a#animation_6(href="/tvshow")
+            a#animation_6(href="/home_tvshow")
              img(src="/images/bb.jpg", width="100%")
  
 // Footer

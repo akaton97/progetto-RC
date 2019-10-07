@@ -23,7 +23,15 @@ head
         a.navbar-brand.text-white(href='/') MovieKraken
         |                        
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto            
+          ul.navbar-nav.ml-auto   
+            li.nav-item
+            a.nav-link.text-white
+              .g-signin2(data-onsuccess='onSignIn')
+            | 
+            li.nav-item
+            a.nav-link.text-white
+                a(href='#', onclick='signOut();') Sign Out
+            |              
             li.nav-item
               #film
                 a.nav-link.text-white(href='/home_film') Film
