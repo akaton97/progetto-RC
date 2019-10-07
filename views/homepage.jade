@@ -29,6 +29,7 @@ head
     
      // FB-ASINC-INIT 
     script.
+      var accessToken;
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '1159693734481176',
@@ -49,6 +50,10 @@ head
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
 
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+        });
+      
       function checkLoginState() {
         FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
@@ -58,8 +63,9 @@ head
       function statusChangeCallback(response){
         if(response.status==='connected'){
           console.log('Logged in and authenticated');
+          accessToken = response.authResponse.accessToken;
           setButtons(true);
-        }else if(response.status==='not connected'){
+        }else{
           console.log('Not authenticated');
           setButtons(false);
         }
