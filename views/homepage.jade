@@ -55,6 +55,10 @@ head
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         document.getElementById('signout').style.display = 'block';
         document.getElementById('signin').style.display = 'none';
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
       }
 
 
