@@ -48,12 +48,13 @@ head
       function onSignIn(googleUser) {
         console.log("hello")
         var profile = googleUser.getBasicProfile();
-        console.log('Signed: '+GoogleAuth.isSignedIn.get());
+        //console.log('Signed: '+GoogleAuth.isSignedIn.get());
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         document.getElementById('signout').style.display = 'block';
+        document.getElementById('chat').style.display = 'block';
         document.getElementById('signin').style.display = 'none';
 
         // The ID token you need to pass to your backend:
@@ -68,6 +69,7 @@ head
       auth2.signOut().then(function () {
         console.log('User signed out.');
         document.getElementById('signout').style.display = 'none';
+        document.getElementById('chat').style.display = 'none';
         document.getElementById('signin').style.display = 'block';
         });
       }
@@ -117,6 +119,8 @@ head
       #br {
         margin-top: 1.1%;
       }
+
+    br
     // Card
     div.container.container.mt-4.mb-5
       hr.bg-dark.mb-4.w-25
