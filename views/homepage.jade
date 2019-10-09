@@ -23,6 +23,10 @@ head
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     |     
+    link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', rel='stylesheet')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+
     link(rel='shortcut icon', href='/images/logo.jpg')    
     body.sfbg
     
@@ -43,10 +47,12 @@ head
       
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
+        console.log('Image URL: ' + profile.getImageUrl());
         sessionStorage = []
         sessionStorage.setItem("profile",profile)
         $("#signout").show()
         $("#signin").hide()
+        $("#signin2").hide()
         $("#chat").show()
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
@@ -61,6 +67,7 @@ head
         $("#signout").hide()
         $("#chat").hide()
         $("#signin").show()
+        $("#signin2").show()
         });
       }
       
@@ -73,28 +80,33 @@ head
           span.navbar-toggler-icon
         |             
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto            
-            li.nav-item
-              #signin
-                .g-signin2(data-onsuccess='onSignIn')
-            | 
-            li.nav-item
-              #signout
-                a.nav-link.text-white(href='#', onclick='signOut();') Sign Out
-            |             
+          ul.navbar-nav.ml-auto  
+            |  
             li.nav-item
               #film
                 a.nav-link.text-white(href='/home_film') Film
-            |                     
-            li.nav-item
+            |                   
+            li.nav-item   
               #tvshow
                 a.nav-link.text-white(href='/home_tvshow') Serie TV
-            |                     
+            |                                             
+            li.nav-item.submenu.dropdown
+              a.nav-link.text-white.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Login
+              ul.dropdown-menu  
+                li.nav-item
+                  #signout
+                    a.so(href='#', onclick='signOut();') Sign Out
+
+                li.nav-item.B
+                  a#signin Accedi con Google
+                
+                li.nav-item
+                  #signin2.si
+                    .g-signin2(data-onsuccess='onSignIn')
+            |                 
             li.nav-item
               #chat
                 a.nav-link.text-white(href='/chat') Chat  
-            | 
-            
     style.
       #title {
         text-align: center;
@@ -109,10 +121,11 @@ head
       }
       #chat{
         display: none;
-      }
+      }     
       #signout{
         display: none;
       }
+
     br
     // Card
     div.container.container.mt-4.mb-5
@@ -177,8 +190,4 @@ footer.footer.bg-dark.text-white
           a.text-white(href='https://getbootstrap.com/') MK
       // Copyright
     // Footer
-    script(src='/javascripts/registr.js')
-       gapi.load('auth2', function() {
-          /* Ready. Make a call to gapi.auth2.init or some other API */
-        });
-      }
+

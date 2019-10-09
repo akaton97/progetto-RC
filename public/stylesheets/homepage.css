@@ -43,3 +43,25 @@
   background-color: black;
   background-size: contain
 }
+
+.si {
+    margin-top: 5%;
+    margin-left: 12%;
+}
+
+.B {
+    color: black;   
+    margin-left: 8%;
+}
+
+.so {
+    color: black;
+    margin-left: 30%;
+    text-decoration: none;
+}
+
+.so:hover {
+    color: black;
+    margin-left: 30%;
+    text-decoration: none;
+}
