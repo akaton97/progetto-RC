@@ -8,7 +8,11 @@ head
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     |     
     link(href='/stylesheets/homepage.css', rel='stylesheet', type='text/css')
-    |                  
+    |          
+    script(src='https://apis.google.com/js/platform.js', async='', defer='')
+    |         
+    script(src='https://apis.google.com/js/platform.js?onload=init', async='', defer='')
+    |                          
     // sweet alert    
     meta(http-equiv='Content-Type', const='text/html;charset=UTF-8')
     link(href='https://fonts.googleapis.com/css?family=Comfortaa', rel='stylesheet', type='text/css')
@@ -19,7 +23,9 @@ head
     title MovieKraken | Chat
     link(rel='shortcut icon', href='/images/logo.jpg')
     body.sfbg
-        
+
+     meta(name='google-signin-client_id', content='620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com')
+    
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -35,7 +41,21 @@ head
             li.nav-item
               #tvshow
                 a.nav-link.text-white(href='/home_tvshow') Serie TV
-            |                     
+            |                                                             
+            li.nav-item.submenu.dropdown
+              a.nav-link.text-white.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Login
+              ul.dropdown-menu  
+                li.nav-item
+                  #signout
+                    a.so(href='#', onclick='signOut();') Sign Out
+
+                li.nav-item.B
+                  a#signin Accedi con Google
+                
+                li.nav-item
+                  #signin2.si
+                    .g-signin2(data-onsuccess='onSignIn')
+            |                 
 
     style.
       #ch {
@@ -56,13 +76,47 @@ head
                 form
                   .field.has-addons
                     p.control
-                      input(type='text', class='input', value='Lorenzo', id='name')
+                      input(type='text', class='input',value = "Lorenzo", id='name' readonly)
                     p.control.is-expanded
                       input(type='text', class='input', placeholder='Digita qualcosa...', id='message')
                     p.control
                       input(type='submit', class='button is-success sfbg', value='Invia', style='background-color: black;')
                       
         script.
+            function init() {
+              gapi.load('auth2', function() {
+                /* Ready. Make a call to gapi.auth2.init or some other API */
+              })
+            }
+            var params = {
+              client_id: '620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com'
+            }
+            gapi.auth2.init(params);
+            
+            function onSignIn(googleUser) {
+              var profile = googleUser.getBasicProfile();
+              console.log('Image URL: ' + profile.getImageUrl());
+              sessionStorage = []
+              sessionStorage.setItem("profile",profile)
+              $("#signout").show()
+              $("#signin").hide()
+              $("#signin2").hide()
+              // The ID token you need to pass to your backend:
+              var id_token = googleUser.getAuthResponse().id_token;
+              console.log("ID Token: " + id_token);
+            }
+
+            function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+              console.log('User signed out.');
+              sessinStorage = []
+              $("#signout").hide()
+              $("#signin").show()
+              $("#signin2").show()
+              });
+            }
+            
             const socket = io(); 
             $('form').submit(function() {
               const name = $('#name').val();
@@ -76,6 +130,8 @@ head
             socket.on('chatter', function(message) {  //This method is responsible for listening for incoming messages
               $('#chat-messages').append($('<li>').text(message));
             });
+            
+            
         
 // Footer
 footer.footer.bg-dark.text-white

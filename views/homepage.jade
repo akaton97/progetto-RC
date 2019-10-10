@@ -30,17 +30,6 @@ head
      meta(name='google-signin-client_id', content='620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com')
 
      script.
-
-      function init() {
-        gapi.load('auth2', function() {
-          /* Ready. Make a call to gapi.auth2.init or some other API */
-        })
-      }
-
-      var params = {
-        client_id: '620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com'
-      }
-      gapi.auth2.init(params);
       
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
@@ -53,14 +42,14 @@ head
         $("#chat").show()
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
+        console.log("ID Token: " + id_token);        
       }
 
       function signOut() {
       var auth2 = gapi.auth2.getAuthInstance();
       auth2.signOut().then(function () {
         console.log('User signed out.');
-        sessinStorage = []
+        sessionStorage = []
         $("#signout").hide()
         $("#chat").hide()
         $("#signin").show()
