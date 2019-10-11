@@ -104,6 +104,9 @@ app.use(function(req, res, next){
   next();
 });
 
+// Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 //connessione con la socket
 io.on('connection', (socket) => {
   console.log('a user connected')

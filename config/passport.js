@@ -1,18 +1,19 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
+
 //keys
-const google_clientID = "620881066128-o3mjoegv64viebt4s5liiqv2j90foa3p.apps.googleusercontent.com"
-const google_clientSecret = "Ng5qK3AXu0MFFzHbiqWSTbwp";
+const keys = require("./keys")
 
 const User = mongoose.model('users');
 
-module.exports = function(passport){    
+module.exports = function(passport){  
+
     //access with google
     passport.use('google',
         new GoogleStrategy({
-        clientID: google_clientID,
-        clientSecret: google_clientSecret,
-        callbackURL:'/auth/google/callback',
+        clientID: keys.google_clientID,
+        clientSecret: keys.google_clientSecret,
+        callbackURL:'https://localhost:3000/login/google',
         proxy: true
         }, (accessToken, refreshToken, profile, done) => {
 
@@ -35,10 +36,10 @@ module.exports = function(passport){
             new User(newUser)
                 .save()
                 .then(user => done(null, user));
-            }
+                }
+            })
         })
-    })
-)
+    )
 
     passport.serializeUser(function(user, done) {
         done(null, user._id);
