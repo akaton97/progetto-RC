@@ -5,8 +5,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');         //needs for flash
 var socketIO = require('socket.io');                //for websocket chat
 const mongoose = require('mongoose');               //database
+const flash = require('connect-flash');             //notification messages
 const passport = require('passport');               //for authentication
 
 //get for pages
@@ -20,6 +22,20 @@ var search_TV = require('./routes/search_TV');
 var chatRouter = require('./routes/chat');
 var authRouter = require('./routes/login');
 var app = express();
+
+//flash middleware
+app.use(flash());
+
+//espress session middleware
+app.use(session({
+  secret: 'porcoPEO#',
+  resave: true,
+  saveUninitialized: true
+}));
+
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 //load user model
 require('./models/User');
