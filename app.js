@@ -38,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //load user model
-require('./models/User');
+require('./models/user');
 
 //Passport config
 require('./config/passport')(passport);
