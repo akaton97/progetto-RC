@@ -18,6 +18,7 @@ var home_tvshow = require('./routes/home_tvshow');
 var risultato_TV = require('./routes/risultato_TV');
 var search_TV = require('./routes/search_TV');
 var chatRouter = require('./routes/chat');
+var authRouter = require('./routes/login');
 var app = express();
 
 //load user model
@@ -49,9 +50,8 @@ app.use('/risultato_film', risultato_film);
 app.use('/home_tvshow', home_tvshow);
 app.use('/risultato_TV', risultato_TV);
 app.use('/search_TV', search_TV);
-app.use('/chat', chatRouter);  //collegamento file
-app.use(passport.initialize()); // Used to initialize passport
-app.use(passport.session()); // Used to persist login sessions
+app.use('/chat', chatRouter); 
+app.use('/login', authRouter); 
 
 //Passport config
 require('./config/passport')(passport);

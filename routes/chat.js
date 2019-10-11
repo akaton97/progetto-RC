@@ -1,10 +1,10 @@
 var express = require("express");
 var router = express.Router();
 
-const {ensureAuthenticated} = require('../javascript/authControl');
+const {ensureAuthenticated} = require('../public/javascript/authControl');
 
-router.get("/",  ensureAuthenticated, function(req,res) {
-	res.render("chat", {title: "Express" });
+router.get('/', ensureAuthenticated, (req,res) => {
+    res.render('chat');
 });
 
 module.exports = router;
