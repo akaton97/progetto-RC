@@ -60,6 +60,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', HP);
+app.use('/homepage', HP);
 app.use('/search_film', search_film)
 app.use('/home_film', home_film);
 app.use('/risultato_film', risultato_film);
