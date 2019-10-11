@@ -1,29 +1,18 @@
 doctype html
 html
 head
-    link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', rel='stylesheet')
-    |         
-    script(src='https://apis.google.com/js/platform.js', async='', defer='')
-    |         
-    script(src='https://apis.google.com/js/platform.js?onload=init', async='', defer='')
-    |         
-    script(src='//code.jquery.com/jquery-1.11.1.min.js')
-    |     
-    meta(charset='UTF-8')
-    |     
-    meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    |     
-    link(href='/stylesheets/homepage.css', rel='stylesheet', type='text/css')
-    |     
-    link(rel='shortcut icon', href='window.location.reload(true);/images/logo.jpg')
-    |     
-    title MovieKraken | HomePage
-    |     
+    link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', rel='stylesheet')     
+    script(src='https://apis.google.com/js/platform.js', async='', defer='')    
+    script(src='https://apis.google.com/js/platform.js?onload=init', async='', defer='')         
+    script(src='//code.jquery.com/jquery-1.11.1.min.js')    
+    meta(charset='UTF-8')    
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')    
+    link(href='/stylesheets/homepage.css', rel='stylesheet', type='text/css')   
+    link(rel='shortcut icon', href='window.location.reload(true);/images/logo.jpg')   
+    title MovieKraken | HomePage   
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
-    |     
     script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-
     link(rel='shortcut icon', href='/images/logo.jpg')    
     body.sfbg
     
@@ -35,7 +24,6 @@ head
         var profile = googleUser.getBasicProfile();
         console.log('Image URL: ' + profile.getImageUrl());
         sessionStorage = []
-        sessionStorage.setItem("profile",profile)
         $("#signout").show()
         $("#signin").hide()
         $("#signin2").hide()

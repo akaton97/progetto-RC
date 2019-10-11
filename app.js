@@ -1,11 +1,12 @@
 'use strict';  //controllo variabili non dichiarate
-
+//dependencies
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var socketIO = require('socket.io');
+const passport = require('passport');
 
 var HP = require('./routes/homepage');
 var home_film = require('./routes/home_film');
@@ -16,6 +17,9 @@ var risultato_TV = require('./routes/risultato_TV');
 var search_TV = require('./routes/search_TV');
 var chatRouter = require('./routes/chat');
 var app = express();
+
+//load user model
+require('./models/User');
 
 //INIZIO parte per la socket
 var APP_PORT = process.env.PORT || 3000
@@ -44,6 +48,11 @@ app.use('/home_tvshow', home_tvshow);
 app.use('/risultato_TV', risultato_TV);
 app.use('/search_TV', search_TV);
 app.use('/chat', chatRouter);  //collegamento file
+app.use(passport.initialize()); // Used to initialize passport
+app.use(passport.session()); // Used to persist login sessions
+
+//Passport config
+require('./config/passport')(passport);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
