@@ -1,5 +1,6 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
+//keys
 const google_clientID = "620881066128-o3mjoegv64viebt4s5liiqv2j90foa3p.apps.googleusercontent.com"
 const google_clientSecret = "Ng5qK3AXu0MFFzHbiqWSTbwp";
 

@@ -5,9 +5,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var socketIO = require('socket.io');
-const passport = require('passport');
+var socketIO = require('socket.io');                //for websocket chat
+const mongoose = require('mongoose');               //database
+const passport = require('passport');               //for authentication
 
+//get for pages
 var HP = require('./routes/homepage');
 var home_film = require('./routes/home_film');
 var risultato_film = require('./routes/risultato_film');
@@ -53,6 +55,10 @@ app.use(passport.session()); // Used to persist login sessions
 
 //Passport config
 require('./config/passport')(passport);
+
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -82,40 +82,7 @@ head
                       input(type='submit', class='button is-success sfbg', value='Invia', style='background-color: black;')
                       
         script.
-            function init() {
-              gapi.load('auth2', function() {
-                /* Ready. Make a call to gapi.auth2.init or some other API */
-              })
-            }
-            var params = {
-              client_id: '620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com'
-            }
-            gapi.auth2.init(params);
-            
-            function onSignIn(googleUser) {
-              var profile = googleUser.getBasicProfile();
-              console.log('Image URL: ' + profile.getImageUrl());
-              sessionStorage = []
-              sessionStorage.setItem("profile",profile)
-              $("#signout").show()
-              $("#signin").hide()
-              $("#signin2").hide()
-              // The ID token you need to pass to your backend:
-              var id_token = googleUser.getAuthResponse().id_token;
-              console.log("ID Token: " + id_token);
-            }
-
-            function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-              console.log('User signed out.');
-              sessinStorage = []
-              $("#signout").hide()
-              $("#signin").show()
-              $("#signin2").show()
-              });
-            }
-            
+                  
             const socket = io(); 
             $('form').submit(function() {
               const name = $('#name').val();
