@@ -40,6 +40,9 @@ app.use(passport.session());
 //load user model
 require('./models/User');
 
+//Passport config
+require('./config/passport')(passport);
+
 //INIZIO parte per la socket
 var APP_PORT = process.env.PORT || 3000
 
@@ -70,9 +73,6 @@ app.use('/search_TV', search_TV);
 app.use('/chat', chatRouter); 
 app.use('/login', authRouter); 
 
-//Passport config
-require('./config/passport')(passport);
-
 //passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -94,6 +94,14 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+// Set global vars (for navbar and error messages)
+app.use(function(req, res, next){
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
 });
 
 //connessione con la socket
