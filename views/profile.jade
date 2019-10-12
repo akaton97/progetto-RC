@@ -49,14 +49,9 @@ head
     br
     br            
     .container
-       form
-        .field.has-addons
-        p.control
-            input(type='text', class='input',value = "Nome: #{user.firstName}", size = '50' readonly)
-        p.control
-            input(type='text', class='input',value = "Cognome: #{user.lastName}", size = '50' readonly)
-        p.control.is-expanded
-            input(type='text', class='input', value = "Indirizzo e-mail: #{user.email}", size= '50' readonly)
+     p NOME: #{user.firstName}
+     p COGNOME: #{user.lastName}
+     p E-MAIL: #{user.email}
        
     style.
       #title {
