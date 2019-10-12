@@ -3,7 +3,7 @@ var router = express.Router();
 var request = require("request");
 
 router.get('/', function(req,res) {
-		res.render("home_film", {title: "Express"})
+		res.render("home_film", {user: req.user});
 });
 
 router.post("/", function(req, res) {  //searchbar
@@ -12,11 +12,11 @@ router.post("/", function(req, res) {  //searchbar
 	name +"&include_adult=false";
   request(url, function(err, response, body) {
     if (err) {
-      res.render("home_film", alert("pio"));
+      res.render("home_film", {user: req.user});
     }
     else {
       let fileJson = JSON.parse(body);
-      res.render("search_film", { jsonfile: fileJson});
+      res.render("search_film", { jsonfile: fileJson}, {user: req.user});
     }
   });
 });

@@ -5,7 +5,7 @@ var request = require("request");
 
 
 router.get('/', function(req,res) {
-		res.render("home_tvshow", {title: "Express"})
+		res.render("home_tvshow", {user: req.user});
 });
 
 router.post("/", function(req, res) {  //searchbar
@@ -14,10 +14,10 @@ router.post("/", function(req, res) {  //searchbar
 	name +"&include_adult=false";
   request(url, function(err, response, body) {
     if (err) {
-      res.render("home_tvshow", alert("pio"));
+      res.render("home_tvshow", {user: req.user});
     } else {
       let fileJson = JSON.parse(body);
-      res.render("search_TV", { jsonfile: fileJson});
+      res.render("search_TV", { jsonfile: fileJson}, {user: req.user});
     }
   });
 });
