@@ -24,6 +24,7 @@ var risultato_TV = require('./routes/risultato_TV');
 var search_TV = require('./routes/search_TV');
 var chatRouter = require('./routes/chat');
 var authRouter = require('./routes/auth');
+var profile = require('./routes/profile')
 var app = express();
 
 //flash middleware
@@ -72,6 +73,7 @@ app.use('/risultato_TV', risultato_TV);
 app.use('/search_TV', search_TV);
 app.use('/chat', chatRouter); 
 app.use('/auth', authRouter); 
+app.use('/profile', profile);
 
 //passport middleware
 app.use(passport.initialize());

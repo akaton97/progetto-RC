@@ -6,11 +6,13 @@ const {ensureAuthenticated} = require('../public/javascript/authControl');
 //log-in routes
 router.get('/login', (req,res) =>{
   res.render('login');
+  console.log("benvenuto")
 });
 
 //log-out routes
 router.get('/logout', (req,res) =>{
   req.logout();
+  console.log("logout")
   req.flash('success_msg', 'Logged out')
   res.redirect('/login');
 });
@@ -31,7 +33,7 @@ router.get('/google', passport.authenticate('google',
 //return from authenticate
 router.get('/google/callback',
   passport.authenticate('google', {
-    successRedirect : '/homepage',
+    successRedirect : '/',
     failureRedirect: '/login'
     })
   );

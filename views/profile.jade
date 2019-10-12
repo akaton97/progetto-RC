@@ -9,7 +9,7 @@ head
     meta(http-equiv='X-UA-Compatible', content='ie=edge')    
     link(href='/stylesheets/homepage.css', rel='stylesheet', type='text/css')   
     link(rel='shortcut icon', href='window.location.reload(true);/images/logo.jpg')   
-    title MovieKraken | Login   
+    title MovieKraken | Profile
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
@@ -18,7 +18,7 @@ head
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
-        a.navbar-brand.text-white(href='/homepage') MovieKraken
+        a.navbar-brand.text-white(href='#') MovieKraken
         |             
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsHomepage', aria-controls='navbarsHomepage', aria-expanded='false', aria-label='Toggle navigation')
           span.navbar-toggler-icon
@@ -40,14 +40,33 @@ head
                 
             li.nav-item   
               #signin
-                a.nav-link.text-white(href='/login') login
-.container
-    .row.mb-2
-    .col-md-6.mx-auto
-        .card.card-body
-        a.btn.btn-danger(href='/auth/google')
-            i.fa.fa-google.left
-            |  Log-in with Google
-        a.btn.btn-danger(href='/auth/logout')
-            i.fa.fa-google.left
-            |  Esci
+                a.nav-link.text-white(href='/auth/login') Login
+
+            li.nav-item   
+              #profile
+                a.nav-link.text-white(href='/profile') Profilo 
+    br
+    br
+    br            
+    .container
+        .row
+            p Nome:
+        .row
+            p Cognome:
+        .row
+            p Data di nascita:
+        .row 
+            p Indirizzo e-mail:
+
+    style.
+      #title {
+        text-align: center;
+        font-family: Georgia;
+      }
+      #box {
+        margin-top: 1.1%;
+        margin-left: 15%;
+      }
+      #br {
+        margin-top: 1.1%;
+      }
