@@ -13,7 +13,7 @@ module.exports = function(passport){
         new GoogleStrategy({
         clientID: keys.google_clientID,
         clientSecret: keys.google_clientSecret,
-        callbackURL:'https://localhost:3000/login/google',
+        callbackURL:'/auth/google',
         proxy: true
         }, (accessToken, refreshToken, profile, done) => {
 

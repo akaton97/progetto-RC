@@ -20,7 +20,7 @@ var home_tvshow = require('./routes/home_tvshow');
 var risultato_TV = require('./routes/risultato_TV');
 var search_TV = require('./routes/search_TV');
 var chatRouter = require('./routes/chat');
-var authRouter = require('./routes/login');
+var authRouter = require('./routes/auth');
 var app = express();
 
 //flash middleware
@@ -43,15 +43,6 @@ require('./models/user');
 //Passport config
 require('./config/passport')(passport);
 
-//INIZIO parte per la socket
-var APP_PORT = process.env.PORT || 3000
-
-const server = app.listen(APP_PORT, () => {
-  console.log(`App running on port ${APP_PORT}`);
-})
-const io = socketIO(server);  //formazione WebSocket
-//FINE roba sulla socket
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -71,7 +62,7 @@ app.use('/home_tvshow', home_tvshow);
 app.use('/risultato_TV', risultato_TV);
 app.use('/search_TV', search_TV);
 app.use('/chat', chatRouter); 
-app.use('/login', authRouter); 
+app.use('/auth', authRouter); 
 
 //passport middleware
 app.use(passport.initialize());
@@ -107,6 +98,15 @@ app.use(function(req, res, next){
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+//server listenting on port & websocket
+var APP_PORT = process.env.PORT || 3000
+
+const server = app.listen(APP_PORT, () => {
+  console.log(`App running on port ${APP_PORT}`);
+})
+
+const io = socketIO(server);  //formazione WebSocket
+
 //connessione con la socket
 io.on('connection', (socket) => {
   console.log('a user connected')
@@ -115,5 +115,6 @@ io.on('connection', (socket) => {
     io.emit('chatter', message)
   })
 })
+
 
 module.exports = app;

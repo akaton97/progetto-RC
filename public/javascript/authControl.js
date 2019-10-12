@@ -5,6 +5,6 @@ module.exports = {
         return next();
       }
       req.flash('error_msg', 'Not authorized, log-in first');
-      res.redirect('/login');
+      res.redirect('/auth/login');
     }
   }
