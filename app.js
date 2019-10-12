@@ -11,6 +11,9 @@ const mongoose = require('mongoose');               //database
 const flash = require('connect-flash');             //notification messages
 const passport = require('passport');               //for authentication
 
+//loads Key
+const keys = require("./config/keys")
+
 //get for pages
 var HP = require('./routes/homepage');
 var home_film = require('./routes/home_film');
@@ -42,6 +45,12 @@ require('./models/user');
 
 //Passport config
 require('./config/passport')(passport);
+
+
+//connect to mongoDB
+mongoose.connect(keys.mongoUri, () => {
+    console.log("connected to mongoDB");
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
