@@ -24,9 +24,12 @@ head
           span.navbar-toggler-icon
         |             
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto  
-            
+          ul.navbar-nav.ml-auto
             li.nav-item
+              #profile       
+                     
+                //input(type='text', class='input',value = "#{user.firstName}", id='name' readonly)
+            li.nav-item 
               #film
                 a.nav-link.text-white(href='/home_film') Film
                              

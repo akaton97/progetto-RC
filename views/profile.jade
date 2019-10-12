@@ -49,15 +49,15 @@ head
     br
     br            
     .container
-        .row
-            p Nome:
-        .row
-            p Cognome:
-        .row
-            p Data di nascita:
-        .row 
-            p Indirizzo e-mail:
-
+       form
+        .field.has-addons
+        p.control
+            input(type='text', class='input',value = "Nome: #{user.firstName}", size = '50' readonly)
+        p.control
+            input(type='text', class='input',value = "Cognome: #{user.lastName}", size = '50' readonly)
+        p.control.is-expanded
+            input(type='text', class='input', value = "Indirizzo e-mail: #{user.email}", size= '50' readonly)
+       
     style.
       #title {
         text-align: center;
