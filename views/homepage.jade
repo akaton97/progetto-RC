@@ -40,7 +40,10 @@ head
                 
             li.nav-item   
               #signin
-                a.nav-link.text-white(href='/auth/login') login  
+                a.nav-link.text-white(href='/auth/login') login
+    script.
+        if(user)
+          $("#signin").html("a.nav-link.text-white(href='/auth/logout') logout")  
     style.
       #title {
         text-align: center;
@@ -71,7 +74,6 @@ head
             h4.tfilm#title Serie TV
             a#animation_6(href="/home_tvshow")
              img(src="/images/bb.jpg", width="100%")
- 
 // Footer
 footer.footer.bg-dark.text-white
       // Footer Links

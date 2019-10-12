@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const passport = require('passport');
+const {ensureAuthenticated} = require('../public/javascript/authControl');
 
 //log-in routes
 router.get('/login', (req,res) =>{
@@ -9,10 +10,14 @@ router.get('/login', (req,res) =>{
 
 //log-out routes
 router.get('/logout', (req,res) =>{
-  res.send('logout');
   req.logout();
   req.flash('success_msg', 'Logged out')
   res.redirect('/login');
+});
+
+//user page routes
+router.get('/userPage', ensureAuthenticated, (req,res) =>{
+  res.render('auth/userPage');
 });
 
 //GOOGLE authentication

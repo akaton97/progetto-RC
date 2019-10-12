@@ -39,22 +39,7 @@ head
             |                     
             li.nav-item
               #tvshow
-                a.nav-link.text-white(href='/home_tvshow') Serie TV
-            |                                                             
-            li.nav-item.submenu.dropdown
-              a.nav-link.text-white.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Login
-              ul.dropdown-menu  
-                li.nav-item
-                  #signout
-                    a.so(href='#', onclick='signOut();') Sign Out
-
-                li.nav-item.B
-                  a#signin Accedi con Google
-                
-                li.nav-item
-                  #signin2.si
-                    .g-signin2(data-onsuccess='onSignIn')
-            |                 
+                a.nav-link.text-white(href='/home_tvshow') Serie TV             
 
     style.
       #ch {
@@ -75,14 +60,14 @@ head
                 form
                   .field.has-addons
                     p.control
-                      input(type='text', class='input',value = "Lorenzo", id='name' readonly)
+                      input(type='text', class='input',value = "#{user.firstName}", id='name' readonly)
                     p.control.is-expanded
                       input(type='text', class='input', placeholder='Digita qualcosa...', id='message')
                     p.control
                       input(type='submit', class='button is-success sfbg', value='Invia', style='background-color: black;')
                       
         script.
-                  
+        
             const socket = io(); 
             $('form').submit(function() {
               const name = $('#name').val();
