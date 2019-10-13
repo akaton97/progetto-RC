@@ -27,52 +27,35 @@ head
       }
       
     body.sfbg
-      
-      
-      // GOOGLE OAUTH
-     meta(name='google-signin-client_id', content='620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com')
-     
-    script.
-      function onSignIn(googleUser) {
-        console.log("hello")
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      }
-
-
-      function signOut() {
-      console.log("adieu")
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        console.log('User signed out.');
-        });
-      }
 
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
         a.navbar-brand.text-white(href='/') MovieKraken
         |                        
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto  
-            li.nav-item
-            a.nav-link.text-white
-              .g-signin2(data-onsuccess='onSignIn')
-            | 
-            li.nav-item
-            a.nav-link.text-white
-                a(href='#', onclick='signOut();') Sign Out
-            |               
+          ul.navbar-nav.ml-auto               
             li.nav-item
               #film
                 a.nav-link.text-white(href='/home_film') Film
-              
             |                     
             li.nav-item
               #tvshow
                 a.nav-link.text-white(href='/home_tvshow') Serie TV
+            -if(user)
+              li.nav-item.active
+                a.nav-link(href='/auth/userPage')
+                  i.fa.fa-address-card
+                  |  Hi
+                  span.nav-user  #{user.firstName}
+              li.nav-item.active
+                a.nav-link(href='/auth/logout')
+                  i.fa.fa-sign-out
+                  |  Log-out
+            -else
+              li.nav-item.active
+                  a.nav-link(href='/auth/login')
+                    i.fa.fa-sign-in
+                    |  Log-in
             
     //rimando i dati raccolti al router della pagina corrente
     #searchbar

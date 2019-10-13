@@ -30,11 +30,25 @@ head
             li.nav-item
               #film
                 a.nav-link.text-white(href='/home_film') Film
-              
             |                     
             li.nav-item
               #tvshow
                 a.nav-link.text-white(href='/home_tvshow') Serie TV
+            -if(user)
+              li.nav-item.active
+                a.nav-link(href='/auth/userPage')
+                  i.fa.fa-address-card
+                  |  Hi
+                  span.nav-user  #{user.firstName}
+              li.nav-item.active
+                a.nav-link(href='/auth/logout')
+                  i.fa.fa-sign-out
+                  |  Log-out
+            -else
+              li.nav-item.active
+                  a.nav-link(href='/auth/login')
+                    i.fa.fa-sign-in
+                    |  Log-in
             
     // CSS
     style.

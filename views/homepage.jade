@@ -36,16 +36,23 @@ head
             li.nav-item
               #chat
                 a.nav-link.text-white(href='/chat') Chat
-                
-            li.nav-item   
-              #signin
-                a.nav-link.text-white(href='/auth/login') Login
-            li.nav-item   
-              #profile
-                a.nav-link.text-white(href='/profile') Profilo
-    script.
-        if(user)
-          $("#signin").html("a.nav-link.text-white(href='/auth/logout') logout")  
+            -if(user)
+              li.nav-item.active
+                a.nav-link(href='/auth/userPage')
+                  i.fa.fa-address-card
+                  |  Hi
+                  span.nav-user  #{user.firstName}
+              li.nav-item.active
+                a.nav-link(href='/auth/logout')
+                  i.fa.fa-sign-out
+                  |  Log-out
+            -else
+              li.nav-item.active
+                  a.nav-link(href='/auth/login')
+                    i.fa.fa-sign-in
+                    |  Log-in
+
+        
     style.
       #title {
         text-align: center;
