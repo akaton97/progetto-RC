@@ -28,6 +28,14 @@ head
       
     body.sfbg
 
+     script.
+      function askLogout(){
+        var domanda = confirm("sei sicuro di uscire? Verrai reindirizzato alla homepage")
+        if (domanda){
+          window.location.href = "auth/logout"
+        }
+      }
+
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
         a.navbar-brand.text-white(href='/') MovieKraken
@@ -43,12 +51,15 @@ head
                 a.nav-link.text-white(href='/home_tvshow') Serie TV
             -if(user)
               li.nav-item.active
-                a.nav-link(href='/auth/userPage')
+               #chat
+                a.nav-link.text-white(href='/chat') Chat
+              li.nav-item.active
+                a.nav-link(href='/profile')
                   i.fa.fa-address-card
-                  |  Hi
+                  |  Benvenuto, 
                   span.nav-user  #{user.firstName}
               li.nav-item.active
-                a.nav-link(href='/auth/logout')
+                a.nav-link(onclick = 'askLogout()',href='#')
                   i.fa.fa-sign-out
                   |  Log-out
             -else
