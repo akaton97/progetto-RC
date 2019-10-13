@@ -14,7 +14,7 @@ router.get('/logout', (req,res) =>{
   req.logout();
   console.log("logout")
   req.flash('success_msg', 'Logged out')
-  res.redirect('/login');
+  res.redirect('/auth/login');
 });
 
 //user page routes
