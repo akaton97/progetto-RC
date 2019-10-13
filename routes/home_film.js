@@ -16,7 +16,7 @@ router.post("/", function(req, res) {  //searchbar
     }
     else {
       let fileJson = JSON.parse(body);
-      res.render("search_film", { jsonfile: fileJson}, {user: req.user});
+      res.render("search_film", { jsonfile: fileJson});
     }
   });
 });

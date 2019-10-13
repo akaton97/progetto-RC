@@ -14,6 +14,7 @@ router.get('/:id?', function(req,res) {
 				}
 				else {
 					let fileJson = JSON.parse(body);
+					console.log(fileJson)
 					res.render("risultato_TV", { filmo: fileJson});
 				}
 			});

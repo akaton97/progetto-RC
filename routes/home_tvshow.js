@@ -17,7 +17,7 @@ router.post("/", function(req, res) {  //searchbar
       res.render("home_tvshow", {user: req.user});
     } else {
       let fileJson = JSON.parse(body);
-      res.render("search_TV", { jsonfile: fileJson}, {user: req.user});
+      res.render("search_TV", { jsonfile: fileJson});
     }
   });
 });

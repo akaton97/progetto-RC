@@ -19,7 +19,9 @@ head
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert
-  body.sfbg
+    script.
+    -var backdrop = 'https://image.tmdb.org/t/p/original/'+ filmo['backdrop_path'];
+  body(background = backdrop)
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -53,14 +55,19 @@ head
     // CSS
     style.
      #rb {
-       margin-top: 7.2%;
+       margin-top: 3%;
+       color: white;
+       background-color: black;
      }
      #tit {
        font-family: Georgia;
-       font-weight: 900;
+       font-size: 360%;
+       background-color: black;
+       color: white;
      }
      #pos {
        margin-left: -33.5%;
+       color: white;
      }
     
     //SCRIPT
@@ -75,6 +82,7 @@ script.
   -var rank = filmo['vote_average']
   -var episodes = filmo['number_of_episodes']
   -var seasons = filmo['seasons'];
+  -var status = (filmo['status'] == 'Ended') ? 'Terminata' : 'In Produzione';
   -var creators = "";
 
   -if(filmo['created_by'].length != 0)
@@ -97,6 +105,7 @@ script.
           p CREATORI: #{creators}
           p NUMERO DI EPISODI: #{episodes}
           p VALUTAZIONE MEDIA: #{rank}/10
+          p STATUS: #{status}
 
         //immagine risultato
         .col-md-4.mt-5  
@@ -122,21 +131,21 @@ script.
 
             .container
                    .row
-                       .col
+                       .col#rb
                            p #{nome1}
                            img(src=image1, width = "200px", height = "300px")    
                            p Messa in onda: #{air1}
                            p Episodi: #{ep1}
                            br
                            br
-                       .col
+                       .col#rb
                            p #{nome2}
                            img(src=image2, width = "200px", height = "300px")    
                            p Messa in onda: #{air2}
                            p Episodi: #{ep2}
                            br
                            br
-                       .col
+                       .col#rb
                            p #{nome3}
                            img(src=image3, width = "200px", height = "300px")    
                            p Messa in onda: #{air3}
@@ -158,7 +167,7 @@ script.
 
             .container
                    .row
-                       .col
+                       .col#rb
                            p #{nome1}
                            img(src=image1, width = "200px", height = "300px")    
                            p Messa in onda: #{air1}
@@ -173,10 +182,7 @@ script.
                            br
                            br
             -i+=2
-            -console.log('number '+i)
-            
 -while(i < seasons.length)
-            -console.log(i)
             -var nome1 = seasons[i]['name'];
             -var image1 = (seasons[i]['poster_path'] != null) ?  'https://image.tmdb.org/t/p/w500/'+seasons[i]['poster_path'] : "/images/no_locandina.webp"
             -var air1 = seasons[i]['air_date'];
@@ -184,7 +190,7 @@ script.
 
             .container
                    .row
-                       .col
+                       .col#rb
                            p #{nome1}
                            img(src=image1, width = "200px", height = "300px")    
                            p Messa in onda: #{air1}

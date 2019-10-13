@@ -56,12 +56,15 @@ head
     // CSS
     style.
      #rb {
-       margin-top: 9%;  
+       margin-top: 9%;
+       color: white;
+       background-color: black;
        //7.3%
      }
      #tit {
        font-family: Georgia;
        font-weight: 1100;
+       background-color: black;
      }
     
     // SCRIPT
@@ -77,7 +80,6 @@ script.
   -var rank = filmo['vote_average']
   -var budget = filmo['budget']
   -var durata = filmo['runtime']
-  -var sito = filmo['homepage']
   
   -var genere = "";
   -if(filmo['genres'].length != 0)
@@ -109,9 +111,6 @@ script.
           p VALUTAZIONE MEDIA: #{rank}/10
           p BUDGET: #{budget} $
           p DURATA: #{durata} min.
-          p SITO UFFICIALE: 
-            a(href= "#{sito}")
-             | #{sito}
 
         //immagine risultato
         .col-md-4.mt-5
