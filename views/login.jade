@@ -15,6 +15,16 @@ head
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     link(rel='shortcut icon', href='/images/logo.jpg')    
     body.sfbg
+
+    style.
+      #boxone {
+        background-color: floralwhite;  
+      }
+
+      #space {
+        margin-top: 2.5%;
+      }
+
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       .container
@@ -22,24 +32,61 @@ head
         |             
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsHomepage', aria-controls='navbarsHomepage', aria-expanded='false', aria-label='Toggle navigation')
           span.navbar-toggler-icon
-        |             
+        |            
         .collapse.navbar-collapse(id='navbarsHomepage userlog')
-          ul.navbar-nav.ml-auto  
-            
-            li.nav-item
-              #film
-                a.nav-link.text-white(href='/home_film') Film
-                             
-            li.nav-item   
-              #tvshow
-                a.nav-link.text-white(href='/home_tvshow') Serie TV
-  
-.container
-    .row.mb-2
-    .col-md-6.mx-auto
-        .card.card-body
-        br
-        a.btn.btn-danger(href='/auth/google')
-            i.fa.fa-google.left
-            |  Log-in with Google
-       
+
+.row.mb-3(style='margin-top: 5%;')
+  .col-md-6.mx-auto
+    .card.card-body#boxone
+      h3.text-center Account Login
+      #space
+      a.btn.btn-danger(href='/auth/google')
+        i.fa.fa-google.left
+        |  Login with Google
+
+// Footer
+footer.footer.bg-dark.text-white(style='margin-top: 24.2%;') 
+     // Footer Links
+     .container.pt-5.pb-2
+       .row
+         .col-md-3.col-lg-4.col-xl-3
+           h4 Information
+           |                     
+           hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+           |                     
+           p
+             | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
+         |                 
+         .col-md-3.col-lg-2.col-xl-2.mx-auto
+           h4 Useful links
+           |                     
+           hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+           |                     
+           p
+             a.text-white(href='/') Home
+           |                     
+           p
+             a.text-white(href='#') About Us
+         |                 
+         .col-md-4.col-lg-3.col-xl-3
+           h4 Contact
+           |                     
+           hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
+           |                     
+           p
+             a(href='https://goo.gl/maps/Z6mkUPT3rin')
+               i.fa.fa-home.mr-3.text-white
+             |  Piazzale Aldo Moro 7
+           |                                        
+           p
+             i.fa.fa-phone.mr-3
+             |  + 06 842 569
+     // Footer Links
+     hr.bg-white.mx-4.mt-2.mb-1
+     // Copyright
+     .container-fluid
+       p.text-center.m-0.py-1
+         | &copy; 2019 Copyright 
+         a.text-white(href='https://getbootstrap.com/') MK
+     // Copyright
+   // Footer
