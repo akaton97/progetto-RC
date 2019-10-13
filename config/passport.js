@@ -19,14 +19,15 @@ module.exports = function(passport){
 
         const newUser = {
             googleID: profile.id,
-            firstName: profile.name.givenName,
-            lastName: profile.name.familyName,
+            firstName: profile._json.given_name,
+            lastName: profile._json.family_name,
             email: profile.emails[0].value,
+            picture: profile.photos[0].value,
         }
-        console.log(newUser)
+        console.log(profile)
         // Check for existing user
         User.findOne({
-            email:profile.emails[0].value
+            email:profile.photos[0].value
             }).then(user => {
             if(user){
             // Return user

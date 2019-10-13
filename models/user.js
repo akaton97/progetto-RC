@@ -7,6 +7,7 @@ const UserSchema = new Schema({
   googleID:               { type: String, required: false },
   firstName:              { type: String, required: true },
   lastName:               { type: String, required: true },
+  picture:                { type: String, required: true },
 });
 
 //create the model based on the schema previously defined

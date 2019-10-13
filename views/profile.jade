@@ -30,7 +30,7 @@ head
               #film
                 a.nav-link.text-white(href='/home_film') Film
                              
-            li.nav-item   
+            li.nav-item  
               #tvshow
                 a.nav-link.text-white(href='/home_tvshow') Serie TV
                          
@@ -45,10 +45,12 @@ head
   .col-md-6.mx-auto
     .card.card-body(style='background-color: floralwhite;')
       h3.text-center INFORMAZIONI PERSONALI
-        .container(style='margin-top: 5%;')
+        .container
           p Nome: #{user.firstName}
           p Cognome: #{user.lastName}
-          p Email: #{user.email}
+          p E-Mail: #{user.email}
+          p Immagine del Profilo: 
+            img(src = '#{user.picture}', width = '30%')
        
     style.
       #title {

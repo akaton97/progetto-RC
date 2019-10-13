@@ -19,7 +19,9 @@ head
     |     
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     // sweet alert
-  body.sfbg
+    script.
+    -var backdrop = filmo['backdrop_path']
+  body(background = 'https://image.tmdb.org/t/p/original/'+ backdrop)
 
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
@@ -59,7 +61,7 @@ head
      }
      #tit {
        font-family: Georgia;
-       font-weight: 900;
+       font-weight: 1100;
      }
     
     // SCRIPT
@@ -73,6 +75,9 @@ script.
   -var cast = filmo['production_companies']
   -var data = filmo['release_date']
   -var rank = filmo['vote_average']
+  -var budget = filmo['budget']
+  -var durata = filmo['runtime']
+  -var sito = filmo['homepage']
   
   -var genere = "";
   -if(filmo['genres'].length != 0)
@@ -99,9 +104,14 @@ script.
           p TITOLO ORIGINALE: #{ot}
           p TRAMA: #{trama}
           p DATA DI USCITA: #{data}
-          p PRODUTTORE: #{pcomp}
+          p PRODUZIONE: #{pcomp}
           p GENERE: #{genere}
           p VALUTAZIONE MEDIA: #{rank}/10
+          p BUDGET: #{budget} $
+          p DURATA: #{durata} min.
+          p SITO UFFICIALE: 
+            a(href= "#{sito}")
+             | #{sito}
 
         //immagine risultato
         .col-md-4.mt-5

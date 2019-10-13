@@ -6,7 +6,6 @@ const {ensureAuthenticated} = require('../public/javascript/authControl');
 //log-in routes
 router.get('/login', (req,res) =>{
   res.render('login');
-  console.log("benvenuto")
 });
 
 //log-out routes
