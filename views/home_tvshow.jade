@@ -25,6 +25,12 @@ head
       #imag {
         margin-left: 3%;
       }
+      #margin{
+        border-radius: 0px 0px 20px 20px; 
+      }
+      #margintop{
+        border-radius: 20px 20px 20px 20px; 
+      } 
       
     body.sfbg
 
@@ -75,22 +81,22 @@ head
       |                      
       .row
         .col-md-4 
-          .card(style="width:85%")
+          .card#margintop(style="width:85%")
             h4.tfilm Peaky Blinders
             a#animation_6(href="/risultato_TV/:60574?")
-             img(src="/images/peaky.jpg", width="100%")
+             img#margin(src="/images/peaky.jpg", width="100%")
         |             
         .col-md-4
-          .card(style="width:85%")
+          .card#margintop(style="width:85%")
             h4.tfilm I Simpson                
             a#animation_6(href = "/risultato_TV/:456?")
-              img(src="/images/Simpson.jpg", width="100%") 
+              img#margin(src="/images/Simpson.jpg", width="100%") 
         |             
         .col-md-4
-          .card(style="width:85%")
+          .card#margintop(style="width:85%")
             h4.tfilm Big Bang Theory
             a#animation_6(href="/risultato_TV/:1418?")
-             img(src="/images/bang.jpg", width="100%")
+             img#margin(src="/images/bang.jpg", width="100%")
 
   // Footer
 footer.footer.bg-dark.text-white
