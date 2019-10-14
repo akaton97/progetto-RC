@@ -36,7 +36,7 @@
 .sfbg{
     background-image: url("/images/sfondo.jpg");
     /*background-color: peachpuff;*/
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
 .sfchat {
@@ -64,4 +64,10 @@
     color: black;
     margin-left: 30%;
     text-decoration: none;
+}
+
+.fbg{
+    background-image: url("/images/interstellar.jpg");
+    /*background-color: peachpuff;*/
+    background-size: 100% 100%;
 }

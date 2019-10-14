@@ -77,3 +77,15 @@ transform:scale(1.05,1.05);  /*a fine animazione torna a questa grandezza*/
     background-color: peachpuff;
     background-size: contain
 }
+
+.fbg{
+  background-image: url("/images/interstellar.jpg");
+  /*background-color: peachpuff;*/
+  background-size: cover;
+}
+
+.sbg{
+  background-image: url("/images/dark.jpg");
+  /*background-color: peachpuff;*/
+  background-size: cover;
+}
