@@ -47,25 +47,10 @@ head
             li.nav-item
               #tvshow
                 a.nav-link.text-white(href='/home_tvshow') Serie TV
-            -if(user)
-              li.nav-item
+            | 
+            li.nav-item
                 #chat
                   a.nav-link.text-white(href='/chat') Chat
-              li.nav-item.active
-                a.nav-link(href='/auth/userPage')
-                  i.fa.fa-address-card
-                  |  Hi
-                  span.nav-user  #{user.firstName}
-              li.nav-item.active
-                a.nav-link(href='/auth/logout')
-                  i.fa.fa-sign-out
-                  |  Log-out
-            -else
-              li.nav-item.active
-                  a.nav-link(href='/auth/login')
-                    i.fa.fa-sign-in
-                    |  Log-in
-            
     #searchbar
     div.container.mt-5
       form(action = "/home_film", method='post')
@@ -96,48 +81,4 @@ head
             h4.tfilm Joker
             a#animation_6(href="/risultato_film/:475557?")
              img#margin(src="/images/Joker.jpg", width="100%")
-             
-  // Footer
-footer.footer.bg-dark.text-white
-    .container.pt-5.pb-2
-      .row
-        .col-md-3.col-lg-4.col-xl-3
-          h4 Information
-          |                     
-          hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-          |                     
-          p
-            | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
-        |                 
-        .col-md-3.col-lg-2.col-xl-2.mx-auto
-          h4 Useful links
-          |                     
-          hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-          |                     
-          p
-            a.text-white(href='/') Home
-          |                     
-          p
-            a.text-white(href='#') About Us
-        |                 
-        .col-md-4.col-lg-3.col-xl-3
-          h4 Contact
-          |                     
-          hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-          |                     
-          p
-            a(href='https://goo.gl/maps/Z6mkUPT3rin')
-              i.fa.fa-home.mr-3.text-white
-            |  Piazzale Aldo Moro 7
-          |                                        
-          p
-            i.fa.fa-phone.mr-3
-            |  + 06 842 569
-    // Footer Links
-    hr.bg-white.mx-4.mt-2.mb-1
-    // Copyright
-    .container-fluid
-      p.text-center.m-0.py-1
-        | &copy; 2019 Copyright 
-        a.text-white(href='https://getbootstrap.com/') MK
-    // Copyright
+  

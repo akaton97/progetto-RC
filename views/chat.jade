@@ -21,7 +21,7 @@ head
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
     title MovieKraken | Chat
     link(rel='shortcut icon', href='/images/logo.jpg')
-    body.sfbg
+    body(background = 'images/sfondo.jpg', style = 'background-size: contain')
 
      meta(name='google-signin-client_id', content='620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com')
     
@@ -43,7 +43,7 @@ head
               li.nav-item.active
                 a.nav-link(href='/auth/userPage')
                   i.fa.fa-address-card
-                  |  Hi
+                  |  Benvenuto, 
                   span.nav-user  #{user.firstName}
               li.nav-item.active
                 a.nav-link(href='/auth/logout')
@@ -58,14 +58,25 @@ head
       #ch {
         margin-top: 42.5%;
       }
-      
+      #seas {
+       margin-top: 4%;
+       background:#ffffff;
+       border-radius: 20px 20px 20px 20px;
+       background-color: rgba(0.5, 0.5, 0, 0.9);
+       color: white;
+       text-align: center;
+       padding: 3px 4px;
+      } 
+      #bs{
+        background-color: white;
+      }
     #chat-app
       #chat.has-text-centered
 
         section.section.chat-container
           .container
             .columns
-              .box.column.is-8.is-offset-2(style='background-color: floralwhite;')
+              .box.column.is-8.is-offset-2#seas
                 h2.title Chatbox
                 .chat-messages.has-text-left
                   ul#chat-messages
@@ -75,9 +86,9 @@ head
                     p.control
                       input(type='text', class='input',value = "#{user.firstName}", id='name' readonly)
                     p.control.is-expanded
-                      input(type='text', class='input', placeholder='Scrivi qualcosa...', id='message')
+                      input(type='text', class='input', placeholder='Scrivi qualcosa...', id='message', min = '1',required)
                     p.control
-                      input(type='submit', class='button is-success sfbg', value='Invia', style='background-color: black;')
+                      input(type='submit', class='button is-successbs ', value='Invia', style='background-color: black;')
                       
         script.
 
