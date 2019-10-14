@@ -72,8 +72,14 @@ head
       }
       #br {
         margin-top: 1.1%;
+        border-radius: 20px 20px 20px 20px;
       }
-      
+      #margin{
+        border-radius: 0px 0px 20px 20px; 
+      }
+      #margintop{
+        border-radius: 20px 20px 20px 20px; 
+      }      
     br
     // Card
     div.container.container.mt-4.mb-5
@@ -81,60 +87,21 @@ head
       |       
       .row 
         .col-md-4#box
-          .card
+          .card#margintop
             h4.tfilm#title Film             
             a#animation_6(href = "/home_film")
-             img(src="/images/venom.jpg", width="100%")
+             img#margin(src="/images/venom.jpg", width="100%")
         |             
         .col-md-4#br
-          .card
+          .card#margintop
             h4.tfilm#title Serie TV
             a#animation_6(href="/home_tvshow")
-             img(src="/images/bb.jpg", width="100%")
-// Footer
-footer.footer.bg-dark.text-white
-      // Footer Links
-      .container.pt-5.pb-2
-        .row
-          .col-md-3.col-lg-4.col-xl-3
-            h4 Information
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
-          |                 
-          .col-md-3.col-lg-2.col-xl-2.mx-auto
-            h4 Useful links
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              a.text-white(href='/homepage') Home
-            |                     
-            p
-              a.text-white(href='/') About Us
-          |                 
-          .col-md-4.col-lg-3.col-xl-3
-            h4 Contact
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              a(href='https://goo.gl/maps/Z6mkUPT3rin')
-                i.fa.fa-home.mr-3.text-white
-              |  Piazzale Aldo Moro 7
-            |                                        
-            p
-              i.fa.fa-phone.mr-3
-              |  + 06 842 569
-      // Footer Links
-      hr.bg-white.mx-4.mt-2.mb-1
-      // Copyright
-      .container-fluid
-        p.text-center.m-0.py-1
-          | &copy; 2019 Copyright 
-          a.text-white(href='https://getbootstrap.com/') MK
-      // Copyright
-    // Footer
-
+             img#margin(src="/images/bb.jpg", width="100%")
+ footer.footer.bg-dark.text-white
+    // Copyright
+    .container-fluid
+      p.text-center.m-0.py-1
+        | &copy; 2019 Copyright 
+        a.text-white(href='https://getbootstrap.com/') MK
+    // Copyright
+  // Footer
