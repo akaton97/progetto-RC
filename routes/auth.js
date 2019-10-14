@@ -17,8 +17,8 @@ router.get('/logout', (req,res) =>{
 });
 
 //user page routes
-router.get('/userPage', ensureAuthenticated, (req,res) =>{
-  res.render('auth/userPage');
+router.get('/profile', ensureAuthenticated, (req,res) =>{
+  res.render('profile',{user: req.user})
 });
 
 //GOOGLE authentication

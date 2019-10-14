@@ -18,10 +18,10 @@ module.exports = function(passport){
         }, (accessToken, refreshToken, profile, done) => {
 
         const newUser = {
+            email: profile.emails[0].value,
             googleID: profile.id,
             firstName: profile._json.given_name,
             lastName: profile._json.family_name,
-            email: profile.emails[0].value,
             picture: profile.photos[0].value,
         }
         console.log(profile)
