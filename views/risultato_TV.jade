@@ -55,14 +55,25 @@ head
     // CSS
     style.
      #rb {
-       margin-top: 3%;
+       margin-top: 4%;
+       background:#ffffff;
+       border-radius: 20px 20px 20px 20px;
+       background-color: rgba(0.5, 0.5, 0, 0.7);
        color: white;
-       background-color: black;
+     }
+     #seas {
+       margin-top: 4%;
+       background:#ffffff;
+       border-radius: 20px 20px 20px 20px;
+       background-color: rgba(0.5, 0.5, 0, 0.7);
+       color: white;
+       text-align: center;
+       padding: 3px 4px;
+       
      }
      #tit {
        font-family: Georgia;
-       font-size: 360%;
-       background-color: black;
+       font-weight: 1100;
        color: white;
      }
      #pos {
@@ -129,29 +140,26 @@ script.
             -var air3 = seasons[i+2]['air_date'];
             -var ep3 = seasons[i+2]['episode_count'];
 
-            .container
+            .container#seas
                    .row
-                       .col#rb
+                       .col
                            p #{nome1}
                            img(src=image1, width = "200px", height = "300px")    
                            p Messa in onda: #{air1}
                            p Episodi: #{ep1}
-                           br
-                           br
-                       .col#rb
+
+                       .col
                            p #{nome2}
                            img(src=image2, width = "200px", height = "300px")    
                            p Messa in onda: #{air2}
                            p Episodi: #{ep2}
-                           br
-                           br
-                       .col#rb
+
+                       .col
                            p #{nome3}
                            img(src=image3, width = "200px", height = "300px")    
                            p Messa in onda: #{air3}
                            p Episodi: #{ep3}
-                           br
-                           br
+
 
 - while(i+1 < seasons.length)
             -console.log(i)
@@ -165,22 +173,20 @@ script.
             -var air2 = seasons[i+1]['air_date'];
             -var ep2 = seasons[i+1]['episode_count'];
 
-            .container
+            .container#seas
                    .row
-                       .col#rb
+                       .col
                            p #{nome1}
                            img(src=image1, width = "200px", height = "300px")    
                            p Messa in onda: #{air1}
                            p Episodi: #{ep1}
-                           br
-                           br
-                       .col#pos
+
+                       .col
                            p #{nome2}
                            img(src=image2, width = "200px", height = "300px")    
                            p Messa in onda: #{air2}
                            p Episodi: #{ep2}
-                           br
-                           br
+
             -i+=2
 -while(i < seasons.length)
             -var nome1 = seasons[i]['name'];
@@ -190,13 +196,12 @@ script.
 
             .container
                    .row
-                       .col#rb
-                           p #{nome1}
-                           img(src=image1, width = "200px", height = "300px")    
+                       .col
+                           p #{nome1}#seas
+                           img(src=image1, width = "200px", height = "300px") 
                            p Messa in onda: #{air1}
                            p Episodi: #{ep1}
-                           br
-                           br
+
             -i+=1
 
 // Footer
