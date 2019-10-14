@@ -21,7 +21,7 @@ head
     // sweet alert
     script.
     -var backdrop = filmo['backdrop_path']
-  body(background = 'https://image.tmdb.org/t/p/original/'+ backdrop)
+  body(background = 'https://image.tmdb.org/t/p/original/'+ backdrop, style = 'background-size: cover;')
 
     // Navigation
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
@@ -56,7 +56,7 @@ head
     // CSS
     style.
      #rb {
-       margin-top: 4%;
+       margin-top: 10%;
        background:#ffffff;
        border-radius: 20px 20px 20px 20px;
        background-color: rgba(0.5, 0.5, 0, 0.6);
@@ -66,8 +66,11 @@ head
        font-family: Georgia;
        font-weight: 1100;
        color: white;
+       text-align: center;
      }
-    
+     #immagine{
+       margin-top: 11%;
+     }
     // SCRIPT
 script.
 -if(filmo == NULL){ console.log("filmo non esiste")}
@@ -116,51 +119,6 @@ script.
         //immagine risultato
         .col-md-4.mt-5
           - var imag = (filmo['poster_path'] != null) ? 'https://image.tmdb.org/t/p/original/' + poster :  "/images/no_locandina.webp"
+           #immagine
           img.card-img-top(src = imag)#rb 
 
-// Footer
-footer.footer.bg-dark.text-white
-      // Footer Links
-      .container.pt-5.pb-2
-        .row
-          .col-md-3.col-lg-4.col-xl-3
-            h4 Information
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              | Progetto realizzato per il corso di Reti di Calcolatori, universit&agrave; Sapienza di Roma.
-          |                 
-          .col-md-3.col-lg-2.col-xl-2.mx-auto
-            h4 Useful links
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              a.text-white(href='/') Home
-            |                     
-            p
-              a.text-white(href='#') About Us
-          |                 
-          .col-md-4.col-lg-3.col-xl-3
-            h4 Contact
-            |                     
-            hr.bg-white.mb-2.mt-0.d-inline-block.mx-auto.w-25
-            |                     
-            p
-              a(href='https://goo.gl/maps/Z6mkUPT3rin')
-                i.fa.fa-home.mr-3.text-white
-              |  Piazzale Aldo Moro 7
-            |                                        
-            p
-              i.fa.fa-phone.mr-3
-              |  + 06 842 569
-      // Footer Links
-      hr.bg-white.mx-4.mt-2.mb-1
-      // Copyright
-      .container-fluid
-        p.text-center.m-0.py-1
-          | &copy; 2019 Copyright 
-          a.text-white(href='https://getbootstrap.com/') MK
-      // Copyright
-    // Footer
