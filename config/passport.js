@@ -24,7 +24,6 @@ module.exports = function(passport){
             lastName: profile._json.family_name,
             picture: profile.photos[0].value,
         }
-        console.log(profile)
         // Check for existing user
         User.findOne({
             email:profile.photos[0].value
