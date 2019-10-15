@@ -69,5 +69,11 @@
 .fbg{
     background-image: url("/images/interstellar.jpg");
     /*background-color: peachpuff;*/
-    background-size: 100% 100%;
+    background-size: cover;
+}
+
+.gog{
+    background-image: url("/images/Google.png");
+    /*background-color: peachpuff;*/
+    background-size: cover;
 }

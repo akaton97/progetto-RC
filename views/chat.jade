@@ -21,7 +21,7 @@ head
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
     title MovieKraken | Chat
     link(rel='shortcut icon', href='/images/logo.jpg')
-    body(background = 'images/sfondo.jpg', style = 'background-size: contain')
+    body(background = 'images/sfondo.jpg', style = 'background-size: cover')
 
      meta(name='google-signin-client_id', content='620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com')
     
@@ -58,14 +58,12 @@ head
       #ch {
         margin-top: 42.5%;
       }
-      #seas {
+      #cont {
        margin-top: 4%;
-       background:#ffffff;
        border-radius: 20px 20px 20px 20px;
-       background-color: rgba(0.5, 0.5, 0, 0.9);
-       color: white;
-       text-align: center;
-       padding: 3px 4px;
+       background-color: floralwhite; 
+       color: black;
+       text-align: center;  
       } 
       #bs{
         background-color: white;
@@ -76,7 +74,7 @@ head
         section.section.chat-container
           .container
             .columns
-              .box.column.is-8.is-offset-2#seas
+              .box.column.is-8.is-offset-2#cont
                 h2.title Chatbox
                 .chat-messages.has-text-left
                   ul#chat-messages
