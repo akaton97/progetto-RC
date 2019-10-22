@@ -21,7 +21,7 @@ head
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
     title MovieKraken | Chat
     link(rel='shortcut icon', href='/images/logo.jpg')
-    body(background = 'images/sfondo.jpg', style = 'background-size: cover')
+    body.gog
 
      meta(name='google-signin-client_id', content='620881066128-m6uikg4jkf1bke3h9pmn5jhmg9oumsj2.apps.googleusercontent.com')
     
@@ -41,7 +41,7 @@ head
                 a.nav-link.text-white(href='/home_tvshow') Serie TV
             -if(user)
               li.nav-item.active
-                a.nav-link(href='/auth/userPage')
+                a.nav-link(href='/auth/profile')
                   i.fa.fa-address-card
                   |  Benvenuto, 
                   span.nav-user  #{user.firstName}
